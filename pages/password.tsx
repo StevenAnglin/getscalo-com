@@ -1,12 +1,29 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 
 export default function Password() {
   const router = useRouter();
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailStatus, setEmailStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  async function handleEmailSubmit(e: FormEvent) {
+    e.preventDefault();
+    setEmailStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      setEmailStatus(res.ok ? "success" : "error");
+    } catch {
+      setEmailStatus("error");
+    }
+  }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -96,6 +113,47 @@ export default function Password() {
             {loading ? "Unlocking…" : <>Enter <ArrowUpRight className="w-4 h-4" /></>}
           </button>
         </form>
+
+        {/* Divider */}
+        <div className="mt-10 flex items-center gap-3">
+          <div className="h-px flex-1 bg-[var(--scalo-border-hairline)]" />
+          <span className="text-[10px] text-[var(--scalo-fg-3)] whitespace-nowrap tracking-wide uppercase">
+            or get notified when we launch
+          </span>
+          <div className="h-px flex-1 bg-[var(--scalo-border-hairline)]" />
+        </div>
+
+        {/* Email signup */}
+        {emailStatus === "success" ? (
+          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-[var(--scalo-fg-2)]">
+            <Check className="w-4 h-4 text-[var(--scalo-ember)] shrink-0" />
+            You&apos;re on the list.
+          </div>
+        ) : (
+          <form onSubmit={handleEmailSubmit} className="mt-4 flex flex-col lg:flex-row gap-2">
+            <input
+              type="email"
+              placeholder="your@email.com"
+              value={email}
+              onChange={(e) => { setEmail(e.target.value); setEmailStatus("idle"); }}
+              required
+              className="w-full lg:flex-1 h-12 rounded-xl bg-[var(--scalo-bg-2)] border border-[var(--scalo-border-strong)] px-4 text-sm text-[var(--scalo-cream)] placeholder:text-[var(--scalo-fg-3)] outline-none transition-colors focus:border-[var(--scalo-ember)]"
+            />
+            <button
+              type="submit"
+              disabled={emailStatus === "loading" || !email}
+              className="h-12 px-5 rounded-xl bg-[var(--scalo-cream)] hover:bg-[var(--scalo-cream)]/90 text-[var(--scalo-bg-0)] text-sm font-medium transition-colors btn-press disabled:opacity-40 disabled:pointer-events-none whitespace-nowrap"
+            >
+              {emailStatus === "loading" ? "Saving…" : "Notify me"}
+            </button>
+            {emailStatus === "error" && (
+              <p className="text-xs text-red-400 lg:hidden -mt-1">Something went wrong. Try again.</p>
+            )}
+          </form>
+        )}
+        {emailStatus === "error" && (
+          <p className="text-xs text-red-400 hidden lg:block mt-1">Something went wrong. Try again.</p>
+        )}
       </div>
     </div>
   );
