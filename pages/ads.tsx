@@ -2,7 +2,7 @@ import { ArrowUpRight, Check } from "lucide-react";
 import Nav from "@/components/sections/Nav";
 import Footer from "@/components/sections/Footer";
 
-const TYPEFORM_ID = "01JGQP7KYJ84MSJNXF9CZPPNQ9";
+const TYPEFORM_ID = "EgCg6DVP";
 
 // 50 brands — doubled in the marquee track for seamless loop
 const brands = [

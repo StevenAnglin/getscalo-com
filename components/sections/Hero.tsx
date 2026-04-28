@@ -79,7 +79,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-10">
             <a
               href="#"
-              data-tf-popup="01JGQP7KYJ84MSJNXF9CZPPNQ9"
+              data-tf-popup="EgCg6DVP"
               className="inline-flex items-center gap-1.5 bg-[var(--scalo-cream)] hover:bg-[var(--scalo-cream)]/90 text-[var(--scalo-bg-0)] rounded-full h-12 px-7 text-base font-medium transition-colors btn-press shadow-[0_0_32px_rgba(255,253,232,0.18),0_0_0_1px_rgba(255,253,232,0.12)]"
             >
               Start with a teardown <ArrowUpRight className="w-4 h-4" />
