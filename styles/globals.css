@@ -1,0 +1,308 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ========================================
+   SCALO DESIGN SYSTEM v1.0
+   Dark always · Cream voice · Ember accent
+   ======================================== */
+
+:root {
+  /* Scalo color tokens */
+  --scalo-bg-0: #0A0A0B;
+  --scalo-bg-1: #111113;
+  --scalo-bg-2: #18181B;
+  --scalo-bg-3: #222226;
+  --scalo-cream: #FFFDE8;
+  --scalo-ember: #FF6B35;
+  --scalo-ember-dim: #C75429;
+  --scalo-fg-1: rgba(255, 253, 232, 1);
+  --scalo-fg-2: rgba(255, 253, 232, 0.72);
+  --scalo-fg-3: rgba(255, 253, 232, 0.48);
+  --scalo-border-strong: rgba(255, 253, 232, 0.22);
+  --scalo-border-ghost: rgba(255, 253, 232, 0.12);
+  --scalo-border-hairline: rgba(255, 253, 232, 0.06);
+
+  /* Scalo motion */
+  --scalo-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* shadcn dark-only mappings to Scalo */
+  --background: var(--scalo-bg-0);
+  --foreground: var(--scalo-cream);
+  --card: var(--scalo-bg-2);
+  --card-foreground: var(--scalo-cream);
+  --popover: var(--scalo-bg-2);
+  --popover-foreground: var(--scalo-cream);
+  --primary: var(--scalo-cream);
+  --primary-foreground: var(--scalo-bg-0);
+  --secondary: var(--scalo-bg-3);
+  --secondary-foreground: var(--scalo-cream);
+  --muted: var(--scalo-bg-3);
+  --muted-foreground: var(--scalo-fg-2);
+  --accent: var(--scalo-ember);
+  --accent-foreground: var(--scalo-bg-0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: var(--scalo-border-ghost);
+  --input: var(--scalo-border-ghost);
+  --ring: var(--scalo-ember);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+
+  /* Scalo brand colors as Tailwind utilities */
+  --color-scalo-bg-0: var(--scalo-bg-0);
+  --color-scalo-bg-1: var(--scalo-bg-1);
+  --color-scalo-bg-2: var(--scalo-bg-2);
+  --color-scalo-bg-3: var(--scalo-bg-3);
+  --color-scalo-cream: var(--scalo-cream);
+  --color-scalo-ember: var(--scalo-ember);
+  --color-scalo-fg-1: var(--scalo-fg-1);
+  --color-scalo-fg-2: var(--scalo-fg-2);
+  --color-scalo-fg-3: var(--scalo-fg-3);
+
+  --font-sans: "Neue Montreal", "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+/* Editorial italic helper */
+.italic-editorial {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── Horizontal line grid — clean, process-section feel ── */
+.bg-lines-h-fade {
+  position: relative;
+}
+.bg-lines-h-fade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 253, 232, 0.055) 0px,
+    rgba(255, 253, 232, 0.055) 1px,
+    transparent 1px,
+    transparent 52px
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-lines-h-fade > * { position: relative; z-index: 1; }
+
+/* ── Cross grid — combines vertical + horizontal hairlines ── */
+.bg-cross-fade {
+  position: relative;
+}
+.bg-cross-fade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 253, 232, 0.05) 0px, rgba(255, 253, 232, 0.05) 1px, transparent 1px, transparent 64px),
+    repeating-linear-gradient(90deg, rgba(255, 253, 232, 0.05) 0px, rgba(255, 253, 232, 0.05) 1px, transparent 1px, transparent 64px);
+  -webkit-mask-image: radial-gradient(ellipse 100% 85% at 50% 50%, black 20%, transparent 100%);
+  mask-image: radial-gradient(ellipse 100% 85% at 50% 50%, black 20%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-cross-fade > * { position: relative; z-index: 1; }
+
+/* Display type scale */
+.display-xl { font-size: clamp(56px, 8vw, 96px); line-height: 0.92; letter-spacing: -0.03em; font-weight: 500; }
+.display-lg { font-size: clamp(40px, 5.5vw, 64px); line-height: 0.92; letter-spacing: -0.02em; font-weight: 500; }
+.display-md { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 500; }
+.body-lg    { font-size: clamp(16px, 1.5vw, 20px); line-height: 1.55; }
+.eyebrow    { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--scalo-fg-3); display: inline-flex; align-items: center; gap: 8px; }
+
+/* ─────────────────────────────────────────────────────────────
+   MOBILE ALIGNMENT SYSTEM
+   ─────────────────────────────────────────────────────────────
+   CENTER on mobile/tablet (<1024px):
+     → Brand statement moments — you want to FEEL, not scan
+     → Hero (text-center lg:text-left)
+     → FinalCTA (text-center, always)
+     → TrustBar logos (symmetric row, always)
+     → Hero stat strip (impact numbers, text-center md:text-left)
+
+   LEFT on mobile (default):
+     → All content/information sections — you want to READ/scan
+     → Cases, Stats, Method, Services, Calculator, Guarantee,
+       Team, Comparison, FAQ, Resources, Footer
+     → All card interiors, body text, eyebrows, lists
+     → Any headline followed by body text (information context)
+
+   Rule of thumb: CENTER = feeling/impact. LEFT = reading/scanning.
+   ───────────────────────────────────────────────────────────── */
+
+/* ── Ember radial glows — INTENTIONAL ONLY, never ambient ── */
+
+/* Hero: diffuse glow — fades to 0 at 75% so it's fully transparent before overflow-hidden clips */
+.glow-ember-headline {
+  background-image: radial-gradient(40% 45% at 36% 38%, rgba(255, 107, 53, 0.18) 0%, rgba(255, 107, 53, 0.05) 55%, rgba(255, 107, 53, 0) 75%);
+}
+
+/* Final CTA: strong centered glow as visual centerpiece */
+.glow-ember-cta {
+  background-image: radial-gradient(55% 55% at 50% 60%, rgba(255, 107, 53, 0.45) 0%, rgba(255, 107, 53, 0) 75%);
+}
+
+/* ── Dot grid background — fades at top and bottom edges ── */
+.bg-grid-fade {
+  position: relative;
+}
+.bg-grid-fade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='rgba(255%2C253%2C232%2C0.09)'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-grid-fade > * { position: relative; z-index: 1; }
+
+/* ── CSS-only marquee — toggle by swapping commented class ── */
+/* Usage: add class="animate-marquee" to the inner track div    */
+/* Remove class (or add paused) when logos are static           */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation-play-state: paused; }
+}
+
+/* Numeric tabular */
+.tnum { font-variant-numeric: tabular-nums; }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  html, body {
+    background: var(--scalo-bg-0);
+    color: var(--scalo-cream);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--scalo-ember); color: var(--scalo-bg-0); }
+}
+
+/* ── Scroll reveal system ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s var(--scalo-ease-out), transform 0.75s var(--scalo-ease-out);
+}
+[data-reveal].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal][data-delay="100"] { transition-delay: 100ms; }
+[data-reveal][data-delay="150"] { transition-delay: 150ms; }
+[data-reveal][data-delay="200"] { transition-delay: 200ms; }
+[data-reveal][data-delay="250"] { transition-delay: 250ms; }
+[data-reveal][data-delay="300"] { transition-delay: 300ms; }
+[data-reveal][data-delay="400"] { transition-delay: 400ms; }
+[data-reveal][data-delay="500"] { transition-delay: 500ms; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Hero entry animations (load, not scroll) ── */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-animate {
+  opacity: 0;
+  animation: hero-fade-up 0.9s var(--scalo-ease-out) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate { opacity: 1; animation: none; }
+}
+
+/* ── Pulse dot for hero pill ── */
+@keyframes pulse-ember {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.35); }
+}
+.pulse-dot {
+  animation: pulse-ember 2s ease-in-out infinite;
+}
+
+/* ── Grain noise overlay (applied to body via _app) ── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ── Ember gradient border — top edge of sections ── */
+.border-ember-top {
+  position: relative;
+}
+.border-ember-top::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.4) 30%, rgba(255, 107, 53, 0.4) 70%, transparent);
+  pointer-events: none;
+}
+
+/* ── Card hover lift ── */
+.card-lift {
+  transition: transform 0.25s var(--scalo-ease-out), box-shadow 0.25s var(--scalo-ease-out);
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 253, 232, 0.1);
+}
+
+/* ── Button press state ── */
+.btn-press:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
