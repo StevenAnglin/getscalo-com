@@ -1,4 +1,17 @@
+import { useRouter } from "next/router";
+
+function resolveFooterHref(href: string, isHomePage: boolean) {
+  if (!href.startsWith("#")) {
+    return href;
+  }
+
+  return isHomePage ? href : `/${href}`;
+}
+
 export default function Footer() {
+  const router = useRouter();
+  const isHomePage = router.pathname === "/";
+
   return (
     <footer className="relative border-t border-[var(--scalo-border-hairline)] py-16 lg:py-20">
       {/* Ember gradient top border */}
@@ -25,9 +38,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h4 className="text-[10px] uppercase tracking-widest text-[var(--scalo-fg-3)] font-medium mb-5">Services</h4>
             <ul className="space-y-3 text-sm text-[var(--scalo-fg-2)]">
-              <li><a href="#services" className="hover:text-[var(--scalo-cream)] transition-colors">Full Store Audit</a></li>
-              <li><a href="#services" className="hover:text-[var(--scalo-cream)] transition-colors">A/B Testing Program</a></li>
-              <li><a href="#book" className="hover:text-[var(--scalo-cream)] transition-colors">Book an Audit</a></li>
+              <li><a href={resolveFooterHref("#services", isHomePage)} className="hover:text-[var(--scalo-cream)] transition-colors">Full Store Audit</a></li>
+              <li><a href={resolveFooterHref("#services", isHomePage)} className="hover:text-[var(--scalo-cream)] transition-colors">A/B Testing Program</a></li>
+              <li><a href={resolveFooterHref("#book", isHomePage)} className="hover:text-[var(--scalo-cream)] transition-colors">Book an Audit</a></li>
             </ul>
           </div>
 
@@ -35,9 +48,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h4 className="text-[10px] uppercase tracking-widest text-[var(--scalo-fg-3)] font-medium mb-5">Company</h4>
             <ul className="space-y-3 text-sm text-[var(--scalo-fg-2)]">
-              <li><a href="#method" className="hover:text-[var(--scalo-cream)] transition-colors">Method</a></li>
-              <li><a href="#results" className="hover:text-[var(--scalo-cream)] transition-colors">Case Studies</a></li>
-              <li><a href="#team" className="hover:text-[var(--scalo-cream)] transition-colors">About</a></li>
+              <li><a href={resolveFooterHref("#method", isHomePage)} className="hover:text-[var(--scalo-cream)] transition-colors">Method</a></li>
+              <li><a href={resolveFooterHref("#results", isHomePage)} className="hover:text-[var(--scalo-cream)] transition-colors">Case Studies</a></li>
+              <li><a href={resolveFooterHref("#team", isHomePage)} className="hover:text-[var(--scalo-cream)] transition-colors">About</a></li>
             </ul>
           </div>
 
@@ -45,7 +58,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-3">
             <h4 className="text-[10px] uppercase tracking-widest text-[var(--scalo-fg-3)] font-medium mb-5">Get Started</h4>
             <a
-              href="#book"
+              href={resolveFooterHref("#book", isHomePage)}
               className="inline-flex items-center gap-1.5 bg-[var(--scalo-ember)] hover:bg-[var(--scalo-ember)]/90 text-[var(--scalo-bg-0)] rounded-full px-5 h-10 text-sm font-medium transition-colors btn-press"
             >
               Book an audit ↗
