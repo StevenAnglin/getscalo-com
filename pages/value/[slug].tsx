@@ -4,6 +4,7 @@ import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "ne
 import Footer from "@/components/sections/Footer";
 import Nav from "@/components/sections/Nav";
 import ContentBlockRenderer from "@/components/value/ContentBlockRenderer";
+import PasswordGate from "@/components/value/PasswordGate";
 import { getValueResourceBySlug, valueResources, type ValueResource } from "@/lib/value-resources";
 
 interface ValueResourcePageProps {
@@ -85,32 +86,50 @@ export default function ValueResourcePage({
           </div>
         </section>
 
-        <section className="pb-24 lg:pb-32">
-          <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
-            {resource.sections.map((section, index) => (
-              <div
-                key={`${section.number}-${section.title}`}
-                className={`grid gap-8 py-12 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12 ${index === 0 ? "" : "border-t border-[var(--scalo-border-hairline)]"}`}
-              >
-                <div data-reveal>
-                  <div className="text-[72px] leading-none italic-editorial text-[var(--scalo-ember)]">
-                    {section.number}
-                  </div>
-                  <div className="mt-6 text-[11px] font-medium tracking-[0.18em] text-[var(--scalo-fg-3)] uppercase">
-                    {section.eyebrow}
-                  </div>
-                  <h2 className="display-md mt-3 text-[var(--scalo-cream)]">{section.title}</h2>
-                </div>
-
-                <div className="space-y-6" data-reveal data-delay="100">
-                  {section.body.map((block, blockIndex) => (
-                    <ContentBlockRenderer key={`${section.number}-${block.type}-${blockIndex}`} block={block} />
-                  ))}
-                </div>
+        {resource.password ? (
+          <section className="pb-24 lg:pb-32 bg-[var(--scalo-bg-0)]">
+            <PasswordGate
+              password={resource.password}
+              storageKey={`value-resource-${resource.slug}`}
+            >
+              <div className="w-full" style={{ height: "calc(100vh - 80px)" }}>
+                <iframe
+                  src="/docs/vital-collagen-plan.html"
+                  title={resource.title}
+                  className="w-full h-full border-0"
+                  style={{ display: "block" }}
+                />
               </div>
-            ))}
-          </div>
-        </section>
+            </PasswordGate>
+          </section>
+        ) : (
+          <section className="pb-24 lg:pb-32">
+            <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+              {resource.sections.map((section, index) => (
+                <div
+                  key={`${section.number}-${section.title}`}
+                  className={`grid gap-8 py-12 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12 ${index === 0 ? "" : "border-t border-[var(--scalo-border-hairline)]"}`}
+                >
+                  <div data-reveal>
+                    <div className="text-[72px] leading-none italic-editorial text-[var(--scalo-ember)]">
+                      {section.number}
+                    </div>
+                    <div className="mt-6 text-[11px] font-medium tracking-[0.18em] text-[var(--scalo-fg-3)] uppercase">
+                      {section.eyebrow}
+                    </div>
+                    <h2 className="display-md mt-3 text-[var(--scalo-cream)]">{section.title}</h2>
+                  </div>
+
+                  <div className="space-y-6" data-reveal data-delay="100">
+                    {section.body.map((block, blockIndex) => (
+                      <ContentBlockRenderer key={`${section.number}-${block.type}-${blockIndex}`} block={block} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="border-t border-[var(--scalo-border-hairline)] py-16 lg:py-20">
           <div className="mx-auto flex max-w-[1440px] flex-col gap-6 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-12">

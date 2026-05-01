@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vital Collagen — Website Optimization Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── TOKENS ─────────────────────────────────────────────────── */
+:root {
+  --black:         #000000;
+  --bg-1:          #0a0a0a;
+  --bg-2:          #111113;
+  --bg-3:          #18181b;
+  --bg-4:          #222226;
+  --ember:         #FF6B35;
+  --ember-dim:     #C75429;
+  --cream:         #FFFDE8;
+  --fg-1:          rgba(255,255,255,1);
+  --fg-2:          rgba(255,255,255,0.72);
+  --fg-3:          rgba(255,255,255,0.48);
+  --fg-4:          rgba(255,255,255,0.28);
+  --border-strong: rgba(255,255,255,0.18);
+  --border-mid:    rgba(255,255,255,0.10);
+  --border-ghost:  rgba(255,255,255,0.06);
+  --serif:         "Instrument Serif", Georgia, serif;
+  --sans:          "Barlow", system-ui, sans-serif;
+  --ease:          cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── BASE ───────────────────────────────────────────────────── */
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--black);
+  color: var(--fg-1);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ─── PRINT ──────────────────────────────────────────────────── */
+@page { size: A4; margin: 0; }
+@media print {
+  html { font-size: 11px; }
+  .page-break { page-break-before: always; }
+  .no-break { page-break-inside: avoid; }
+  .cover { min-height: 100vh; }
+  .grain { display: none; }
+}
+
+/* ─── GRAIN OVERLAY ──────────────────────────────────────────── */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ─── LAYOUT ─────────────────────────────────────────────────── */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 640px) {
+  .container { padding: 0 48px; }
+}
+
+/* ─── COVER ──────────────────────────────────────────────────── */
+.cover {
+  background: var(--black);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .cover { padding: 56px 64px; }
+}
+
+.cover-glow {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(255,107,53,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-rings {
+  position: absolute;
+  top: -8rem;
+  right: -8rem;
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+}
+
+.cover-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.cover-grid {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='rgba(255%2C255%2C255%2C0.05)'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+  pointer-events: none;
+}
+
+.cover-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.wordmark-serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--fg-2);
+  letter-spacing: -0.02em;
+}
+
+.wordmark-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ember);
+  flex-shrink: 0;
+}
+
+.cover-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cover-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--ember);
+  flex-shrink: 0;
+}
+
+.cover-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(36px, 8vw, 72px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--fg-1);
+  margin-bottom: 6px;
+}
+
+.cover-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 3.5vw, 28px);
+  font-weight: 400;
+  color: var(--fg-4);
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.cover-rule {
+  width: 40px;
+  height: 2px;
+  background: var(--ember);
+  border-radius: 1px;
+  margin-bottom: 24px;
+}
+
+.cover-desc {
+  font-size: 15px;
+  color: var(--fg-3);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.cover-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.pill-ember  { background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.25); color: #FF9070; }
+.pill-ghost  { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); color: var(--fg-3); }
+.pill-ok     { background: rgba(61,220,151,0.10); border: 1px solid rgba(61,220,151,0.20); color: #5DEBB4; }
+
+.cover-footer {
+  position: relative;
+  z-index: 1;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-ghost);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 480px) {
+  .cover-footer { grid-template-columns: repeat(4, 1fr); }
+}
+
+.meta-item {}
+.meta-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  margin-bottom: 5px;
+}
+.meta-val {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-2);
+}
+
+/* ─── TOC ────────────────────────────────────────────────────── */
+.toc-wrap {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border-ghost);
+}
+
+.toc-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-ghost);
+  border-top-color: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px 28px;
+}
+
+.toc-eyebrow {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  margin-bottom: 20px;
+}
+
+.toc-list { list-style: none; }
+
+.toc-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-ghost);
+}
+
+.toc-row:last-child { border-bottom: none; }
+
+.toc-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ember);
+  min-width: 20px;
+  flex-shrink: 0;
+}
+
+.toc-label {
+  font-size: 13px;
+  color: var(--fg-3);
+  font-weight: 400;
+}
+
+/* ─── SECTIONS ───────────────────────────────────────────────── */
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-ghost);
+}
+
+.section:last-child { border-bottom: none; }
+
+.s-eyebrow {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.s-eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--ember);
+  flex-shrink: 0;
+}
+
+.s-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 5vw, 40px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+  margin-bottom: 14px;
+}
+
+.s-lead {
+  font-size: 15px;
+  color: var(--fg-3);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ─── CALLOUTS ───────────────────────────────────────────────── */
+.callout {
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 24px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border-left: 3px solid;
+}
+
+.callout-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.callout-body { flex: 1; }
+.callout-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.callout-text { font-size: 13px; line-height: 1.65; }
+
+.callout-ember {
+  background: rgba(255,107,53,0.06);
+  border-left-color: var(--ember);
+}
+.callout-ember .callout-title { color: var(--ember); }
+.callout-ember .callout-text  { color: rgba(255,144,112,0.85); }
+
+.callout-warn {
+  background: rgba(255,181,71,0.06);
+  border-left-color: #FFB547;
+}
+.callout-warn .callout-title { color: #FFB547; }
+.callout-warn .callout-text  { color: rgba(255,205,130,0.8); }
+
+.callout-ok {
+  background: rgba(61,220,151,0.06);
+  border-left-color: #3DDC97;
+}
+.callout-ok .callout-title { color: #3DDC97; }
+.callout-ok .callout-text  { color: rgba(93,235,180,0.8); }
+
+.callout-red {
+  background: rgba(255,91,107,0.06);
+  border-left-color: #ff5b6b;
+}
+.callout-red .callout-title { color: #ff5b6b; }
+.callout-red .callout-text  { color: rgba(255,140,150,0.8); }
+
+.callout-ghost {
+  background: rgba(255,255,255,0.02);
+  border-left-color: rgba(255,255,255,0.12);
+}
+.callout-ghost .callout-title { color: var(--fg-2); }
+.callout-ghost .callout-text  { color: var(--fg-3); }
+
+/* ─── TABLES ─────────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  min-width: 500px;
+}
+
+thead tr { background: var(--bg-3); }
+
+thead th {
+  padding: 11px 14px;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  border: none;
+}
+
+tbody tr { border-bottom: 1px solid var(--border-ghost); }
+tbody tr:hover { background: rgba(255,107,53,0.03); }
+
+tbody td {
+  padding: 11px 14px;
+  color: var(--fg-3);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+td strong { color: var(--fg-2); font-weight: 600; }
+
+/* ─── BADGES ─────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.badge-ember  { background: rgba(255,107,53,0.15); color: #FF9070; border: 1px solid rgba(255,107,53,0.2); }
+.badge-ghost  { background: rgba(255,255,255,0.05); color: var(--fg-3); border: 1px solid var(--border-ghost); }
+.badge-ok     { background: rgba(61,220,151,0.12); color: #5DEBB4; border: 1px solid rgba(61,220,151,0.2); }
+.badge-warn   { background: rgba(255,181,71,0.12); color: #FFD080; border: 1px solid rgba(255,181,71,0.2); }
+.badge-red    { background: rgba(255,91,107,0.12); color: #FF8E97; border: 1px solid rgba(255,91,107,0.2); }
+
+/* ─── CARDS ──────────────────────────────────────────────────── */
+.card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-ghost);
+  border-top-color: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.card-header {
+  background: var(--bg-3);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-ghost);
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-2);
+}
+
+.card-count {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ember);
+  line-height: 1;
+  font-family: var(--sans);
+}
+
+.card-count span {
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--fg-4);
+  display: block;
+  text-align: right;
+}
+
+.card-body { padding: 16px 20px; }
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border-ghost);
+}
+
+.card-row:last-child { border-bottom: none; }
+.card-row-label { color: var(--fg-4); font-weight: 500; flex-shrink: 0; }
+.card-row-val { color: var(--fg-2); font-weight: 500; text-align: right; }
+
+/* ─── PAGE GRID ──────────────────────────────────────────────── */
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+@media (min-width: 600px) {
+  .page-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── TWO COL ────────────────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+@media (min-width: 600px) {
+  .two-col { grid-template-columns: 1fr 1fr; }
+}
+
+.box {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-ghost);
+  border-top-color: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.box-title {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  margin-bottom: 14px;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border-ghost);
+  font-size: 12.5px;
+}
+
+.metric-row:last-child { border-bottom: none; }
+.metric-key { color: var(--fg-4); }
+.metric-val { font-weight: 600; color: var(--fg-2); }
+.metric-val.danger { color: #ff5b6b; }
+
+/* ─── MISSING GRID ───────────────────────────────────────────── */
+.missing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+@media (min-width: 600px) {
+  .missing-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.missing-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-ghost);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.missing-header {
+  background: var(--bg-3);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  border-bottom: 1px solid var(--border-ghost);
+}
+
+.missing-count {
+  background: rgba(255,255,255,0.05);
+  color: var(--ember);
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.missing-body { padding: 12px 16px; }
+
+.missing-item {
+  font-size: 12.5px;
+  color: var(--fg-3);
+  padding: 5px 0 5px 18px;
+  position: relative;
+  border-bottom: 1px solid var(--border-ghost);
+  line-height: 1.5;
+}
+
+.missing-item:last-child { border-bottom: none; }
+
+.missing-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid rgba(255,91,107,0.5);
+  border-radius: 50%;
+}
+
+/* ─── LENS GRID ──────────────────────────────────────────────── */
+.lens-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+
+@media (min-width: 640px) {
+  .lens-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+.lens-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-ghost);
+  border-top-color: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.lens-icon { font-size: 22px; margin-bottom: 8px; }
+.lens-name { font-size: 12px; font-weight: 700; color: var(--fg-2); margin-bottom: 7px; }
+.lens-desc { font-size: 11px; color: var(--fg-4); line-height: 1.5; }
+
+/* ─── TEMPLATE BOX ───────────────────────────────────────────── */
+.template-box {
+  background: var(--bg-2);
+  border: 1px solid var(--border-ghost);
+  border-top-color: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 24px 24px;
+  margin: 24px 0;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 11.5px;
+  line-height: 2;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.t-label { color: var(--ember); font-weight: 700; }
+.t-placeholder { color: var(--fg-4); font-style: italic; }
+
+/* ─── LAYER CARDS ────────────────────────────────────────────── */
+.layer-stack { display: flex; flex-direction: column; gap: 14px; margin: 28px 0; }
+
+.layer-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border-ghost);
+  border-top-color: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.layer-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #000;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.l1 .layer-num { background: var(--ember); }
+.l2 .layer-num { background: #FFB547; }
+.l3 .layer-num { background: #3DDC97; }
+
+.layer-body { flex: 1; }
+.layer-title { font-size: 14px; font-weight: 700; color: var(--fg-1); margin-bottom: 6px; }
+.layer-desc { font-size: 12.5px; color: var(--fg-3); line-height: 1.65; margin-bottom: 12px; }
+
+.layer-status {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.status-now  { background: rgba(255,107,53,0.12); color: var(--ember); border: 1px solid rgba(255,107,53,0.2); }
+.status-next { background: rgba(255,181,71,0.12); color: #FFB547; border: 1px solid rgba(255,181,71,0.2); }
+.status-later{ background: rgba(255,255,255,0.04); color: var(--fg-4); border: 1px solid var(--border-ghost); }
+
+/* ─── STEPS ──────────────────────────────────────────────────── */
+.steps { margin: 24px 0; display: flex; flex-direction: column; gap: 18px; }
+
+.step { display: flex; gap: 16px; align-items: flex-start; }
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,107,53,0.12);
+  border: 1px solid rgba(255,107,53,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ember);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.step-body { flex: 1; }
+.step-title { font-size: 13px; font-weight: 700; color: var(--fg-2); margin-bottom: 4px; }
+.step-desc { font-size: 12.5px; color: var(--fg-4); line-height: 1.6; }
+
+/* ─── CONCLUSION ─────────────────────────────────────────────── */
+.conclusion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+
+@media (min-width: 640px) {
+  .conclusion-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.c-step {
+  background: var(--bg-2);
+  border: 1px solid var(--border-ghost);
+  border-top-color: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.c-step-num {
+  font-size: 36px;
+  font-weight: 900;
+  color: rgba(255,107,53,0.15);
+  line-height: 1;
+  margin-bottom: 10px;
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+.c-step-title { font-size: 12px; font-weight: 700; color: var(--fg-2); margin-bottom: 6px; }
+.c-step-desc { font-size: 11px; color: var(--fg-4); line-height: 1.5; }
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fg-2);
+  margin: 32px 0 14px;
+  letter-spacing: -0.02em;
+}
+
+h4 {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  margin: 20px 0 12px;
+}
+
+p {
+  font-size: 13.5px;
+  color: var(--fg-3);
+  line-height: 1.72;
+  margin-bottom: 14px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+.ember { color: var(--ember); font-weight: 600; }
+
+/* ─── BULLET LIST ────────────────────────────────────────────── */
+.bullet-list { list-style: none; margin: 12px 0; }
+.bullet-list li {
+  padding: 5px 0 5px 18px;
+  position: relative;
+  font-size: 13px;
+  color: var(--fg-3);
+  line-height: 1.6;
+  border-bottom: 1px solid var(--border-ghost);
+}
+.bullet-list li:last-child { border-bottom: none; }
+.bullet-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--ember);
+  font-size: 11px;
+  top: 7px;
+  font-weight: 700;
+}
+
+/* ─── SUMMARY TABLE ──────────────────────────────────────────── */
+.summary-matrix {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 24px 0;
+  border: 1px solid var(--border-ghost);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────────── */
+.doc-footer {
+  background: var(--bg-1);
+  border-top: 1px solid var(--border-ghost);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .doc-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 64px;
+  }
+}
+
+.footer-brand {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--fg-3);
+}
+
+.footer-meta {
+  font-size: 11px;
+  color: var(--fg-4);
+}
+
+/* ─── PRINT BUTTON ───────────────────────────────────────────── */
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--ember);
+  color: #000;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.print-btn:hover { opacity: 0.85; }
+
+.no-print-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-ghost);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .no-print-bar { padding: 12px 48px; }
+}
+
+.no-print-bar-label {
+  font-size: 12px;
+  color: var(--fg-4);
+}
+
+@media print {
+  .no-print-bar { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Sticky print bar -->
+<div class="no-print-bar">
+  <span class="no-print-bar-label">Vital Collagen — Optimization Plan · April 30, 2026</span>
+  <button class="print-btn" onclick="window.print()">
+    ↓ Export PDF
+  </button>
+</div>
+
+<!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-rings">
+    <div class="cover-ring" style="inset:0;border-color:rgba(255,255,255,0.03)"></div>
+    <div class="cover-ring" style="inset:70px;border-color:rgba(255,255,255,0.04)"></div>
+    <div class="cover-ring" style="inset:140px;border-color:rgba(255,255,255,0.05)"></div>
+    <div class="cover-ring" style="inset:210px;border-color:rgba(255,107,53,0.08)"></div>
+    <div class="cover-ring" style="inset:280px;border-color:rgba(255,107,53,0.14)"></div>
+  </div>
+
+  <div class="cover-wordmark">
+    <span class="wordmark-serif">scalo.</span>
+    <span class="wordmark-dot"></span>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Internal Strategy Document — CRO</div>
+    <div class="cover-title">Vital Collagen<br>Website<br>Optimization Plan</div>
+    <div class="cover-subtitle">Backlog Review &amp; Structural Roadmap</div>
+    <div class="cover-rule"></div>
+    <div class="cover-desc">
+      Organizes the current 31-item backlog, identifies what's missing by page, defines how Airtable should be structured going forward, and establishes the correct sequence of work before any A/B test synthesis is run.
+    </div>
+    <div class="cover-pills">
+      <span class="pill pill-ember">⚠ Do Not Run Synthesis Yet</span>
+      <span class="pill pill-ghost">31 Items Documented</span>
+      <span class="pill pill-ghost">0 Concluded A/B Tests</span>
+      <span class="pill pill-ok">Next: Structure Airtable</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="meta-item">
+      <div class="meta-label">Client</div>
+      <div class="meta-val">Vital Collagen</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Prepared By</div>
+      <div class="meta-val">Scalo</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Date</div>
+      <div class="meta-val">Apr 30, 2026</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Status</div>
+      <div class="meta-val">Pre-Synthesis</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ TOC ════════════════════════════ -->
+<div class="container">
+  <div class="toc-wrap">
+    <div class="toc-card">
+      <div class="toc-eyebrow">Contents</div>
+      <ul class="toc-list">
+        <li class="toc-row"><span class="toc-num">01</span><span class="toc-label">Executive Summary</span></li>
+        <li class="toc-row"><span class="toc-num">02</span><span class="toc-label">Airtable Structure Fix</span></li>
+        <li class="toc-row"><span class="toc-num">03</span><span class="toc-label">Current Backlog By Page</span></li>
+        <li class="toc-row"><span class="toc-num">04</span><span class="toc-label">What's Missing</span></li>
+        <li class="toc-row"><span class="toc-num">05</span><span class="toc-label">Page Review Framework</span></li>
+        <li class="toc-row"><span class="toc-num">06</span><span class="toc-label">The Right Operating Model</span></li>
+        <li class="toc-row"><span class="toc-num">07</span><span class="toc-label">Recommended Next Steps</span></li>
+        <li class="toc-row"><span class="toc-num">08</span><span class="toc-label">Final Strategic Conclusion</span></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 1: EXECUTIVE SUMMARY ═══════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 01</div>
+    <div class="s-title">Executive Summary</div>
+    <div class="s-lead">Where we are, what we have, and why we can't jump straight to synthesis.</div>
+
+    <div class="callout callout-ember" style="margin-top:28px">
+      <div class="callout-icon">⚡</div>
+      <div class="callout-body">
+        <div class="callout-title">Bottom Line Up Front</div>
+        <div class="callout-text">
+          We have 31 documented website changes — not 31 A/B tests. The current backlog is predominantly baseline fixes and small UX corrections. The site has real structural gaps that these items do not address. Before running any synthesis, we need to organize the backlog properly, identify what's missing, and build a second wave of stronger improvements.
+        </div>
+      </div>
+    </div>
+
+    <h3>Current Situation</h3>
+    <p>A prior session produced 31 documented website changes for Vital Collagen, stored in Airtable. Those records were created without a field distinguishing <em>Direct Changes</em> from <em>A/B Tests</em>. The backlog has no structural clarity around work type, page context, or intent.</p>
+    <p>The 31 items are mostly valid work — typos, weak copy, missing trust signals, layout friction — but they are overwhelmingly fix-oriented. They address surface-level problems rather than defining how each page should perform as a conversion system. The site needs more than cleanup.</p>
+
+    <h3>Why These 31 Records Are Not Enough</h3>
+    <p>Baseline fixes remove friction. They are necessary but not sufficient. The site's underlying structure — how trust is built, how products are merchandised, how offers are communicated, how reviews are surfaced — has not been designed yet. The backlog does not reflect this gap.</p>
+
+    <h3>Why We Should Not Run the Synthesis SOP Yet</h3>
+    <div class="callout callout-red">
+      <div class="callout-icon">🚫</div>
+      <div class="callout-body">
+        <div class="callout-title">Do Not Run Synthesis</div>
+        <div class="callout-text">The synthesis SOP is designed to aggregate results from concluded A/B tests — experiments with control groups, traffic splits, and measurable outcomes. We have zero concluded tests. Running synthesis now would produce meaningless output. The SOP should only be used after real experiments have run and returned data.</div>
+      </div>
+    </div>
+
+    <h3>The Right Next Move</h3>
+    <p>Structure Airtable properly → tag the 31 items by type and page → review each page through a consistent framework → identify what's truly missing → build a second backlog of structural improvements → define page systems → only then design real A/B experiments → run synthesis when those experiments conclude.</p>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="box-title">What We Have</div>
+        <div class="metric-row"><span class="metric-key">Documented items</span><span class="metric-val">31</span></div>
+        <div class="metric-row"><span class="metric-key">Concluded A/B tests</span><span class="metric-val danger">0</span></div>
+        <div class="metric-row"><span class="metric-key">Pages covered</span><span class="metric-val">5</span></div>
+        <div class="metric-row"><span class="metric-key">Primary work type</span><span class="metric-val">Baseline Fixes</span></div>
+        <div class="metric-row"><span class="metric-key">Airtable structure</span><span class="metric-val danger">Needs setup</span></div>
+      </div>
+      <div class="box">
+        <div class="box-title">What We Need</div>
+        <div class="metric-row"><span class="metric-key">Airtable fields to add</span><span class="metric-val">4</span></div>
+        <div class="metric-row"><span class="metric-key">Page-level reviews</span><span class="metric-val">5 pages</span></div>
+        <div class="metric-row"><span class="metric-key">Missing systems</span><span class="metric-val">35+</span></div>
+        <div class="metric-row"><span class="metric-key">Second backlog</span><span class="metric-val">Structural additions</span></div>
+        <div class="metric-row"><span class="metric-key">Synthesis readiness</span><span class="metric-val danger">Not yet</span></div>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 2: AIRTABLE ════════════════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 02</div>
+    <div class="s-title">Airtable Structure Fix</div>
+    <div class="s-lead">Four fields to add manually. What each option means. Why each one matters.</div>
+
+    <div class="callout callout-ghost" style="margin-top:28px">
+      <div class="callout-icon">🗂</div>
+      <div class="callout-body">
+        <div class="callout-title">Action Required — Manual Airtable Setup</div>
+        <div class="callout-text">Add the following four fields directly in Airtable. After adding each field, bulk-update all 31 existing records using the instructions below. These fields are the operating structure for how we prioritize, filter, and review work going forward.</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Field Name</th>
+            <th>Type</th>
+            <th>Options</th>
+            <th>Bulk Update: Current 31</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Action Type</strong></td>
+            <td>Single Select</td>
+            <td><span class="badge badge-ghost">Direct Change</span>&nbsp;<span class="badge badge-warn">A/B Test</span></td>
+            <td>Set all 31 → <span class="badge badge-ghost">Direct Change</span></td>
+            <td>Separates pushes from experiments. Without it, synthesis is meaningless.</td>
+          </tr>
+          <tr>
+            <td><strong>Change Intent</strong></td>
+            <td>Single Select</td>
+            <td><span class="badge badge-red">Fix</span> <span class="badge badge-ghost">Optimization</span> <span class="badge badge-ok">Addition</span> <span class="badge badge-ember">Redesign</span> <span class="badge badge-warn">Merchandising</span> <span class="badge badge-ghost">Offer</span> <span class="badge badge-ghost">Content</span> <span class="badge badge-ghost">UX System</span></td>
+            <td>Review each of the 31 individually — most will be <span class="badge badge-red">Fix</span></td>
+            <td>Makes the work-type mix visible at a glance. Ensures you're not only doing cleanup.</td>
+          </tr>
+          <tr>
+            <td><strong>Page</strong></td>
+            <td>Single Select</td>
+            <td><span class="badge badge-ghost">Homepage</span> <span class="badge badge-ghost">Collection</span> <span class="badge badge-ghost">PDP</span> <span class="badge badge-ghost">Cart</span> <span class="badge badge-ghost">Global</span></td>
+            <td>Tag each record with its page context</td>
+            <td>Enables filtered views per page. This is how you review one page at a time.</td>
+          </tr>
+          <tr>
+            <td><strong>Workstream</strong></td>
+            <td>Single Select</td>
+            <td><span class="badge badge-ghost">Baseline Fix</span> <span class="badge badge-warn">Structural Addition</span> <span class="badge badge-ok">System Definition</span> <span class="badge badge-ember">Experiment</span></td>
+            <td>Set all 31 → <span class="badge badge-ghost">Baseline Fix</span></td>
+            <td>Maps each item to the operating model (Section 06). Filters sprints by layer.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Filtered Views to Create After Tagging</h3>
+
+    <div class="two-col">
+      <div class="box">
+        <div class="box-title">Views by Action Type</div>
+        <ul class="bullet-list">
+          <li>All Direct Changes (31 items now)</li>
+          <li>All A/B Tests (empty now — that's the point)</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="box-title">Views by Workstream</div>
+        <ul class="bullet-list">
+          <li>Baseline Fix (current 31)</li>
+          <li>Structural Addition (next wave)</li>
+          <li>System Definition (next wave)</li>
+          <li>Experiment (future)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 3: BACKLOG BY PAGE ══════════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 03</div>
+    <div class="s-title">Current Backlog By Page</div>
+    <div class="s-lead">What the 31 documented changes are actually doing, page by page.</div>
+
+    <div class="table-wrap" style="margin-top:28px">
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Items</th>
+            <th>Primary Focus</th>
+            <th>Work Type</th>
+            <th>Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Homepage</strong></td>
+            <td><span class="badge badge-ember">~13</span></td>
+            <td>Trust signals, nav clarity, review UX, footer trust leaks</td>
+            <td><span class="badge badge-red">Mostly Fix</span></td>
+            <td>Cleanup only</td>
+          </tr>
+          <tr>
+            <td><strong>Collection</strong></td>
+            <td><span class="badge badge-ghost">~7</span></td>
+            <td>Header, card friction, missing badges, imagery</td>
+            <td><span class="badge badge-red">Mostly Fix</span></td>
+            <td>Cleanup only</td>
+          </tr>
+          <tr>
+            <td><strong>PDP</strong></td>
+            <td><span class="badge badge-ghost">~7</span></td>
+            <td>Review visibility, weak copy, trust icons, scarcity grammar</td>
+            <td><span class="badge badge-red">Mostly Fix</span></td>
+            <td>Cleanup only</td>
+          </tr>
+          <tr>
+            <td><strong>Cart</strong></td>
+            <td><span class="badge badge-ghost">~2</span></td>
+            <td>Empty cart state, urgency misfire</td>
+            <td><span class="badge badge-red">Fix</span></td>
+            <td>Barely touched</td>
+          </tr>
+          <tr>
+            <td><strong>Global</strong></td>
+            <td><span class="badge badge-ghost">~2</span></td>
+            <td>WhatsApp overlap, duplicate icon</td>
+            <td><span class="badge badge-red">Fix</span></td>
+            <td>Bug fixes only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Page Detail</h3>
+
+    <div class="page-grid">
+      <div class="card no-break">
+        <div class="card-header">
+          <div class="card-title">Homepage</div>
+          <div class="card-count">~13 <span>items</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row"><span class="card-row-label">Fixing</span><span class="card-row-val">Hero trust gap, nav naming, review carousel, FAQ, footer leaks</span></div>
+          <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">~85% Fix</span></div>
+          <div class="card-row"><span class="card-row-label">Treatment</span><span class="card-row-val">Cleanup only</span></div>
+          <div class="card-row"><span class="card-row-label">Missing</span><span class="card-row-val">Hero offer, email capture, brand story, merch logic</span></div>
+        </div>
+      </div>
+
+      <div class="card no-break">
+        <div class="card-header">
+          <div class="card-title">Collection</div>
+          <div class="card-count">~7 <span>items</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row"><span class="card-row-label">Fixing</span><span class="card-row-val">Generic header, redundant titles, card friction, missing ratings/badges</span></div>
+          <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">~90% Fix</span></div>
+          <div class="card-row"><span class="card-row-label">Treatment</span><span class="card-row-val">Cleanup only</span></div>
+          <div class="card-row"><span class="card-row-label">Missing</span><span class="card-row-val">Education, sort logic, quick-buy, intent matching</span></div>
+        </div>
+      </div>
+
+      <div class="card no-break">
+        <div class="card-header">
+          <div class="card-title">PDP</div>
+          <div class="card-count">~7 <span>items</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row"><span class="card-row-label">Fixing</span><span class="card-row-val">Review emphasis, weak copy, trust icons, scarcity grammar, sticky ATC</span></div>
+          <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">~80% Fix</span></div>
+          <div class="card-row"><span class="card-row-label">Treatment</span><span class="card-row-val">Cleanup with minor UX fixes</span></div>
+          <div class="card-row"><span class="card-row-label">Missing</span><span class="card-row-val">Media sequence, benefit hierarchy, objection handling, bundles</span></div>
+        </div>
+      </div>
+
+      <div class="card no-break">
+        <div class="card-header">
+          <div class="card-title">Cart</div>
+          <div class="card-count">~2 <span>items</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row"><span class="card-row-label">Fixing</span><span class="card-row-val">Empty cart recs missing, urgency fires on empty cart</span></div>
+          <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">~100% Fix</span></div>
+          <div class="card-row"><span class="card-row-label">Treatment</span><span class="card-row-val">Barely touched — critical surface</span></div>
+          <div class="card-row"><span class="card-row-label">Missing</span><span class="card-row-val">Upsell, bundles, shipping bar, reassurance stack</span></div>
+        </div>
+      </div>
+
+      <div class="card no-break" style="grid-column: 1 / -1;">
+        <div class="card-header">
+          <div class="card-title">Global</div>
+          <div class="card-count">~2 <span>items</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row"><span class="card-row-label">Fixing</span><span class="card-row-val">WhatsApp button mobile overlap, duplicate Apple Pay icon in footer</span></div>
+          <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">~100% Fix</span></div>
+          <div class="card-row"><span class="card-row-label">Missing</span><span class="card-row-val">Image system, badge system, trust system, review system, copy system, offer system, mobile layout standards</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 4: WHAT'S MISSING ═══════════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 04</div>
+    <div class="s-title">What's Missing</div>
+    <div class="s-lead">The current backlog is a cleanup list. Here's the structural work that doesn't exist yet.</div>
+
+    <div class="callout callout-red" style="margin-top:28px">
+      <div class="callout-icon">🔍</div>
+      <div class="callout-body">
+        <div class="callout-title">The Problem in Plain Terms</div>
+        <div class="callout-text">Fixing a broken nav label is not the same as designing navigation. Fixing weak review copy is not the same as building a review system. The current 31 items fix visible errors. None of them define how any page is supposed to work as a conversion system. That architecture doesn't exist in the backlog — and the site can't be optimized meaningfully until it does.</div>
+      </div>
+    </div>
+
+    <div class="missing-grid">
+      <div class="missing-card no-break">
+        <div class="missing-header">Homepage — Missing Systems<span class="missing-count">6</span></div>
+        <div class="missing-body">
+          <div class="missing-item">Hero offer architecture — what is the first-screen value proposition?</div>
+          <div class="missing-item">First-screen trust structure — social proof placement, review count, authority signals</div>
+          <div class="missing-item">Best-seller / category entry logic — how does the page direct different intents?</div>
+          <div class="missing-item">Email or SMS capture strategy — where does list-building happen above the fold?</div>
+          <div class="missing-item">Brand story compression — a 1–2 sentence narrative that makes the product obvious</div>
+          <div class="missing-item">Merchandising pathing — which products surface first, and why?</div>
+        </div>
+      </div>
+
+      <div class="missing-card no-break">
+        <div class="missing-header">Collection — Missing Systems<span class="missing-count">6</span></div>
+        <div class="missing-body">
+          <div class="missing-item">Collection education — header copy that orients the shopper to what they're browsing</div>
+          <div class="missing-item">Product comparison logic — how does a shopper know which product is right for them?</div>
+          <div class="missing-item">Sort strategy — correct default sort order and why</div>
+          <div class="missing-item">Merchandising hierarchy — which products are featured, pinned, or promoted?</div>
+          <div class="missing-item">Quick-buy / quick-compare — reduce click depth to add-to-cart</div>
+          <div class="missing-item">Collection-specific intent matching — align copy and imagery to why this category exists</div>
+        </div>
+      </div>
+
+      <div class="missing-card no-break">
+        <div class="missing-header">PDP — Missing Systems<span class="missing-count">10</span></div>
+        <div class="missing-body">
+          <div class="missing-item">Product media sequence rules — what order do images appear in, and why?</div>
+          <div class="missing-item">Image order standards — lifestyle first, ingredient second, or vice versa?</div>
+          <div class="missing-item">Product storytelling system — how does the page move from awareness to conviction?</div>
+          <div class="missing-item">Benefit hierarchy — what is the #1, #2, #3 reason to buy?</div>
+          <div class="missing-item">Objection handling system — where do we address price, ingredients, skepticism?</div>
+          <div class="missing-item">Trust stack structure — which trust signals appear, in what order, at what stage?</div>
+          <div class="missing-item">Bundle / subscription opportunities</div>
+          <div class="missing-item">Cross-sell placement rules</div>
+          <div class="missing-item">Review placement rules — where do reviews sit relative to ATC?</div>
+          <div class="missing-item">Variant education structure — how does a shopper choose flavor or size?</div>
+        </div>
+      </div>
+
+      <div class="missing-card no-break">
+        <div class="missing-header">Cart — Missing Systems<span class="missing-count">6</span></div>
+        <div class="missing-body">
+          <div class="missing-item">Upsell strategy — what is offered in cart, in what format, at what price?</div>
+          <div class="missing-item">Bundle prompts — "add one more to save" or "complete the routine"</div>
+          <div class="missing-item">Free shipping motivation — threshold progress bar</div>
+          <div class="missing-item">Reassurance stack — trust signals to reduce abandonment</div>
+          <div class="missing-item">Better urgency logic — scarcity should only fire under real conditions</div>
+          <div class="missing-item">Recovery path — what happens when a user removes a product?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="missing-card no-break" style="margin-top:14px">
+      <div class="missing-header">Global / Sitewide — Missing Systems<span class="missing-count">7</span></div>
+      <div class="missing-body" style="display:grid;grid-template-columns:1fr;gap:0">
+        <div class="missing-item">Image system — rules for how product and lifestyle images are used across pages</div>
+        <div class="missing-item">Badge system — when do bestseller, new, sale, limited badges appear and under what rules?</div>
+        <div class="missing-item">Trust system — sitewide trust icon standards, placement rules, and language</div>
+        <div class="missing-item">Review system — how reviews are surfaced, summarized, and used as conversion assets</div>
+        <div class="missing-item">Copy system — voice and tone rules, headline patterns, CTA language standards</div>
+        <div class="missing-item">Offer system — how discounts, bundles, and promotions are communicated sitewide</div>
+        <div class="missing-item">Mobile layout standards — explicit rules for spacing, tap targets, and component priority</div>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 5: FRAMEWORK ════════════════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 05</div>
+    <div class="s-title">Page Review Framework</div>
+    <div class="s-lead">Five lenses for evaluating any page. One consistent template for structured review.</div>
+
+    <h3>The 5 Lenses</h3>
+    <p>Apply all five to each page. They force you to look beyond obvious bugs and surface structural gaps.</p>
+
+    <div class="lens-grid">
+      <div class="lens-card">
+        <div class="lens-icon">🔎</div>
+        <div class="lens-name">Clarity</div>
+        <div class="lens-desc">Does the visitor immediately understand what this page is for and what to do next?</div>
+      </div>
+      <div class="lens-card">
+        <div class="lens-icon">🛡</div>
+        <div class="lens-name">Trust</div>
+        <div class="lens-desc">Does the page reduce skepticism and risk at the right moments with the right signals?</div>
+      </div>
+      <div class="lens-card">
+        <div class="lens-icon">🏷</div>
+        <div class="lens-name">Merch</div>
+        <div class="lens-desc">Are the right products visible? Is value communicated? Is the hierarchy correct?</div>
+      </div>
+      <div class="lens-card">
+        <div class="lens-icon">⚡</div>
+        <div class="lens-name">Conversion</div>
+        <div class="lens-desc">Are CTAs clear? Is friction minimal? Does urgency and offer work properly?</div>
+      </div>
+      <div class="lens-card">
+        <div class="lens-icon">📈</div>
+        <div class="lens-name">Expansion</div>
+        <div class="lens-desc">Does the page create opportunities beyond the single transaction?</div>
+      </div>
+    </div>
+
+    <h3>Per-Page Review Template</h3>
+    <p>Use this for each page when doing the structured backlog review.</p>
+
+    <div class="template-box">
+      <div><span class="t-label">PAGE NAME:</span>                <span class="t-placeholder">[Homepage / Collection / PDP / Cart / Global]</span></div>
+      <div><span class="t-label">CURRENT ITEMS:</span>            <span class="t-placeholder">[Count of documented changes in Airtable for this page]</span></div>
+      <br>
+      <div><span class="t-label">CLARITY LENS</span></div>
+      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
+      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
+      <br>
+      <div><span class="t-label">TRUST LENS</span></div>
+      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
+      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
+      <br>
+      <div><span class="t-label">MERCHANDISING LENS</span></div>
+      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
+      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
+      <br>
+      <div><span class="t-label">CONVERSION LENS</span></div>
+      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
+      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
+      <br>
+      <div><span class="t-label">EXPANSION LENS</span></div>
+      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
+      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
+      <br>
+      <div><span class="t-label">MISSING SYSTEMS:</span>             <span class="t-placeholder">[Name each missing system not yet in the backlog]</span></div>
+      <div><span class="t-label">NEW DIRECT CHANGES TO ADD:</span>   <span class="t-placeholder">[Specific new Airtable records to create]</span></div>
+      <div><span class="t-label">FUTURE A/B TEST OPPORTUNITIES:</span><span class="t-placeholder">[Items suitable for a proper experiment later]</span></div>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 6: OPERATING MODEL ══════════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 06</div>
+    <div class="s-title">The Right Operating Model</div>
+    <div class="s-lead">Three layers of work. Different timelines. Different outputs. All necessary.</div>
+
+    <p style="margin-top:24px">Not all website work is the same type. Running everything as a single flat backlog creates confusion about priority, sequencing, and what "done" means.</p>
+
+    <div class="layer-stack">
+      <div class="layer-card l1 no-break">
+        <div class="layer-num">1</div>
+        <div class="layer-body">
+          <div class="layer-title">Layer 1 — Baseline Fixes</div>
+          <div class="layer-desc">Remove obvious friction hurting conversion right now. Typos, broken layouts, missing signals, confusing labels, misfiring logic. These are corrections, not experiments. The outcome is a clean, credible, non-embarrassing site. A necessary prerequisite to everything else — you cannot accurately measure the effect of a structural change on top of a broken foundation.<br><br><strong style="color:var(--fg-2)">The current 31 items are almost entirely Layer 1 work.</strong></div>
+          <span class="layer-status status-now">Active Now — Complete These First</span>
+        </div>
+      </div>
+
+      <div class="layer-card l2 no-break">
+        <div class="layer-num">2</div>
+        <div class="layer-body">
+          <div class="layer-title">Layer 2 — Structural Additions &amp; System Definition</div>
+          <div class="layer-desc">Design how each page is supposed to work. Define the trust system, review system, merchandising hierarchy, offer structure, media sequence rules. Add capabilities not present at all — email capture, bundle prompts, free shipping progress, variant education. These are deliberate design decisions that go live as direct changes once the architecture is agreed on.<br><br><strong style="color:var(--fg-2)">This is the next wave of Airtable records. It does not yet exist.</strong></div>
+          <span class="layer-status status-next">Next — After Layer 1 Is Implemented</span>
+        </div>
+      </div>
+
+      <div class="layer-card l3 no-break">
+        <div class="layer-num">3</div>
+        <div class="layer-body">
+          <div class="layer-title">Layer 3 — A/B Tests &amp; Experimentation</div>
+          <div class="layer-desc">Once foundation is clean and structural systems are in place, run true experiments. A proper A/B test has a clear hypothesis, a control, a treatment, defined metrics, sufficient traffic, and a minimum runtime. Results are what feed the synthesis SOP. Without Layers 1 and 2 complete, experiments produce noisy data and synthesis output is unreliable.<br><br><strong style="color:var(--fg-2)">This layer does not exist yet. Do not start it until the layers above are solid.</strong></div>
+          <span class="layer-status status-later">Future — After Layer 2 Work Is Live</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-ghost">
+      <div class="callout-icon">💡</div>
+      <div class="callout-body">
+        <div class="callout-title">How This Maps to Airtable Workstream Field</div>
+        <div class="callout-text">Layer 1 → <strong>Baseline Fix</strong>. Layer 2 → <strong>Structural Addition</strong> + <strong>System Definition</strong>. Layer 3 → <strong>Experiment</strong>. The Workstream field in Airtable gives you a one-click filter to see only the work that belongs in each layer.</div>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 7: NEXT STEPS ═══════════════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 07</div>
+    <div class="s-title">Recommended Next Steps</div>
+    <div class="s-lead">The practical sequence. Do these in order. Don't skip ahead.</div>
+
+    <div class="steps" style="margin-top:28px">
+      <div class="step no-break">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Add the four Airtable fields</div>
+          <div class="step-desc">Manually create Action Type, Change Intent, Page, and Workstream in Airtable. Set up select options exactly as defined in Section 02. Don't create filtered views yet — do the tagging first.</div>
+        </div>
+      </div>
+
+      <div class="step no-break">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Tag all 31 current records</div>
+          <div class="step-desc">Bulk-set Action Type → Direct Change and Workstream → Baseline Fix for all 31. Then individually review each record and set the correct Page and Change Intent values. Most will be Fix.</div>
+        </div>
+      </div>
+
+      <div class="step no-break">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Create filtered views and group by Page</div>
+          <div class="step-desc">Build the filtered views from Section 02. Create one grouped view sorted by Page. This becomes your working view for the next step.</div>
+        </div>
+      </div>
+
+      <div class="step no-break">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Review each page using the 5-lens framework</div>
+          <div class="step-desc">Work through the Page Review Template in Section 05 for all five page types. This surfaces what the current backlog covers, what it's missing, and where the structural gaps are.</div>
+        </div>
+      </div>
+
+      <div class="step no-break">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Create the second backlog — Structural Additions</div>
+          <div class="step-desc">Add new records for each missing system in Section 04. Tag as Action Type → Direct Change, Workstream → Structural Addition, Change Intent → Addition / UX System / Merchandising as appropriate.</div>
+        </div>
+      </div>
+
+      <div class="step no-break">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <div class="step-title">Add System Definition records</div>
+          <div class="step-desc">For each sitewide system (image system, badge system, trust system, etc.) create a record that documents the decision. Tag as Workstream → System Definition. These are design decisions, not just tasks.</div>
+        </div>
+      </div>
+
+      <div class="step no-break">
+        <div class="step-num">7</div>
+        <div class="step-body">
+          <div class="step-title">Prioritize the combined backlog</div>
+          <div class="step-desc">With Layer 1 and Layer 2 both visible in Airtable, prioritize by impact and sequencing. Layer 1 items go first. Layer 2 items that unblock other work follow.</div>
+        </div>
+      </div>
+
+      <div class="step no-break">
+        <div class="step-num">8</div>
+        <div class="step-body">
+          <div class="step-title">Design real A/B experiments — then run synthesis</div>
+          <div class="step-desc">Only after Layer 1 is implemented and Layer 2 systems are live: design true experiments with hypotheses, controls, treatments, and metrics. When those experiments conclude and return data, run the synthesis SOP. Not before.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ══════════════════ SECTION 8: CONCLUSION ═══════════════════════════ -->
+  <div class="section">
+    <div class="s-eyebrow">Section 08</div>
+    <div class="s-title">Final Strategic Conclusion</div>
+    <div class="s-lead">The right order of operations — and why the framing matters.</div>
+
+    <div class="callout callout-ember" style="margin-top:28px">
+      <div class="callout-icon">🎯</div>
+      <div class="callout-body">
+        <div class="callout-title">The Core Argument</div>
+        <div class="callout-text">This is not "redesign everything" vs. "optimize everything." That's a false choice. The right approach is sequenced: fix obvious friction, design page systems deliberately, upgrade weak architecture, then test. Each layer makes the next layer more meaningful. Skipping to testing before the structure is solid produces noisy experiments and misleading results.</div>
+      </div>
+    </div>
+
+    <h3>The Correct Order of Operations</h3>
+
+    <div class="conclusion-grid">
+      <div class="c-step no-break">
+        <div class="c-step-num">1</div>
+        <div class="c-step-title">Fix Obvious Friction</div>
+        <div class="c-step-desc">Remove errors and missing signals that are breaking credibility right now</div>
+      </div>
+      <div class="c-step no-break">
+        <div class="c-step-num">2</div>
+        <div class="c-step-title">Define Page Systems</div>
+        <div class="c-step-desc">Make deliberate decisions about how each page performs as a conversion system</div>
+      </div>
+      <div class="c-step no-break">
+        <div class="c-step-num">3</div>
+        <div class="c-step-title">Upgrade Architecture</div>
+        <div class="c-step-desc">Add what's missing — offers, trust, merchandising, upsell — as structured direct changes</div>
+      </div>
+      <div class="c-step no-break">
+        <div class="c-step-num">4</div>
+        <div class="c-step-title">Test With Intent</div>
+        <div class="c-step-desc">Run real experiments against a solid foundation, then synthesize results</div>
+      </div>
+    </div>
+
+    <h3>Status Table — Vital Collagen Right Now</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Current Status</th>
+            <th>Right Move</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>A/B Test Synthesis</strong></td>
+            <td><span class="badge badge-red">Do Not Run</span></td>
+            <td>Wait until concluded experiments exist with real data</td>
+          </tr>
+          <tr>
+            <td><strong>Airtable Structure</strong></td>
+            <td><span class="badge badge-red">Not Ready</span></td>
+            <td>Add 4 fields, tag all 31 records, create filtered views</td>
+          </tr>
+          <tr>
+            <td><strong>Current 31 Records</strong></td>
+            <td><span class="badge badge-warn">Direct Changes</span></td>
+            <td>Implement as fixes — they are not experiments</td>
+          </tr>
+          <tr>
+            <td><strong>Page Systems</strong></td>
+            <td><span class="badge badge-red">Not Defined</span></td>
+            <td>Design explicitly as Layer 2 Structural Addition records</td>
+          </tr>
+          <tr>
+            <td><strong>Missing Work</strong></td>
+            <td><span class="badge badge-red">Not in Backlog</span></td>
+            <td>Add 35+ missing system items into a second wave of records</td>
+          </tr>
+          <tr>
+            <td><strong>Cart &amp; Global</strong></td>
+            <td><span class="badge badge-red">Under-Covered</span></td>
+            <td>Prioritize both in the structural addition wave</td>
+          </tr>
+          <tr>
+            <td><strong>True Experiments</strong></td>
+            <td><span class="badge badge-ghost">Future Layer</span></td>
+            <td>Design after Layer 1 + 2 work is live and stable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-ok" style="margin-top:28px">
+      <div class="callout-icon">✓</div>
+      <div class="callout-body">
+        <div class="callout-title">The Outcome When This Is Done Right</div>
+        <div class="callout-text">A clean, credible site. Deliberate page architecture. A structured backlog with full context per item. Clear separation between changes that go live and experiments that need measurement. When experiments eventually run, synthesis produces reliable insights. Every layer of work makes the next layer more valuable.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="doc-footer">
+  <div class="footer-brand">scalo.</div>
+  <div class="footer-meta">Vital Collagen Website Optimization Plan · April 30, 2026 · Internal — Confidential</div>
+</div>
+
+</body>
+</html>

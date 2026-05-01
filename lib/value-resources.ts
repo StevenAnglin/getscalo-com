@@ -120,6 +120,7 @@ export interface ValueResource {
   description: string;
   tool: string;
   audience: string[];
+  password?: string;
   sections: ValueSection[];
 }
 
@@ -440,6 +441,18 @@ Design rules:
         ],
       },
     ],
+  },
+  {
+    slug: "vital-collagen-optimization-plan",
+    title: "Vital Collagen Optimization Plan",
+    subtitle: "Backlog Review & Structural Roadmap",
+    eyebrow: "CRO · Strategy",
+    description:
+      "How we structure a Shopify CRO backlog — distinguishing direct changes from A/B tests, organizing by page, and identifying what's missing before synthesis.",
+    tool: "CRO Framework",
+    audience: ["Internal"],
+    password: "godandmoney",
+    sections: [],
   },
 ];
 

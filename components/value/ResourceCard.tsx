@@ -34,8 +34,15 @@ export default function ResourceCard({ resource, index }: ResourceCardProps) {
             {resource.eyebrow}
           </span>
         </div>
-        <div className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--scalo-border-ghost)] text-[var(--scalo-fg-3)] transition-colors group-hover:border-[var(--scalo-ember)]/50 group-hover:text-[var(--scalo-ember)]">
-          <ArrowUpRight className="h-3.5 w-3.5" />
+        <div className="absolute right-4 top-4 flex items-center gap-2">
+          {resource.password && (
+            <span className="flex h-7 items-center gap-1 rounded-full border border-[var(--scalo-border-ghost)] bg-[var(--scalo-bg-0)]/60 px-2 text-[10px] font-medium tracking-wide text-[var(--scalo-fg-3)] backdrop-blur-sm">
+              🔒 Private
+            </span>
+          )}
+          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--scalo-border-ghost)] text-[var(--scalo-fg-3)] transition-colors group-hover:border-[var(--scalo-ember)]/50 group-hover:text-[var(--scalo-ember)]">
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </div>
         </div>
       </div>
 
