@@ -1098,7 +1098,7 @@ p:last-child { margin-bottom: 0; }
       <div class="callout-icon">🗂</div>
       <div class="callout-body">
         <div class="callout-title">Action Required — Manual Airtable Setup</div>
-        <div class="callout-text">Add the following four fields directly in Airtable. After adding each field, bulk-update all 31 existing records using the instructions below. These fields are the operating structure for how we prioritize, filter, and review work going forward.</div>
+        <div class="callout-text">Add the following four fields directly in Airtable. After adding each field, bulk-update all 64 existing records using the instructions below. These fields are the operating structure for how we prioritize, filter, and review work going forward.</div>
       </div>
     </div>
 
@@ -1109,7 +1109,7 @@ p:last-child { margin-bottom: 0; }
             <th>Field Name</th>
             <th>Type</th>
             <th>Options</th>
-            <th>Bulk Update: Current 31</th>
+            <th>Bulk Update: Current 64</th>
             <th>Why It Matters</th>
           </tr>
         </thead>
@@ -1118,20 +1118,20 @@ p:last-child { margin-bottom: 0; }
             <td><strong>Action Type</strong></td>
             <td>Single Select</td>
             <td><span class="badge badge-ghost">Direct Change</span>&nbsp;<span class="badge badge-warn">A/B Test</span></td>
-            <td>Set all 31 → <span class="badge badge-ghost">Direct Change</span></td>
+            <td>Set all 64 → <span class="badge badge-ghost">Direct Change</span></td>
             <td>Separates pushes from experiments. Without it, synthesis is meaningless.</td>
           </tr>
           <tr>
             <td><strong>Change Intent</strong></td>
             <td>Single Select</td>
             <td><span class="badge badge-red">Fix</span> <span class="badge badge-ghost">Optimization</span> <span class="badge badge-ok">Addition</span> <span class="badge badge-ember">Redesign</span> <span class="badge badge-warn">Merchandising</span> <span class="badge badge-ghost">Offer</span> <span class="badge badge-ghost">Content</span> <span class="badge badge-ghost">UX System</span></td>
-            <td>Review each of the 31 individually — most will be <span class="badge badge-red">Fix</span></td>
+            <td>Review each of the 64 individually — most will be <span class="badge badge-red">Fix</span></td>
             <td>Makes the work-type mix visible at a glance. Ensures you're not only doing cleanup.</td>
           </tr>
           <tr>
             <td><strong>Page</strong></td>
             <td>Single Select</td>
-            <td><span class="badge badge-ghost">Homepage</span> <span class="badge badge-ghost">Collection</span> <span class="badge badge-ghost">PDP</span> <span class="badge badge-ghost">Cart</span> <span class="badge badge-ghost">Global</span></td>
+            <td><span class="badge badge-ghost">Sitewide</span> <span class="badge badge-ghost">Navigation</span> <span class="badge badge-ghost">Collection</span> <span class="badge badge-ghost">PDP</span> <span class="badge badge-ghost">Cart</span> <span class="badge badge-ghost">Checkout</span> <span class="badge badge-ghost">Homepage</span> <span class="badge badge-ghost">Bundle</span></td>
             <td>Tag each record with its page context</td>
             <td>Enables filtered views per page. This is how you review one page at a time.</td>
           </tr>
@@ -1139,7 +1139,7 @@ p:last-child { margin-bottom: 0; }
             <td><strong>Workstream</strong></td>
             <td>Single Select</td>
             <td><span class="badge badge-ghost">Baseline Fix</span> <span class="badge badge-warn">Structural Addition</span> <span class="badge badge-ok">System Definition</span> <span class="badge badge-ember">Experiment</span></td>
-            <td>Set all 31 → <span class="badge badge-ghost">Baseline Fix</span></td>
+            <td>Set all 64 → <span class="badge badge-ghost">Baseline Fix</span></td>
             <td>Maps each item to the operating model (Section 06). Filters sprints by layer.</td>
           </tr>
         </tbody>
@@ -1152,14 +1152,14 @@ p:last-child { margin-bottom: 0; }
       <div class="box">
         <div class="box-title">Views by Action Type</div>
         <ul class="bullet-list">
-          <li>All Direct Changes (31 items now)</li>
+          <li>All Direct Changes (64 items now)</li>
           <li>All A/B Tests (empty now — that's the point)</li>
         </ul>
       </div>
       <div class="box">
         <div class="box-title">Views by Workstream</div>
         <ul class="bullet-list">
-          <li>Baseline Fix (current 31)</li>
+          <li>Baseline Fix (current 64)</li>
           <li>Structural Addition (next wave)</li>
           <li>System Definition (next wave)</li>
           <li>Experiment (future)</li>
@@ -1172,7 +1172,7 @@ p:last-child { margin-bottom: 0; }
   <div class="section">
     <div class="s-eyebrow">Section 03</div>
     <div class="s-title">Current Backlog By Page</div>
-    <div class="s-lead">What the 31 documented changes are actually doing, page by page.</div>
+    <div class="s-lead">What the 64 documented changes are actually doing, page by page.</div>
 
     <div class="table-wrap" style="margin-top:28px">
       <table>
@@ -1234,6 +1234,13 @@ p:last-child { margin-bottom: 0; }
             <td>Full redesign, hero, UGC, reviews, featured products, quiz CTA</td>
             <td><span class="badge badge-ember">Redesign</span></td>
             <td>Queued</td>
+          </tr>
+          <tr>
+            <td><strong>Bundle</strong></td>
+            <td><span class="badge badge-ghost">2</span></td>
+            <td>Pre-made bundles (2–3), bundle builder page with carousel + interactive builder</td>
+            <td><span class="badge badge-ok">Addition</span></td>
+            <td>Queued — client input needed</td>
           </tr>
         </tbody>
       </table>
@@ -1306,6 +1313,19 @@ p:last-child { margin-bottom: 0; }
           <div class="card-row"><span class="card-row-label">Sequence</span><span class="card-row-val">Fix first, then redesign once sitewide systems are live</span></div>
         </div>
       </div>
+
+      <div class="card no-break" style="grid-column: 1 / -1;">
+        <div class="card-header">
+          <div class="card-title">Bundle</div>
+          <div class="card-count">2 <span>tests</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row"><span class="card-row-label">Pre-Made Bundles</span><span class="card-row-val">2–3 curated product bundles as dedicated pages — clear value prop, savings callout, single-click ATC</span></div>
+          <div class="card-row"><span class="card-row-label">Bundle Builder</span><span class="card-row-val">Dedicated page: carousel of pre-made bundle cards at top → bundle PDP template; interactive builder below (pick 2–4 SKUs, live price + savings update)</span></div>
+          <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">Structural Addition</span></div>
+          <div class="card-row"><span class="card-row-label">Blocked by</span><span class="card-row-val">Client input needed — bundle product selection, discount structure, builder constraints (see Section 09)</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1313,13 +1333,13 @@ p:last-child { margin-bottom: 0; }
   <div class="section">
     <div class="s-eyebrow">Section 04</div>
     <div class="s-title">What's Missing</div>
-    <div class="s-lead">The current backlog is a cleanup list. Here's the structural work that doesn't exist yet.</div>
+    <div class="s-lead">Every identified gap is now covered in the 64-test backlog. Here's what was missing and exactly which test addresses it.</div>
 
     <div class="callout callout-ok" style="margin-top:28px">
       <div class="callout-icon">✓</div>
       <div class="callout-body">
         <div class="callout-title">Previously Missing — Now In The Backlog</div>
-        <div class="callout-text">The gaps identified in this section have been addressed in the expanded test suite. The 62-test backlog now covers every system that was missing — review platform, trust bar, offer bar, quiz, image system, badge system, subscription mechanics, cart feature parity, checkout branding, and the full homepage redesign. What remains is implementation.</div>
+        <div class="callout-text">The gaps identified in this section have been addressed in the expanded test suite. The 64-test backlog now covers every system that was missing — review platform, trust bar, offer bar, quiz, image system, badge system, subscription mechanics, cart feature parity, checkout branding, the full homepage redesign, and bundle offers. What remains is implementation.</div>
       </div>
     </div>
 
@@ -1428,7 +1448,7 @@ p:last-child { margin-bottom: 0; }
     <p>Use this for each page when doing the structured backlog review.</p>
 
     <div class="template-box">
-      <div><span class="t-label">PAGE NAME:</span>                <span class="t-placeholder">[Homepage / Collection / PDP / Cart / Global]</span></div>
+      <div><span class="t-label">PAGE NAME:</span>                <span class="t-placeholder">[Sitewide / Navigation / Collection / PDP / Cart / Checkout / Homepage / Bundle]</span></div>
       <div><span class="t-label">CURRENT ITEMS:</span>            <span class="t-placeholder">[Count of documented changes in Airtable for this page]</span></div>
       <br>
       <div><span class="t-label">CLARITY LENS</span></div>
@@ -1470,7 +1490,7 @@ p:last-child { margin-bottom: 0; }
         <div class="layer-num">1</div>
         <div class="layer-body">
           <div class="layer-title">Layer 1 — Baseline Fixes</div>
-          <div class="layer-desc">Remove obvious friction hurting conversion right now. Typos, broken layouts, missing signals, confusing labels, misfiring logic. These are corrections, not experiments. The outcome is a clean, credible, non-embarrassing site. A necessary prerequisite to everything else — you cannot accurately measure the effect of a structural change on top of a broken foundation.<br><br><strong style="color:var(--fg-2)">The current 31 items are almost entirely Layer 1 work.</strong></div>
+          <div class="layer-desc">Remove obvious friction hurting conversion right now. Typos, broken layouts, missing signals, confusing labels, misfiring logic. These are corrections, not experiments. The outcome is a clean, credible, non-embarrassing site. A necessary prerequisite to everything else — you cannot accurately measure the effect of a structural change on top of a broken foundation.<br><br><strong style="color:var(--fg-2)">Layer 1 items are documented in the backlog and ready to implement. Ship these first.</strong></div>
           <span class="layer-status status-now">Active Now — Complete These First</span>
         </div>
       </div>
@@ -1479,7 +1499,7 @@ p:last-child { margin-bottom: 0; }
         <div class="layer-num">2</div>
         <div class="layer-body">
           <div class="layer-title">Layer 2 — Structural Additions &amp; System Definition</div>
-          <div class="layer-desc">Design how each page is supposed to work. Define the trust system, review system, merchandising hierarchy, offer structure, media sequence rules. Add capabilities not present at all — email capture, bundle prompts, free shipping progress, variant education. These are deliberate design decisions that go live as direct changes once the architecture is agreed on.<br><br><strong style="color:var(--fg-2)">This is the next wave of Airtable records. It does not yet exist.</strong></div>
+          <div class="layer-desc">Design how each page is supposed to work. Define the trust system, review system, merchandising hierarchy, offer structure, media sequence rules. Add capabilities not present at all — bundle offers, quiz, free shipping progress, variant education. These are deliberate design decisions that go live as direct changes once the architecture is agreed on.<br><br><strong style="color:var(--fg-2)">Layer 2 items are documented in the backlog. Implement after Layer 1 baseline fixes are shipped.</strong></div>
           <span class="layer-status status-next">Next — After Layer 1 Is Implemented</span>
         </div>
       </div>
@@ -1513,56 +1533,56 @@ p:last-child { margin-bottom: 0; }
       <div class="step no-break">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Add the four Airtable fields</div>
-          <div class="step-desc">Manually create Action Type, Change Intent, Page, and Workstream in Airtable. Set up select options exactly as defined in Section 02. Don't create filtered views yet — do the tagging first.</div>
+          <div class="step-title">Tag the 64 Airtable records</div>
+          <div class="step-desc">The backlog is fully loaded. Now add the four structural fields (Action Type, Change Intent, Page, Workstream) and tag each record. Bulk-set Action Type → Direct Change for all 64. Set Workstream and Page individually per record using the options in Section 02. This unlocks filtered views by layer and page.</div>
         </div>
       </div>
 
       <div class="step no-break">
         <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Tag all 31 current records</div>
-          <div class="step-desc">Bulk-set Action Type → Direct Change and Workstream → Baseline Fix for all 31. Then individually review each record and set the correct Page and Change Intent values. Most will be Fix.</div>
+          <div class="step-title">Ship Layer 1 — baseline fixes first</div>
+          <div class="step-desc">Filter Airtable to Workstream → Baseline Fix. Work through every item in this layer: typo fixes, WhatsApp positioning, urgency bar conditional logic, footer leaks, review carousel dots, social proof stat correction. These have zero risk and unblock everything else. Ship them before touching any structural work.</div>
         </div>
       </div>
 
       <div class="step no-break">
         <div class="step-num">3</div>
         <div class="step-body">
-          <div class="step-title">Create filtered views and group by Page</div>
-          <div class="step-desc">Build the filtered views from Section 02. Create one grouped view sorted by Page. This becomes your working view for the next step.</div>
+          <div class="step-title">Collect client assets (parallel to Layer 1)</div>
+          <div class="step-desc">While Layer 1 is shipping, send the client the asset brief from Section 09. Product photography, general site imagery, Dr. Mohammed quiz interview, subscription confirmation, and bundle product selection are all needed before specific Layer 2 tests can go live. Start the conversation now so assets don't become a bottleneck later.</div>
         </div>
       </div>
 
       <div class="step no-break">
         <div class="step-num">4</div>
         <div class="step-body">
-          <div class="step-title">Review each page using the 5-lens framework</div>
-          <div class="step-desc">Work through the Page Review Template in Section 05 for all five page types. This surfaces what the current backlog covers, what it's missing, and where the structural gaps are.</div>
+          <div class="step-title">Implement sitewide systems — Layer 2 priority</div>
+          <div class="step-desc">After Layer 1 is shipped, move to the high-leverage sitewide systems: review platform (Okendo or Judge.me), trust bar, offer bar with free shipping threshold, and product recommendation quiz. These systems affect every page simultaneously and make every subsequent test more effective.</div>
         </div>
       </div>
 
       <div class="step no-break">
         <div class="step-num">5</div>
         <div class="step-body">
-          <div class="step-title">Create the second backlog — Structural Additions</div>
-          <div class="step-desc">Add new records for each missing system in Section 04. Tag as Action Type → Direct Change, Workstream → Structural Addition, Change Intent → Addition / UX System / Merchandising as appropriate.</div>
+          <div class="step-title">Implement page-level structural additions</div>
+          <div class="step-desc">With sitewide systems live, work through the page-level Layer 2 items: PDP doctor widget, trust points, image-linked variants, sticky ATC, benefit badges, accordions, FAQs; Collection two-step quick add, product badges, category banners; Cart subscription mechanics, free shipping bar, feature parity with slide cart.</div>
         </div>
       </div>
 
       <div class="step no-break">
         <div class="step-num">6</div>
         <div class="step-body">
-          <div class="step-title">Add System Definition records</div>
-          <div class="step-desc">For each sitewide system (image system, badge system, trust system, etc.) create a record that documents the decision. Tag as Workstream → System Definition. These are design decisions, not just tasks.</div>
+          <div class="step-title">Implement bundle tests — once client input is received</div>
+          <div class="step-desc">Pre-made bundles and the bundle builder page are both in the backlog but require client decisions first (product selection, discount structure, builder constraints — see Section 09). Once those are confirmed, build the pre-made bundle pages first, then the bundle builder. Update the offer bar to reference the bundle builder as a persistent entry point.</div>
         </div>
       </div>
 
       <div class="step no-break">
         <div class="step-num">7</div>
         <div class="step-body">
-          <div class="step-title">Prioritize the combined backlog</div>
-          <div class="step-desc">With Layer 1 and Layer 2 both visible in Airtable, prioritize by impact and sequencing. Layer 1 items go first. Layer 2 items that unblock other work follow.</div>
+          <div class="step-title">Execute the homepage redesign last</div>
+          <div class="step-desc">The homepage full optimization is an 8-test redesign that assumes the sitewide systems (trust bar, reviews, quiz, offer bar) are already live and functioning. Do not start the homepage redesign until sitewide systems are in place — the redesign is built around them. Existing homepage fixes (hero copy, CTA unify) can ship with Layer 1.</div>
         </div>
       </div>
 
@@ -1570,7 +1590,7 @@ p:last-child { margin-bottom: 0; }
         <div class="step-num">8</div>
         <div class="step-body">
           <div class="step-title">Design real A/B experiments — then run synthesis</div>
-          <div class="step-desc">Only after Layer 1 is implemented and Layer 2 systems are live: design true experiments with hypotheses, controls, treatments, and metrics. When those experiments conclude and return data, run the synthesis SOP. Not before.</div>
+          <div class="step-desc">Only after Layer 1 and Layer 2 are fully implemented: design true experiments with hypotheses, controls, treatments, and metrics. When those experiments conclude and return data, run the synthesis SOP. Not before. The foundation must be solid for experiments to produce reliable signal.</div>
         </div>
       </div>
     </div>
@@ -1629,13 +1649,13 @@ p:last-child { margin-bottom: 0; }
         <tbody>
           <tr>
             <td><strong>Full Test Backlog</strong></td>
-            <td><span class="badge badge-ok">62 Tests Documented</span></td>
+            <td><span class="badge badge-ok">64 Tests Documented</span></td>
             <td>Backlog is complete — begin implementation by layer</td>
           </tr>
           <tr>
             <td><strong>Airtable</strong></td>
             <td><span class="badge badge-ok">Fully Loaded</span></td>
-            <td>All 62 tests in Airtable with issue, direct change, and hypothesis</td>
+            <td>All 64 tests in Airtable with issue, direct change, and hypothesis</td>
           </tr>
           <tr>
             <td><strong>Layer 1 — Baseline Fixes</strong></td>
