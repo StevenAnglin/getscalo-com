@@ -28,11 +28,11 @@ export default function PasswordGate({ password, storageKey, children }: Passwor
     }
   }
 
-  if (!checked) return null;
+  // Render gate on first paint (SSR + initial client), then swap on mount if already unlocked
   if (unlocked) return <>{children}</>;
 
   return (
-    <div className="flex items-center justify-center py-24 px-6">
+    <div className="flex flex-1 items-center justify-center px-6 py-16" style={{ minHeight: "calc(100svh - 72px)" }}>
       <div
         className="w-full max-w-sm rounded-3xl p-10 flex flex-col items-center gap-8"
         style={{
