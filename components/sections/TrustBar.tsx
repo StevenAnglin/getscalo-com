@@ -65,7 +65,7 @@ export default function TrustBar() {
 
           <div className="flex animate-marquee">
             {track.map((l, i) => (
-              <LogoItem key={`${l.name}-${i}`} name={l.name} sub={l.sub} />
+              <LogoItem key={`${l.name}-${i}`} name={l.name} sub={l.sub} logo={l.logo} />
             ))}
           </div>
         </div>
