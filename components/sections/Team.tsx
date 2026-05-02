@@ -14,7 +14,7 @@ export default function Team() {
 
               {/* Ember corner wash */}
               <div className="absolute -bottom-10 -right-10 w-80 h-80 pointer-events-none"
-                style={{ background: "radial-gradient(circle at 70% 70%, rgba(255,107,53,0.28) 0%, rgba(255,107,53,0) 70%)" }} />
+                style={{ background: "radial-gradient(circle at 70% 70%, rgba(139,28,28,0.28) 0%, rgba(139,28,28,0) 70%)" }} />
 
               {/* Avatar block */}
               <div className="relative flex flex-col items-center gap-3 pt-10 pb-8 px-8">

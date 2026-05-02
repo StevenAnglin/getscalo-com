@@ -27,7 +27,7 @@ export default function ContentBlockRenderer({ block }: ContentBlockRendererProp
 
     case "callout":
       return (
-        <div className="rounded-2xl border border-[var(--scalo-ember)]/25 bg-[var(--scalo-bg-2)]/70 p-6 shadow-[inset_0_1px_0_rgba(255,107,53,0.08)]">
+        <div className="rounded-2xl border border-[var(--scalo-ember)]/25 bg-[var(--scalo-bg-2)]/70 p-6 shadow-[inset_0_1px_0_rgba(139,28,28,0.08)]">
           <div className="flex items-start gap-3">
             <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--scalo-ember)]/30 text-[var(--scalo-ember)]">
               <ArrowRight className="h-4 w-4" />

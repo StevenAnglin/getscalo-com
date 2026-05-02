@@ -44,7 +44,7 @@ export default function Stats() {
               {/* Hover glow — only on ember card */}
               {s.ember && (
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(255,107,53,0.07) 0%, transparent 100%)" }} />
+                  style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(139,28,28,0.07) 0%, transparent 100%)" }} />
               )}
 
               {/* Decorative large background number */}

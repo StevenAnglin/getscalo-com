@@ -72,7 +72,7 @@ export default function Services() {
             <div className="absolute top-0 left-8 right-8 h-px bg-[var(--scalo-ember)]" />
             {/* Ember ambient glow */}
             <div className="pointer-events-none absolute -bottom-16 -right-16 w-64 h-64"
-              style={{ background: "radial-gradient(circle at 70% 70%, rgba(255,107,53,0.14) 0%, transparent 70%)" }} />
+              style={{ background: "radial-gradient(circle at 70% 70%, rgba(139,28,28,0.14) 0%, transparent 70%)" }} />
 
             <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-widest uppercase bg-[var(--scalo-ember)] text-[var(--scalo-bg-0)]">
               {program.tag}

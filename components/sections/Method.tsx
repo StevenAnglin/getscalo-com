@@ -38,7 +38,7 @@ export default function Method() {
               >
                 {/* Subtle ember corner wash on hover */}
                 <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: "radial-gradient(circle at 0% 100%, rgba(255,107,53,0.08) 0%, transparent 70%)" }} />
+                  style={{ background: "radial-gradient(circle at 0% 100%, rgba(139,28,28,0.08) 0%, transparent 70%)" }} />
 
                 <div className="w-11 h-11 rounded-xl bg-[var(--scalo-ember)]/10 border border-[var(--scalo-ember)]/25 flex items-center justify-center mb-8 group-hover:bg-[var(--scalo-ember)]/15 group-hover:border-[var(--scalo-ember)]/40 transition-colors">
                   <Icon className="w-5 h-5 text-[var(--scalo-ember)]" strokeWidth={1.5} />

@@ -49,8 +49,8 @@ export default function PasswordGate({ password, storageKey, children }: Passwor
           <div
             className="flex h-12 w-12 items-center justify-center rounded-2xl text-xl"
             style={{
-              background: "rgba(255,107,53,0.10)",
-              border: "1px solid rgba(255,107,53,0.20)",
+              background: "rgba(139,28,28,0.10)",
+              border: "1px solid rgba(139,28,28,0.20)",
             }}
           >
             🔒
@@ -98,7 +98,7 @@ export default function PasswordGate({ password, storageKey, children }: Passwor
             }}
             onFocus={(e) => {
               e.target.style.borderColor = "rgba(255,255,255,0.18)";
-              e.target.style.boxShadow = "0 0 0 3px rgba(255,107,53,0.15)";
+              e.target.style.boxShadow = "0 0 0 3px rgba(139,28,28,0.15)";
             }}
             onBlur={(e) => {
               e.target.style.borderColor = err ? "rgba(255,91,107,0.5)" : "rgba(255,255,255,0.08)";

@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="absolute inset-0 rounded-full border border-[var(--scalo-cream)]/[0.035]" />
         <div className="absolute inset-[100px] rounded-full border border-[var(--scalo-cream)]/[0.05]" />
         <div className="absolute inset-[200px] rounded-full border border-[var(--scalo-cream)]/[0.07]" />
-        <div className="absolute inset-[300px] rounded-full border border-[var(--scalo-ember)]/[0.18] shadow-[inset_0_0_60px_rgba(255,107,53,0.04)]" />
+        <div className="absolute inset-[300px] rounded-full border border-[var(--scalo-ember)]/[0.18] shadow-[inset_0_0_60px_rgba(139,28,28,0.04)]" />
         <div className="absolute inset-[400px] rounded-full border border-[var(--scalo-ember)]/[0.12] bg-[var(--scalo-ember)]/[0.03]" />
       </div>
 
@@ -51,7 +51,7 @@ export default function Hero() {
 
         {/* Proof card — replaces plain subhead */}
         <div className="hero-animate" style={{ animationDelay: "180ms" }}>
-          <div className="mt-8 sm:mt-10 max-w-[560px] mx-auto lg:mx-0 rounded-2xl border border-[var(--scalo-border-strong)] bg-[var(--scalo-bg-1)]/60 backdrop-blur-sm overflow-hidden shadow-[0_0_48px_rgba(255,107,53,0.05)]">
+          <div className="mt-8 sm:mt-10 max-w-[560px] mx-auto lg:mx-0 rounded-2xl border border-[var(--scalo-border-strong)] bg-[var(--scalo-bg-1)]/60 backdrop-blur-sm overflow-hidden shadow-[0_0_48px_rgba(139,28,28,0.05)]">
             {/* Card header */}
             <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-[var(--scalo-border-hairline)]">
               <span className="text-[10px] uppercase tracking-widest text-[var(--scalo-fg-3)] font-medium">

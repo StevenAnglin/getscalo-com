@@ -108,7 +108,7 @@ export default function Password() {
           <button
             type="submit"
             disabled={loading || !value}
-            className="inline-flex items-center justify-center gap-1.5 h-12 rounded-xl bg-[var(--scalo-ember)] hover:bg-[var(--scalo-ember)]/90 text-[var(--scalo-bg-0)] text-sm font-medium transition-colors btn-press disabled:opacity-40 disabled:pointer-events-none shadow-[0_0_32px_rgba(255,107,53,0.25)]"
+            className="inline-flex items-center justify-center gap-1.5 h-12 rounded-xl bg-[var(--scalo-ember)] hover:bg-[var(--scalo-ember)]/90 text-[var(--scalo-bg-0)] text-sm font-medium transition-colors btn-press disabled:opacity-40 disabled:pointer-events-none shadow-[0_0_32px_rgba(139,28,28,0.25)]"
           >
             {loading ? "Unlocking…" : <>Enter <ArrowUpRight className="w-4 h-4" /></>}
           </button>

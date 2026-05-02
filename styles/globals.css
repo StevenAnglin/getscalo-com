@@ -18,6 +18,7 @@
   --scalo-accent: #8B1C1C;
   --scalo-accent-dim: #6B1414;
   --scalo-accent-glow: rgba(139, 28, 28, 0.38);
+  --scalo-ember: var(--scalo-accent);
   --scalo-fg-1: rgba(255, 253, 232, 1);
   --scalo-fg-2: rgba(255, 253, 232, 0.72);
   --scalo-fg-3: rgba(255, 253, 232, 0.48);

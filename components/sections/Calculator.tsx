@@ -68,7 +68,7 @@ export default function Calculator() {
               {/* Output — ember number with subtle glow */}
               <div className="pt-8 border-t border-[var(--scalo-border-ghost)] text-center relative">
                 <div className="pointer-events-none absolute inset-0"
-                  style={{ background: "radial-gradient(ellipse 60% 60% at 50% 80%, rgba(255,107,53,0.08) 0%, transparent 100%)" }} />
+                  style={{ background: "radial-gradient(ellipse 60% 60% at 50% 80%, rgba(139,28,28,0.08) 0%, transparent 100%)" }} />
                 <div className="text-xs uppercase tracking-widest text-[var(--scalo-fg-3)] mb-4">
                   Additional Revenue / Year
                 </div>
