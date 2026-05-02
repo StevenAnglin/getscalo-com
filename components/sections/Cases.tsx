@@ -7,17 +7,17 @@ const featured = {
   client: "Y Studios",
   category: "Streetwear · Cairo, Egypt",
   metric: "+183%",
-  metricSub: "Revenue · E£4.6M → E£13M ($124K → $351K)",
-  result: "4 of 7 drops broke E£1M (~$27K). Drop CVR averaged 6%. Ongoing in-stock CVR hit 2.3% across 197.7K sessions — revenue flowing between drops too.",
+  metricSub: "Revenue · E£4.6M → E£13M ($124K → $351K) · over 6 months",
+  result: "4 of 8 drops broke E£1M (~$20K in a day). Drop CVR averaged 6%. Ongoing in-stock CVR hit 2.3% across 197.7K sessions — revenue flowing between drops too.",
   quote: "Every drop now converts harder than the last.",
   attribution: "Y Studios, Founder",
   href: "/value/y-studios-case-study",
-  image: "/images/case-studies/y-studios/homepage-after-desktop.png",
+  image: "/images/case-studies/y-studios/new/ys-01.png",
   floats: [
-    { pos: "top left", label: "Revenue growth", value: "+183%", trend: "E£4.6M → E£13M" },
+    { pos: "top left", label: "Revenue growth", value: "+183%", trend: "over 6 months" },
     { pos: "top right", label: "Drop CVR avg", value: "6%", trend: "Per drop" },
     { pos: "bottom left", label: "Ongoing CVR", value: "2.3%", trend: "197.7K sessions" },
-    { pos: "bottom right", label: "Peak drop", value: "E£1M+", trend: "4 of 7 drops" },
+    { pos: "bottom right", label: "Peak drop", value: "E£1.4M", trend: "~$30K · 1 drop" },
   ],
 };
 
@@ -131,7 +131,7 @@ export default function Cases() {
                     <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                   </div>
                   <div className="flex-1 mx-2 h-4 rounded-md bg-white/[0.07] flex items-center px-2">
-                    <span className="text-[9px] text-white/20 tracking-wide">ystudios.com</span>
+                    <span className="text-[9px] text-white/20 tracking-wide">ystudios.net</span>
                   </div>
                 </div>
                 {/* Screenshot */}

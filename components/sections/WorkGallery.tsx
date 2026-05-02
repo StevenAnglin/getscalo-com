@@ -1,32 +1,33 @@
 import Image from "next/image";
 
-// Images from real client work — drop new screenshots into /public/images/case-studies/
 const col1 = [
-  { src: "/images/case-studies/y-studios/homepage-after-desktop.png", alt: "Y Studios homepage" },
-  { src: "/images/case-studies/y-studios/collections-desktop.png", alt: "Y Studios collections" },
-  { src: "/images/case-studies/fit-tribe/collections-after-desktop.png", alt: "Fit Tribe collections" },
-  { src: "/images/case-studies/y-studios/navigation-desktop.png", alt: "Y Studios navigation" },
+  { src: "/images/case-studies/y-studios/new/ys-01.png", alt: "Y Studios homepage" },
+  { src: "/images/case-studies/fit-tribe/new/ft-01.png", alt: "Fit Tribe homepage" },
+  { src: "/images/case-studies/y-studios/new/ys-05.png", alt: "Y Studios collections" },
+  { src: "/images/case-studies/fit-tribe/new/ft-05.png", alt: "Fit Tribe product" },
+  { src: "/images/case-studies/tet/new/tet-01.png", alt: "TET learning platform" },
 ];
 
 const col2 = [
-  { src: "/images/case-studies/y-studios/pdp-after-desktop.png", alt: "Y Studios product page" },
-  { src: "/images/case-studies/y-studios/cart-desktop.png", alt: "Y Studios cart" },
-  { src: "/images/case-studies/y-studios/search-desktop.png", alt: "Y Studios search" },
-  { src: "/images/case-studies/y-studios/pdp-desktop.png", alt: "Y Studios PDP" },
+  { src: "/images/case-studies/y-studios/new/ys-02.png", alt: "Y Studios product page" },
+  { src: "/images/case-studies/fit-tribe/new/ft-02.png", alt: "Fit Tribe collections" },
+  { src: "/images/case-studies/y-studios/new/ys-06.png", alt: "Y Studios cart" },
+  { src: "/images/case-studies/fit-tribe/new/ft-06.png", alt: "Fit Tribe product detail" },
 ];
 
 const col3 = [
-  { src: "/images/case-studies/y-studios/homepage-desktop.png", alt: "Y Studios homepage v1" },
-  { src: "/images/case-studies/fit-tribe/collections-after-desktop.png", alt: "Fit Tribe collections" },
-  { src: "/images/case-studies/y-studios/collections-desktop.png", alt: "Y Studios collections" },
-  { src: "/images/case-studies/y-studios/homepage-after-desktop.png", alt: "Y Studios homepage" },
+  { src: "/images/case-studies/fit-tribe/new/ft-03.png", alt: "Fit Tribe homepage" },
+  { src: "/images/case-studies/y-studios/new/ys-03.png", alt: "Y Studios drop page" },
+  { src: "/images/case-studies/fit-tribe/new/ft-07.png", alt: "Fit Tribe cart" },
+  { src: "/images/case-studies/y-studios/new/ys-07.png", alt: "Y Studios search" },
+  { src: "/images/case-studies/fit-tribe/new/ft-10.png", alt: "Fit Tribe checkout" },
 ];
 
 const col4 = [
-  { src: "/images/case-studies/y-studios/pdp-desktop.png", alt: "Y Studios PDP" },
-  { src: "/images/case-studies/y-studios/navigation-desktop.png", alt: "Y Studios navigation" },
-  { src: "/images/case-studies/y-studios/cart-desktop.png", alt: "Y Studios cart" },
-  { src: "/images/case-studies/y-studios/pdp-after-desktop.png", alt: "Y Studios product page" },
+  { src: "/images/case-studies/y-studios/new/ys-04.png", alt: "Y Studios navigation" },
+  { src: "/images/case-studies/fit-tribe/new/ft-04.png", alt: "Fit Tribe navigation" },
+  { src: "/images/case-studies/y-studios/new/ys-08.png", alt: "Y Studios PDP" },
+  { src: "/images/case-studies/fit-tribe/new/ft-08.png", alt: "Fit Tribe lookbook" },
 ];
 
 type ImgItem = { src: string; alt: string };
