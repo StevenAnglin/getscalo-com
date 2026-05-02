@@ -2,27 +2,25 @@ import Image from "next/image";
 
 type ImgItem = { src: string; alt: string; w: number; h: number };
 
+// 20 unique images across 5 columns × 4 — zero repeats
 const col1: ImgItem[] = [
   { src: "/images/case-studies/fit-tribe/new/ft-01.png",  alt: "Fit Tribe homepage",        w: 1866, h: 931  },
   { src: "/images/case-studies/y-studios/new/ys-01.png",  alt: "Y Studios homepage",        w: 391,  h: 848  },
   { src: "/images/case-studies/fit-tribe/new/ft-05.png",  alt: "Fit Tribe collections",     w: 1860, h: 926  },
-  { src: "/images/case-studies/y-studios/new/ys-05.png",  alt: "Y Studios drop page",       w: 476,  h: 933  },
-  { src: "/images/case-studies/tet/new/tet-01.png",       alt: "TET learning platform",     w: 1866, h: 935  },
+  { src: "/images/case-studies/y-studios/new/ys-05.png",  alt: "Y Studios cart",            w: 476,  h: 933  },
 ];
 
 const col2: ImgItem[] = [
   { src: "/images/case-studies/y-studios/new/ys-02.png",  alt: "Y Studios archive",         w: 391,  h: 833  },
   { src: "/images/case-studies/fit-tribe/new/ft-09.png",  alt: "Fit Tribe all products",    w: 1860, h: 1535 },
   { src: "/images/case-studies/y-studios/new/ys-04.png",  alt: "Y Studios nav",             w: 1866, h: 933  },
-  { src: "/images/case-studies/fit-tribe/new/ft-13.png",  alt: "Fit Tribe social content",  w: 396,  h: 851  },
-  { src: "/images/case-studies/fit-tribe/new/ft-12.png",  alt: "Fit Tribe cart",            w: 411,  h: 926  },
+  { src: "/images/case-studies/fit-tribe/new/ft-13.png",  alt: "Fit Tribe social",          w: 396,  h: 851  },
 ];
 
 const col3: ImgItem[] = [
   { src: "/images/case-studies/y-studios/new/ys-07.png",  alt: "Y Studios pre-order",       w: 1860, h: 1661 },
   { src: "/images/case-studies/fit-tribe/new/ft-03.png",  alt: "Fit Tribe homepage",        w: 396,  h: 851  },
   { src: "/images/case-studies/fit-tribe/new/ft-07.png",  alt: "Fit Tribe collection guide",w: 1860, h: 832  },
-  { src: "/images/case-studies/fit-tribe/new/ft-08.png",  alt: "Fit Tribe PDP",             w: 390,  h: 870  },
   { src: "/images/case-studies/fit-tribe/new/ft-10.png",  alt: "Fit Tribe filters",         w: 389,  h: 854  },
 ];
 
@@ -31,16 +29,13 @@ const col4: ImgItem[] = [
   { src: "/images/case-studies/y-studios/new/ys-08.png",  alt: "Y Studios all products",    w: 1860, h: 1068 },
   { src: "/images/case-studies/fit-tribe/new/ft-04.png",  alt: "Fit Tribe bestsellers",     w: 393,  h: 576  },
   { src: "/images/case-studies/y-studios/new/ys-06.png",  alt: "Y Studios product",         w: 391,  h: 1001 },
-  { src: "/images/case-studies/fit-tribe/new/ft-02.png",  alt: "Fit Tribe feature select",  w: 395,  h: 852  },
 ];
 
-// col5 scrolls UP — only repeats from col2+col4 (DOWN) so timing never syncs
 const col5: ImgItem[] = [
+  { src: "/images/case-studies/tet/new/tet-01.png",       alt: "TET platform",              w: 1866, h: 935  },
+  { src: "/images/case-studies/fit-tribe/new/ft-08.png",  alt: "Fit Tribe PDP",             w: 390,  h: 870  },
   { src: "/images/case-studies/fit-tribe/new/ft-12.png",  alt: "Fit Tribe cart",            w: 411,  h: 926  },
-  { src: "/images/case-studies/y-studios/new/ys-04.png",  alt: "Y Studios nav",             w: 1866, h: 933  },
-  { src: "/images/case-studies/fit-tribe/new/ft-11.png",  alt: "Fit Tribe quick view",      w: 466,  h: 933  },
-  { src: "/images/case-studies/fit-tribe/new/ft-09.png",  alt: "Fit Tribe all products",    w: 1860, h: 1535 },
-  { src: "/images/case-studies/y-studios/new/ys-02.png",  alt: "Y Studios archive",         w: 391,  h: 833  },
+  { src: "/images/case-studies/fit-tribe/new/ft-02.png",  alt: "Fit Tribe feature select",  w: 395,  h: 852  },
 ];
 
 function GalleryImage({ src, alt, w, h }: ImgItem) {
