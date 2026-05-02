@@ -66,7 +66,7 @@ export default function PasswordGate({ password, storageKey, children }: Passwor
         <div className="text-center space-y-2">
           <div
             style={{
-              fontFamily: '"Instrument Serif", Georgia, serif',
+              fontFamily: 'var(--font-serif)',
               fontStyle: "italic",
               fontSize: "22px",
               color: "#fff",
