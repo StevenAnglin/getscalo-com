@@ -34,11 +34,11 @@ const col4: ImgItem[] = [
   { src: "/images/case-studies/fit-tribe/new/ft-02.png",  alt: "Fit Tribe feature select",  w: 395,  h: 852  },
 ];
 
-// col5 repeats only from col1 + col2 — no adjacent-column duplicates
+// col5 scrolls UP — only repeats from col2+col4 (DOWN) so timing never syncs
 const col5: ImgItem[] = [
-  { src: "/images/case-studies/tet/new/tet-01.png",       alt: "TET platform",              w: 1866, h: 935  },
+  { src: "/images/case-studies/fit-tribe/new/ft-12.png",  alt: "Fit Tribe cart",            w: 411,  h: 926  },
   { src: "/images/case-studies/y-studios/new/ys-04.png",  alt: "Y Studios nav",             w: 1866, h: 933  },
-  { src: "/images/case-studies/y-studios/new/ys-01.png",  alt: "Y Studios homepage",        w: 391,  h: 848  },
+  { src: "/images/case-studies/fit-tribe/new/ft-11.png",  alt: "Fit Tribe quick view",      w: 466,  h: 933  },
   { src: "/images/case-studies/fit-tribe/new/ft-09.png",  alt: "Fit Tribe all products",    w: 1860, h: 1535 },
   { src: "/images/case-studies/y-studios/new/ys-02.png",  alt: "Y Studios archive",         w: 391,  h: 833  },
 ];
