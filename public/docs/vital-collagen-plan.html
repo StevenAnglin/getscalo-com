@@ -963,6 +963,22 @@ p:last-child { margin-bottom: 0; }
 @media print {
   .no-print-bar { display: none !important; }
 }
+
+/* ─── MOBILE TABLE RESPONSIVE ────────────────────────────────── */
+@media (max-width: 640px) {
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-wrap table { min-width: 480px; }
+
+  .two-col { grid-template-columns: 1fr !important; }
+
+  .conclusion-grid { grid-template-columns: 1fr 1fr !important; }
+
+  .cover-footer { grid-template-columns: repeat(2, 1fr) !important; }
+
+  .metric-row { flex-wrap: wrap; gap: 2px; }
+  .metric-key { min-width: 0; flex: 1 1 60%; }
+  .metric-val { flex: 0 0 auto; }
+}
 </style>
 </head>
 <body>
@@ -996,12 +1012,12 @@ p:last-child { margin-bottom: 0; }
   </div>
 
   <div class="cover-body">
-    <div class="cover-eyebrow">Internal Strategy Document — CRO</div>
+    <div class="cover-eyebrow">CRO Strategy — Client Deliverable</div>
     <div class="cover-title">Vital Collagen<br>Website<br><span class="cover-accent" style="font-size:inherit;font-style:normal">Optimization Plan</span></div>
     <div class="cover-subtitle">Full Test Suite — 62 Tests Across All Pages</div>
     <div class="cover-rule"></div>
     <div class="cover-desc">
-      Documents the complete Vital Collagen website optimization plan — 62 tests covering Sitewide, Navigation, Collection, PDP, Cart, Checkout, and Homepage. Includes issue diagnosis, direct change, and hypothesis for every test. Organized by page and plane. Ready for implementation.
+      Documents the complete Vital Collagen website optimization plan — 62 improvements covering every page of the site. Each one includes what's broken, what to change, and the expected result. Ready for implementation.
     </div>
     <div class="cover-pills">
       <span class="pill pill-ok">62 Tests Documented</span>
@@ -1026,7 +1042,7 @@ p:last-child { margin-bottom: 0; }
     </div>
     <div class="meta-item">
       <div class="meta-label">Status</div>
-      <div class="meta-val">Pre-Synthesis</div>
+      <div class="meta-val">In Progress</div>
     </div>
   </div>
 </div>
@@ -1038,10 +1054,10 @@ p:last-child { margin-bottom: 0; }
       <div class="toc-eyebrow">Contents</div>
       <ul class="toc-list">
         <li class="toc-row"><span class="toc-num">01</span><span class="toc-label">Executive Summary</span></li>
-        <li class="toc-row"><span class="toc-num">02</span><span class="toc-label">Airtable Structure Fix</span></li>
+        <li class="toc-row"><span class="toc-num">02</span><span class="toc-label">How We Track the Work</span></li>
         <li class="toc-row"><span class="toc-num">03</span><span class="toc-label">Current Backlog By Page</span></li>
         <li class="toc-row"><span class="toc-num">04</span><span class="toc-label">What's Missing</span></li>
-        <li class="toc-row"><span class="toc-num">05</span><span class="toc-label">Page Review Framework</span></li>
+        <li class="toc-row"><span class="toc-num">05</span><span class="toc-label">How We Evaluate Every Page</span></li>
         <li class="toc-row"><span class="toc-num">06</span><span class="toc-label">The Right Operating Model</span></li>
         <li class="toc-row"><span class="toc-num">07</span><span class="toc-label">Recommended Next Steps</span></li>
         <li class="toc-row"><span class="toc-num">08</span><span class="toc-label">Final Strategic Conclusion</span></li>
@@ -1054,36 +1070,36 @@ p:last-child { margin-bottom: 0; }
   <div class="section">
     <div class="s-eyebrow">Section 01</div>
     <div class="s-title">Executive Summary</div>
-    <div class="s-lead">Where we are, what we have, and why we can't jump straight to synthesis.</div>
+    <div class="s-lead">Where we are, what we have, and what comes next.</div>
 
     <div class="callout callout-ok" style="margin-top:28px">
       <div class="callout-icon">✓</div>
       <div class="callout-body">
         <div class="callout-title">Bottom Line Up Front</div>
         <div class="callout-text">
-          We have 62 fully documented tests across every page of the site — Sitewide, Navigation, Collection, PDP, Cart, Checkout, and Homepage. Every test has an issue diagnosis, a direct change, and a hypothesis. The backlog is comprehensive. Implementation is the next move.
+          Your optimization backlog is fully built — 62 improvements documented across every page of the site. Each one includes what's broken, what to change, and what result we expect. Implementation is the next move.
         </div>
       </div>
     </div>
 
     <h3>Current Situation</h3>
-    <p>The Vital Collagen optimization backlog has been fully built out — 62 tests documented in Airtable covering all major page areas. The suite spans baseline fixes, structural additions, UX system builds, content rewrites, and full-page redesigns. Every test is scoped with a clear issue, direct change, and hypothesis.</p>
-    <p>The work is organized across three implementation layers: baseline fixes that remove immediate friction, structural additions that define how each page performs as a conversion system, and future A/B experiments that will generate the data needed for synthesis once the foundation is solid.</p>
+    <p>Your optimization backlog is fully built — 62 improvements documented across every page of the site. Each one includes what's broken, what to change, and the expected result.</p>
+    <p>The work runs in three layers: quick fixes that remove obvious friction, structural additions that define how each page converts, and A/B tests that generate data once the foundation is solid.</p>
 
-    <h3>What the 62 Tests Cover</h3>
-    <p>The suite is built to convert at every stage of the funnel — from the first nav interaction to the checkout confirmation. Sitewide systems (trust bar, offer bar, review platform, quiz, chat widget, typography) anchor the foundation. Page-level tests address the specific conversion mechanics of each surface.</p>
+    <h3>What the 62 Improvements Cover</h3>
+    <p>Every stage of the customer journey is covered — from the first site visit to checkout. Sitewide systems (trust bar, offer bar, reviews, quiz, chat, typography) anchor the foundation. Page-level improvements address how each individual page converts.</p>
 
-    <h3>Synthesis Readiness</h3>
+    <h3>Where Testing Fits In</h3>
     <div class="callout callout-warn">
       <div class="callout-icon">⏳</div>
       <div class="callout-body">
-        <div class="callout-title">Synthesis After Implementation</div>
-        <div class="callout-text">The synthesis SOP is designed to aggregate results from concluded A/B tests. We have zero concluded tests — implementation comes first. Run synthesis once real experiments have run and returned data. The backlog is ready; the experiments haven't run yet.</div>
+        <div class="callout-title">Testing Comes After the Foundation Is Built</div>
+        <div class="callout-text">We can't analyze test results until tests have actually run. Implementation comes first — then we run experiments, collect data, and review what worked. The improvements are ready; the experiments haven't started yet.</div>
       </div>
     </div>
 
     <h3>The Implementation Sequence</h3>
-    <p>Layer 1 baseline fixes first → Layer 2 structural additions and system builds → Layer 3 true A/B experiments → synthesis when experiments conclude. Each layer makes the next layer more valuable.</p>
+    <p>Quick fixes first → Foundation builds → A/B tests → review results when experiments conclude. Each layer makes the next one more valuable.</p>
 
     <div class="two-col">
       <div class="box">
@@ -1092,7 +1108,7 @@ p:last-child { margin-bottom: 0; }
         <div class="metric-row"><span class="metric-key">Concluded A/B tests</span><span class="metric-val danger">0</span></div>
         <div class="metric-row"><span class="metric-key">Page areas covered</span><span class="metric-val">7</span></div>
         <div class="metric-row"><span class="metric-key">Work types</span><span class="metric-val">Fix + Structural + Redesign</span></div>
-        <div class="metric-row"><span class="metric-key">Airtable status</span><span class="metric-val">Fully loaded</span></div>
+        <div class="metric-row"><span class="metric-key">Backlog status</span><span class="metric-val">Complete</span></div>
       </div>
       <div class="box">
         <div class="box-title">Next Moves</div>
@@ -1100,87 +1116,42 @@ p:last-child { margin-bottom: 0; }
         <div class="metric-row"><span class="metric-key">Layer 2 target</span><span class="metric-val">Structural additions</span></div>
         <div class="metric-row"><span class="metric-key">Sitewide systems</span><span class="metric-val">Trust, Reviews, Quiz, Offer Bar</span></div>
         <div class="metric-row"><span class="metric-key">Homepage</span><span class="metric-val">Full redesign queued</span></div>
-        <div class="metric-row"><span class="metric-key">Synthesis readiness</span><span class="metric-val warn">After experiments run</span></div>
+        <div class="metric-row"><span class="metric-key">A/B testing</span><span class="metric-val warn">Starts after foundation is live</span></div>
       </div>
     </div>
   </div>
 
-<!-- ══════════════════ SECTION 2: AIRTABLE ════════════════════════════ -->
+<!-- ══════════════════ SECTION 2: BACKLOG MANAGEMENT ═════════════════ -->
   <div class="section">
     <div class="s-eyebrow">Section 02</div>
-    <div class="s-title">Airtable Structure Fix</div>
-    <div class="s-lead">Four fields to add manually. What each option means. Why each one matters.</div>
+    <div class="s-title">How We Track the Work</div>
+    <div class="s-lead">Every improvement is logged, categorized, and ready to move.</div>
 
     <div class="callout callout-ghost" style="margin-top:28px">
       <div class="callout-icon">🗂</div>
       <div class="callout-body">
-        <div class="callout-title">Action Required — Manual Airtable Setup</div>
-        <div class="callout-text">Add the following four fields directly in Airtable. After adding each field, bulk-update all 64 existing records using the instructions below. These fields are the operating structure for how we prioritize, filter, and review work going forward.</div>
+        <div class="callout-title">Backlog Is Live in Airtable</div>
+        <div class="callout-text">All 62 improvements are tracked in Airtable — organized by page, work type, and implementation layer. Each item shows what's broken, what we're changing, and what result we expect. We'll handle all backlog organization on our end so you always have a clear, up-to-date view of what's in progress.</div>
       </div>
     </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Field Name</th>
-            <th>Type</th>
-            <th>Options</th>
-            <th>Bulk Update: Current 64</th>
-            <th>Why It Matters</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Action Type</strong></td>
-            <td>Single Select</td>
-            <td><span class="badge badge-ghost">Direct Change</span>&nbsp;<span class="badge badge-warn">A/B Test</span></td>
-            <td>Set all 64 → <span class="badge badge-ghost">Direct Change</span></td>
-            <td>Separates pushes from experiments. Without it, synthesis is meaningless.</td>
-          </tr>
-          <tr>
-            <td><strong>Change Intent</strong></td>
-            <td>Single Select</td>
-            <td><span class="badge badge-red">Fix</span> <span class="badge badge-ghost">Optimization</span> <span class="badge badge-ok">Addition</span> <span class="badge badge-ember">Redesign</span> <span class="badge badge-warn">Merchandising</span> <span class="badge badge-ghost">Offer</span> <span class="badge badge-ghost">Content</span> <span class="badge badge-ghost">UX System</span></td>
-            <td>Review each of the 64 individually — most will be <span class="badge badge-red">Fix</span></td>
-            <td>Makes the work-type mix visible at a glance. Ensures you're not only doing cleanup.</td>
-          </tr>
-          <tr>
-            <td><strong>Page</strong></td>
-            <td>Single Select</td>
-            <td><span class="badge badge-ghost">Sitewide</span> <span class="badge badge-ghost">Navigation</span> <span class="badge badge-ghost">Collection</span> <span class="badge badge-ghost">PDP</span> <span class="badge badge-ghost">Cart</span> <span class="badge badge-ghost">Checkout</span> <span class="badge badge-ghost">Homepage</span> <span class="badge badge-ghost">Bundle</span></td>
-            <td>Tag each record with its page context</td>
-            <td>Enables filtered views per page. This is how you review one page at a time.</td>
-          </tr>
-          <tr>
-            <td><strong>Workstream</strong></td>
-            <td>Single Select</td>
-            <td><span class="badge badge-ghost">Baseline Fix</span> <span class="badge badge-warn">Structural Addition</span> <span class="badge badge-ok">System Definition</span> <span class="badge badge-ember">Experiment</span></td>
-            <td>Tag each record individually. Not all items are Baseline Fixes. Checkout items → <span class="badge badge-ghost">Baseline Fix</span>. Sitewide systems → <span class="badge badge-warn">Structural Addition</span>. Image/trust/offer/review systems → <span class="badge badge-ok">System Definition</span>. Homepage redesign → <span class="badge badge-ember">Redesign</span>. Use Section 03 work types as your guide.</td>
-            <td>Maps each item to the operating model (Section 06). Filters sprints by layer.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>Filtered Views to Create After Tagging</h3>
-
-    <div class="two-col">
+    <div class="two-col" style="margin-top:28px">
       <div class="box">
-        <div class="box-title">Views by Action Type</div>
+        <div class="box-title">How Items Are Categorized</div>
         <ul class="bullet-list">
-          <li>All Direct Changes (64 items now)</li>
-          <li>All A/B Tests (empty now — that's the point)</li>
+          <li><strong>Quick Fix</strong> — typos, broken logic, missing signals</li>
+          <li><strong>Foundation Build</strong> — new features and page systems</li>
+          <li><strong>Redesign</strong> — full-page rebuilds (homepage first)</li>
+          <li><strong>A/B Test</strong> — experiments run after the foundation is live</li>
         </ul>
       </div>
       <div class="box">
-        <div class="box-title">Views by Workstream</div>
+        <div class="box-title">How We Prioritize</div>
         <ul class="bullet-list">
-          <li>Baseline Fix — typos, broken logic, labeling fixes</li>
-          <li>Structural Addition — new capabilities and features</li>
-          <li>System Definition — sitewide design decisions</li>
-          <li>Redesign — homepage and premium repositioning</li>
-          <li>Experiment — future only, after foundation is live</li>
+          <li>Quick fixes ship first — low risk, immediate impact</li>
+          <li>Foundation builds follow — define how each page converts</li>
+          <li>Redesigns come after sitewide systems are in place</li>
+          <li>Tests run last — on a clean, solid foundation</li>
         </ul>
       </div>
     </div>
@@ -1190,7 +1161,7 @@ p:last-child { margin-bottom: 0; }
   <div class="section">
     <div class="s-eyebrow">Section 03</div>
     <div class="s-title">Current Backlog By Page</div>
-    <div class="s-lead">What the 64 documented changes are actually doing, page by page.</div>
+    <div class="s-lead">What the 62 documented improvements are actually doing, page by page.</div>
 
     <div class="table-wrap" style="margin-top:28px">
       <table>
@@ -1226,9 +1197,9 @@ p:last-child { margin-bottom: 0; }
             <td>Queued</td>
           </tr>
           <tr>
-            <td><strong>PDP</strong></td>
+            <td><strong>Product Page</strong></td>
             <td><span class="badge badge-ghost">17</span></td>
-            <td>Trust, reviews, variants, accordions, UGC, doctor widget, scarcity, sticky ATC</td>
+            <td>Trust, reviews, variants, accordions, customer photos, doctor widget, scarcity, sticky Add to Cart</td>
             <td><span class="badge badge-warn">Fix + Structural + Addition</span></td>
             <td>Queued</td>
           </tr>
@@ -1249,7 +1220,7 @@ p:last-child { margin-bottom: 0; }
           <tr>
             <td><strong>Homepage</strong></td>
             <td><span class="badge badge-ghost">8</span></td>
-            <td>Full redesign, hero, UGC, reviews, featured products, quiz CTA</td>
+            <td>Full redesign, hero, customer photos, reviews, featured products, quiz</td>
             <td><span class="badge badge-ember">Redesign</span></td>
             <td>Queued</td>
           </tr>
@@ -1295,13 +1266,13 @@ p:last-child { margin-bottom: 0; }
 
       <div class="card no-break">
         <div class="card-header">
-          <div class="card-title">PDP</div>
+          <div class="card-title">Product Page</div>
           <div class="card-count">17 <span>tests</span></div>
         </div>
         <div class="card-body">
           <div class="card-row"><span class="card-row-label">Trust</span><span class="card-row-val">Doctor widget, trust points, certification badges, reviews</span></div>
-          <div class="card-row"><span class="card-row-label">Content</span><span class="card-row-val">Optimized descriptions, accordions, FAQs, UGC</span></div>
-          <div class="card-row"><span class="card-row-label">UX</span><span class="card-row-val">Image-linked variants, sticky ATC, benefit badges</span></div>
+          <div class="card-row"><span class="card-row-label">Content</span><span class="card-row-val">Optimized descriptions, accordions, FAQs, customer photos</span></div>
+          <div class="card-row"><span class="card-row-label">UX</span><span class="card-row-val">Image-linked variants, sticky Add to Cart, benefit badges</span></div>
           <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">Fix + Structural + Addition</span></div>
         </div>
       </div>
@@ -1325,7 +1296,7 @@ p:last-child { margin-bottom: 0; }
           <div class="card-count">8 <span>tests</span></div>
         </div>
         <div class="card-body">
-          <div class="card-row"><span class="card-row-label">Full redesign</span><span class="card-row-val">Hero, trust bar, collections, standout products, tabbed carousel, quiz CTA, UGC, reviews, FAQ</span></div>
+          <div class="card-row"><span class="card-row-label">Full redesign</span><span class="card-row-val">Hero, trust bar, collections, standout products, tabbed carousel, quiz, customer photos, reviews, FAQ</span></div>
           <div class="card-row"><span class="card-row-label">Existing fixes</span><span class="card-row-val">Hero copy, review carousel dots, social proof stat, footer leaks, CTA unify</span></div>
           <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">Fix + Full Redesign</span></div>
           <div class="card-row"><span class="card-row-label">Sequence</span><span class="card-row-val">Fix first, then redesign once sitewide systems are live</span></div>
@@ -1338,8 +1309,8 @@ p:last-child { margin-bottom: 0; }
           <div class="card-count">2 <span>tests</span></div>
         </div>
         <div class="card-body">
-          <div class="card-row"><span class="card-row-label">Pre-Made Bundles</span><span class="card-row-val">2–3 curated product bundles as dedicated pages — clear value prop, savings callout, single-click ATC</span></div>
-          <div class="card-row"><span class="card-row-label">Bundle Builder</span><span class="card-row-val">Dedicated page: carousel of pre-made bundle cards at top → bundle PDP template; interactive builder below (pick 2–4 SKUs, live price + savings update)</span></div>
+          <div class="card-row"><span class="card-row-label">Pre-Made Bundles</span><span class="card-row-val">2–3 curated product bundles as dedicated pages — clear value prop, savings callout, one-click Add to Cart</span></div>
+          <div class="card-row"><span class="card-row-label">Bundle Builder</span><span class="card-row-val">Dedicated page: carousel of pre-made bundle options at top → bundle product page; interactive builder below (pick 2–4 products, live price + savings update)</span></div>
           <div class="card-row"><span class="card-row-label">Work type</span><span class="card-row-val">Structural Addition</span></div>
           <div class="card-row"><span class="card-row-label">Blocked by</span><span class="card-row-val">Client input needed — bundle product selection, discount structure, builder constraints (see Section 09)</span></div>
         </div>
@@ -1351,13 +1322,13 @@ p:last-child { margin-bottom: 0; }
   <div class="section">
     <div class="s-eyebrow">Section 04</div>
     <div class="s-title">What's Missing</div>
-    <div class="s-lead">Every identified gap is now covered in the 64-test backlog. Here's what was missing and exactly which test addresses it.</div>
+    <div class="s-lead">Every identified gap is now covered in the backlog. Here's what was missing and exactly which improvement addresses it.</div>
 
     <div class="callout callout-ok" style="margin-top:28px">
       <div class="callout-icon">✓</div>
       <div class="callout-body">
         <div class="callout-title">Previously Missing — Now In The Backlog</div>
-        <div class="callout-text">The gaps identified in this section have been addressed in the expanded test suite. The 64-test backlog now covers every system that was missing — review platform, trust bar, offer bar, quiz, image system, badge system, subscription mechanics, cart feature parity, checkout branding, the full homepage redesign, and bundle offers. What remains is implementation.</div>
+        <div class="callout-text">The gaps identified in this section have been addressed. The backlog now covers every system that was missing — review platform, trust bar, offer bar, quiz, image system, badge system, subscription mechanics, cart feature parity, checkout branding, the full homepage redesign, and bundle offers. What remains is implementation.</div>
       </div>
     </div>
 
@@ -1387,7 +1358,7 @@ p:last-child { margin-bottom: 0; }
       </div>
 
       <div class="missing-card no-break">
-        <div class="missing-header">PDP — Now Covered<span class="missing-count" style="background:rgba(61,220,151,0.12);color:#5DEBB4">✓</span></div>
+        <div class="missing-header">Product Page — Now Covered<span class="missing-count" style="background:rgba(61,220,151,0.12);color:#5DEBB4">✓</span></div>
         <div class="missing-body">
           <div class="missing-item">Benefit hierarchy → <strong style="color:var(--fg-2)">Grid Benefit Badges</strong></div>
           <div class="missing-item">Trust stack → <strong style="color:var(--fg-2)">Optimized Trust Points + Doctor Widget + Certs</strong></div>
@@ -1417,7 +1388,7 @@ p:last-child { margin-bottom: 0; }
         <div class="missing-item">Image system → <strong style="color:var(--fg-2)">Product Image Optimization test + brief</strong></div>
         <div class="missing-item">Badge system → <strong style="color:var(--fg-2)">Collection Cards — Product Badges</strong></div>
         <div class="missing-item">Trust system → <strong style="color:var(--fg-2)">Trust Bar + Optimized Trust Points + Doctor Widget</strong></div>
-        <div class="missing-item">Review system → <strong style="color:var(--fg-2)">Sitewide Adding Reviews (PDP + PLP + Homepage + Search)</strong></div>
+        <div class="missing-item">Review system → <strong style="color:var(--fg-2)">Sitewide Adding Reviews (Product Page + Collection Page + Homepage + Search)</strong></div>
         <div class="missing-item">Offer system → <strong style="color:var(--fg-2)">Offer Bar (free shipping + bundle)</strong></div>
         <div class="missing-item">Copy system → <strong style="color:var(--fg-2)">Product Naming + Optimized Descriptions + Collection Banners</strong></div>
         <div class="missing-item">Design system → <strong style="color:var(--fg-2)">Typography & Color Optimization + Premium Positioning Redesign</strong></div>
@@ -1428,11 +1399,11 @@ p:last-child { margin-bottom: 0; }
 <!-- ══════════════════ SECTION 5: FRAMEWORK ════════════════════════════ -->
   <div class="section">
     <div class="s-eyebrow">Section 05</div>
-    <div class="s-title">Page Review Framework</div>
-    <div class="s-lead">Five lenses for evaluating any page. One consistent template for structured review.</div>
+    <div class="s-title">How We Evaluate Every Page</div>
+    <div class="s-lead">Five lenses. Applied consistently. Every page, every time.</div>
 
     <h3>The 5 Lenses</h3>
-    <p>Apply all five to each page. They force you to look beyond obvious bugs and surface structural gaps.</p>
+    <p>Every page gets evaluated on all five dimensions — not just the obvious issues.</p>
 
     <div class="lens-grid">
       <div class="lens-card">
@@ -1462,37 +1433,7 @@ p:last-child { margin-bottom: 0; }
       </div>
     </div>
 
-    <h3>Per-Page Review Template</h3>
-    <p>Use this for each page when doing the structured backlog review.</p>
-
-    <div class="template-box">
-      <div><span class="t-label">PAGE NAME:</span>                <span class="t-placeholder">[Sitewide / Navigation / Collection / PDP / Cart / Checkout / Homepage / Bundle]</span></div>
-      <div><span class="t-label">CURRENT ITEMS:</span>            <span class="t-placeholder">[Count of documented changes in Airtable for this page]</span></div>
-      <br>
-      <div><span class="t-label">CLARITY LENS</span></div>
-      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
-      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
-      <br>
-      <div><span class="t-label">TRUST LENS</span></div>
-      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
-      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
-      <br>
-      <div><span class="t-label">MERCHANDISING LENS</span></div>
-      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
-      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
-      <br>
-      <div><span class="t-label">CONVERSION LENS</span></div>
-      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
-      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
-      <br>
-      <div><span class="t-label">EXPANSION LENS</span></div>
-      <div>&nbsp;&nbsp;Current fixes:   <span class="t-placeholder">[List or "None"]</span></div>
-      <div>&nbsp;&nbsp;Gap:             <span class="t-placeholder">[Describe what is still not addressed]</span></div>
-      <br>
-      <div><span class="t-label">MISSING SYSTEMS:</span>             <span class="t-placeholder">[Name each missing system not yet in the backlog]</span></div>
-      <div><span class="t-label">NEW DIRECT CHANGES TO ADD:</span>   <span class="t-placeholder">[Specific new Airtable records to create]</span></div>
-      <div><span class="t-label">FUTURE A/B TEST OPPORTUNITIES:</span><span class="t-placeholder">[Items suitable for a proper experiment later]</span></div>
-    </div>
+    <p style="margin-top:8px;color:var(--fg-3);font-size:14px">We apply all five lenses to every page in the backlog — not just obvious bugs. This is how gaps get surfaced before they become problems.</p>
   </div>
 
 <!-- ══════════════════ SECTION 6: OPERATING MODEL ══════════════════════ -->
@@ -1526,7 +1467,7 @@ p:last-child { margin-bottom: 0; }
         <div class="layer-num">3</div>
         <div class="layer-body">
           <div class="layer-title">Layer 3 — A/B Tests &amp; Experimentation</div>
-          <div class="layer-desc">Once foundation is clean and structural systems are in place, run true experiments. A proper A/B test has a clear hypothesis, a control, a treatment, defined metrics, sufficient traffic, and a minimum runtime. Results are what feed the synthesis SOP. Without Layers 1 and 2 complete, experiments produce noisy data and synthesis output is unreliable.<br><br><strong style="color:var(--fg-2)">This layer does not exist yet. Do not start it until the layers above are solid.</strong></div>
+          <div class="layer-desc">Once the foundation is clean and the page systems are in place, run real experiments. A proper A/B test compares two versions, tracks a clear goal, gets enough visitors to be meaningful, and runs long enough to trust the result. Without Layers 1 and 2 complete, test results are unreliable.<br><br><strong style="color:var(--fg-2)">This layer starts after the foundation is live. Not before.</strong></div>
           <span class="layer-status status-later">Future — After Layer 2 Work Is Live</span>
         </div>
       </div>
@@ -1535,8 +1476,8 @@ p:last-child { margin-bottom: 0; }
     <div class="callout callout-ghost">
       <div class="callout-icon">💡</div>
       <div class="callout-body">
-        <div class="callout-title">How This Maps to Airtable Workstream Field</div>
-        <div class="callout-text">Layer 1 → <strong>Baseline Fix</strong>. Layer 2 → <strong>Structural Addition</strong> + <strong>System Definition</strong>. Layer 3 → <strong>Experiment</strong>. The Workstream field in Airtable gives you a one-click filter to see only the work that belongs in each layer.</div>
+        <div class="callout-title">How the Layers Map to the Backlog</div>
+        <div class="callout-text">Layer 1 → <strong>Quick Fixes</strong>. Layer 2 → <strong>Foundation Builds + System Definition</strong>. Layer 3 → <strong>A/B Tests</strong>. Every item in the backlog is tagged to its layer so you can always see exactly what's being worked on and what's coming next.</div>
       </div>
     </div>
   </div>
@@ -1551,8 +1492,8 @@ p:last-child { margin-bottom: 0; }
       <div class="step no-break">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Tag the 64 Airtable records</div>
-          <div class="step-desc">The backlog is fully loaded. Now add the four structural fields (Action Type, Change Intent, Page, Workstream) and tag each record. Bulk-set Action Type → Direct Change for all 64. Set Workstream and Page individually per record using the options in Section 02. This unlocks filtered views by layer and page.</div>
+          <div class="step-title">Organize the backlog by layer and page</div>
+          <div class="step-desc">Every item in the backlog gets tagged to its layer (Quick Fix, Foundation Build, or A/B Test) and its page area. This unlocks filtered views so we can work through one layer at a time without things getting mixed up. We'll handle all of this on our end.</div>
         </div>
       </div>
 
@@ -1560,15 +1501,15 @@ p:last-child { margin-bottom: 0; }
         <div class="step-num">2</div>
         <div class="step-body">
           <div class="step-title">Ship Layer 1 — baseline fixes first</div>
-          <div class="step-desc">Filter Airtable to Workstream → Baseline Fix. Work through every item in this layer: typo fixes, WhatsApp positioning, urgency bar conditional logic, footer leaks, review carousel dots, social proof stat correction. These have zero risk and unblock everything else. Ship them before touching any structural work.</div>
+          <div class="step-desc">Work through every quick fix first: typo corrections, WhatsApp button positioning, urgency bar logic, footer links, review carousel, social proof stat. These have zero risk and unblock everything else. Ship them before touching any structural work.</div>
         </div>
       </div>
 
       <div class="step no-break">
         <div class="step-num">3</div>
         <div class="step-body">
-          <div class="step-title">Collect client assets (parallel to Layer 1)</div>
-          <div class="step-desc">While Layer 1 is shipping, send the client the asset brief from Section 09. Product photography, general site imagery, Dr. Mohammed quiz interview, subscription confirmation, and bundle product selection are all needed before specific Layer 2 tests can go live. Start the conversation now so assets don't become a bottleneck later.</div>
+          <div class="step-title">Gather required assets (runs parallel to Layer 1)</div>
+          <div class="step-desc">While quick fixes are shipping, review Section 09 for what we need from you. Product photography, site imagery, the Dr. Mohammed quiz interview, subscription confirmation, and bundle decisions are all needed before specific foundation builds can go live. Getting these sorted now keeps implementation moving without delays.</div>
         </div>
       </div>
 
@@ -1584,7 +1525,7 @@ p:last-child { margin-bottom: 0; }
         <div class="step-num">5</div>
         <div class="step-body">
           <div class="step-title">Implement page-level structural additions</div>
-          <div class="step-desc">With sitewide systems live, work through the page-level Layer 2 items: PDP doctor widget, trust points, image-linked variants, sticky ATC, benefit badges, accordions, FAQs; Collection two-step quick add, product badges, category banners; Cart subscription mechanics, free shipping bar, feature parity with slide cart.</div>
+          <div class="step-desc">With sitewide systems live, work through the page-level foundation builds: Product page — doctor widget, trust points, image-linked variants, sticky Add to Cart button, benefit badges, accordions, FAQs. Collection page — two-step quick add, product badges, category banners. Cart — subscription mechanics, free shipping bar, feature parity with slide cart.</div>
         </div>
       </div>
 
@@ -1607,8 +1548,8 @@ p:last-child { margin-bottom: 0; }
       <div class="step no-break">
         <div class="step-num">8</div>
         <div class="step-body">
-          <div class="step-title">Design real A/B experiments — then run synthesis</div>
-          <div class="step-desc">Only after Layer 1 and Layer 2 are fully implemented: design true experiments with hypotheses, controls, treatments, and metrics. When those experiments conclude and return data, run the synthesis SOP. Not before. The foundation must be solid for experiments to produce reliable signal.</div>
+          <div class="step-title">Design and run A/B experiments</div>
+          <div class="step-desc">Only after quick fixes and foundation builds are fully implemented: design proper experiments — two versions, a clear goal, enough traffic, enough time. When those experiments conclude, we review the results and identify what to keep. Not before. The foundation must be solid for tests to produce reliable data.</div>
         </div>
       </div>
     </div>
@@ -1649,7 +1590,7 @@ p:last-child { margin-bottom: 0; }
       <div class="c-step no-break">
         <div class="c-step-num">4</div>
         <div class="c-step-title">Test With Intent</div>
-        <div class="c-step-desc">Run real experiments against a solid foundation, then synthesize results</div>
+        <div class="c-step-desc">Run real experiments on a solid foundation, then review results and decide what to keep</div>
       </div>
     </div>
 
@@ -1666,39 +1607,34 @@ p:last-child { margin-bottom: 0; }
         </thead>
         <tbody>
           <tr>
-            <td><strong>Full Test Backlog</strong></td>
-            <td><span class="badge badge-ok">64 Tests Documented</span></td>
+            <td><strong>Full Backlog</strong></td>
+            <td><span class="badge badge-ok">62 Improvements Documented</span></td>
             <td>Backlog is complete — begin implementation by layer</td>
           </tr>
           <tr>
-            <td><strong>Airtable</strong></td>
-            <td><span class="badge badge-ok">Fully Loaded</span></td>
-            <td>All 64 tests in Airtable with issue, direct change, and hypothesis</td>
-          </tr>
-          <tr>
-            <td><strong>Layer 1 — Baseline Fixes</strong></td>
+            <td><strong>Layer 1 — Quick Fixes</strong></td>
             <td><span class="badge badge-ember">Ready to Implement</span></td>
-            <td>Typos, grammar, footer leaks, WhatsApp overlap, urgency fix — ship first</td>
+            <td>Typos, footer links, WhatsApp positioning, urgency fix — ship first</td>
           </tr>
           <tr>
-            <td><strong>Layer 2 — Structural Additions</strong></td>
+            <td><strong>Layer 2 — Foundation Builds</strong></td>
             <td><span class="badge badge-warn">Queued</span></td>
             <td>Reviews, trust bar, offer bar, quiz, accordions, cart mechanics</td>
           </tr>
           <tr>
             <td><strong>Layer 2 — Redesigns</strong></td>
             <td><span class="badge badge-warn">Queued After Systems</span></td>
-            <td>Homepage full redesign, premium positioning — after sitewide systems are live</td>
+            <td>Homepage full redesign — after sitewide systems are live</td>
           </tr>
           <tr>
             <td><strong>Cart &amp; Checkout</strong></td>
-            <td><span class="badge badge-ok">10 Tests Documented</span></td>
-            <td>Subscription toggles, subtotal display, brand optimization — now in backlog</td>
+            <td><span class="badge badge-ok">10 Improvements Documented</span></td>
+            <td>Subscription toggles, subtotal display, brand optimization — in backlog</td>
           </tr>
           <tr>
-            <td><strong>A/B Test Synthesis</strong></td>
-            <td><span class="badge badge-ghost">Future Layer</span></td>
-            <td>Run after real experiments conclude and return data</td>
+            <td><strong>A/B Testing</strong></td>
+            <td><span class="badge badge-ghost">Starts After Foundation</span></td>
+            <td>Begins after quick fixes and foundation builds are live</td>
           </tr>
         </tbody>
       </table>
@@ -1708,7 +1644,7 @@ p:last-child { margin-bottom: 0; }
       <div class="callout-icon">✓</div>
       <div class="callout-body">
         <div class="callout-title">The Outcome When This Is Done Right</div>
-        <div class="callout-text">A clean, credible site. Deliberate page architecture. A structured backlog with full context per item. Clear separation between changes that go live and experiments that need measurement. When experiments eventually run, synthesis produces reliable insights. Every layer of work makes the next layer more valuable.</div>
+        <div class="callout-text">A clean, credible site. Every page designed to convert. A clear backlog with context behind every item. Experiments that run on a solid foundation and produce data you can actually trust. Each layer of work makes the next one more valuable.</div>
       </div>
     </div>
   </div>
@@ -1729,7 +1665,7 @@ p:last-child { margin-bottom: 0; }
     </div>
 
     <h3>Product Photography — By Category</h3>
-    <p>Several optimizations — including the collection page redesign, PDP image gallery, and the bundle builder page — require high-quality product images organized by category. Current imagery is inconsistent and blocking the visual upgrade.</p>
+    <p>Several improvements — including the collection page redesign, product page image gallery, and the bundle builder page — require high-quality product images organized by category. Current imagery is inconsistent and blocking the visual upgrade.</p>
 
     <div class="missing-grid">
       <div class="missing-card">
@@ -1791,7 +1727,7 @@ p:last-child { margin-bottom: 0; }
           <tr>
             <td><strong>Lifestyle / Brand</strong></td>
             <td>2–3 lifestyle shots showing the product in real use — person drinking, applying, holding. High light, clean aesthetic.</td>
-            <td>Homepage sections, PDP gallery, trust bar</td>
+            <td>Homepage sections, product page gallery, trust bar</td>
           </tr>
         </tbody>
       </table>
@@ -1820,12 +1756,12 @@ p:last-child { margin-bottom: 0; }
         <div class="box-title">Why It Matters</div>
         <div class="metric-row"><span class="metric-key">Quiz without Dr. M</span><span class="metric-val danger">Generic, low trust</span></div>
         <div class="metric-row"><span class="metric-key">Quiz with Dr. M</span><span class="metric-val">Authority-backed, high conversion</span></div>
-        <div class="metric-row"><span class="metric-key">Blocks</span><span class="metric-val">PDP quiz + homepage quiz CTA</span></div>
+        <div class="metric-row"><span class="metric-key">Blocks</span><span class="metric-val">Product page quiz + homepage quiz</span></div>
       </div>
     </div>
 
     <h3>Subscription Model — Confirmation Needed</h3>
-    <p>Several tests in the backlog — including the subscribe-and-save toggle on the PDP and the cart subscription upgrade prompt — require a subscription offering to exist on your products. Before we build these, we need confirmation that subscriptions are something you want to offer.</p>
+    <p>Several improvements in the backlog — including the subscribe-and-save toggle on the product page and the cart subscription upgrade prompt — require a subscription offering to exist on your products. Before we build these, we need confirmation that subscriptions are something you want to offer.</p>
 
     <div class="callout callout-warn" style="margin-top:16px">
       <div class="callout-icon">⚠</div>
@@ -1877,7 +1813,7 @@ p:last-child { margin-bottom: 0; }
       <div class="callout-icon">✓</div>
       <div class="callout-body">
         <div class="callout-title">What Happens After You Provide These</div>
-        <div class="callout-text">Once we have the assets and decisions above, we can move immediately on the blocked tests. Photography unlocks the collection redesign, PDP gallery, and bundle builder. The quiz interview unlocks two high-impact PDP and homepage tests. Subscription confirmation unlocks three cart and PDP tests. Bundle decisions unlock the two newest tests in the backlog. None of these require development work to start — we just need your input.</div>
+        <div class="callout-text">Once we have the assets and decisions above, we can move immediately on the blocked improvements. Photography unlocks the collection redesign, product page gallery, and bundle builder. The quiz interview unlocks two high-impact product page and homepage improvements. Subscription confirmation unlocks three cart and product page improvements. Bundle decisions unlock the two newest items in the backlog. None of these require development work to start — we just need your input.</div>
       </div>
     </div>
 
@@ -1887,7 +1823,7 @@ p:last-child { margin-bottom: 0; }
 
 <div class="doc-footer">
   <div class="footer-brand">scalo.</div>
-  <div class="footer-meta">Vital Collagen Website Optimization Plan · May 1, 2026 · Internal — Confidential</div>
+  <div class="footer-meta">Vital Collagen Website Optimization Plan · May 1, 2026 · Confidential</div>
 </div>
 
 </body>
