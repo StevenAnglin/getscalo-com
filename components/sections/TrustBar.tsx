@@ -10,7 +10,6 @@ const logos: LogoEntry[] = [
   { name: "Y Studios",               sub: "+183% revenue",         logo: "/images/logos/y-studios.svg"          },
   { name: "Fit Tribe",               sub: "+23% RPV",              logo: "/images/logos/fit-tribe.svg"          },
   { name: "Sulb",                    sub: "Active project",        logo: "/images/logos/sulb.svg"               },
-  { name: "Tykes Collections",       sub: "8-figure exit",         logo: "/images/logos/tykes-collections.svg"  },
   { name: "Vital Collagen",          sub: "Active project",        logo: "/images/logos/vital-collagen.svg"     },
   { name: "Trusted English Trainer", sub: "Seamless migration",    logo: "/images/logos/tet.svg"                },
 ];
