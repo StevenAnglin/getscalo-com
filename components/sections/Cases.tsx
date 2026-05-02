@@ -5,6 +5,7 @@ import Link from "next/link";
 const featured = {
   tag: "CASE 01",
   client: "Y Studios",
+  logo: "/images/logos/y-studios.svg",
   category: "Streetwear · Cairo, Egypt",
   metric: "+183%",
   metricSub: "Revenue · E£4.6M → E£13M ($124K → $351K) · over 6 months",
@@ -25,6 +26,7 @@ const secondary = [
   {
     tag: "CASE 02",
     client: "Fit Tribe",
+    logo: "/images/logos/fit-tribe.svg",
     category: "Activewear · Egypt",
     metric: "+16%",
     sub: "TikTok CVR ↓ as traffic scaled — we reversed it",
@@ -34,6 +36,7 @@ const secondary = [
   {
     tag: "CASE 03",
     client: "TET",
+    logo: "/images/logos/tet.svg",
     category: "EdTech · Learning Platform",
     metric: "Full Migration",
     sub: "Teachable → Shopify",
@@ -90,7 +93,15 @@ export default function Cases() {
             <div className="absolute bottom-0 inset-x-0 p-5 flex items-end justify-between">
               <div>
                 <div className="text-[10px] uppercase tracking-widest text-[var(--scalo-accent)] mb-1 font-medium">{featured.tag}</div>
-                <div className="text-2xl font-bold text-white leading-none">{featured.client}</div>
+                <Image
+                  src={featured.logo}
+                  alt={featured.client}
+                  width={140}
+                  height={32}
+                  className="h-7 w-auto object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                  unoptimized
+                />
                 <div className="text-xs text-white/40 mt-1">{featured.category}</div>
               </div>
               <div className="text-right shrink-0 ml-4">
@@ -112,9 +123,17 @@ export default function Cases() {
                 <div className="text-[11px] uppercase tracking-widest text-[var(--scalo-accent)] font-medium mb-5">
                   {featured.tag} · {featured.category}
                 </div>
-                <h3 className="text-4xl lg:text-5xl font-bold text-white tracking-tight leading-none">
-                  {featured.client}
-                </h3>
+                <div className="mt-1">
+                  <Image
+                    src={featured.logo}
+                    alt={featured.client}
+                    width={200}
+                    height={48}
+                    className="h-10 w-auto object-contain"
+                    style={{ filter: "brightness(0) invert(1)" }}
+                    unoptimized
+                  />
+                </div>
                 <div className="mt-8">
                   <div className="tnum text-[clamp(72px,10vw,108px)] font-bold leading-none text-[var(--scalo-accent)] tracking-tight">
                     {featured.metric}
@@ -224,7 +243,19 @@ export default function Cases() {
               <div className="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
                 <div>
                   <div className="text-[10px] uppercase tracking-widest text-[var(--scalo-accent)] mb-1 font-medium">{c.tag}</div>
-                  <div className="text-xl font-bold text-white leading-none">{c.client}</div>
+                  {c.logo ? (
+                    <Image
+                      src={c.logo}
+                      alt={c.client}
+                      width={120}
+                      height={28}
+                      className="h-6 w-auto object-contain"
+                      style={{ filter: "brightness(0) invert(1)" }}
+                      unoptimized
+                    />
+                  ) : (
+                    <div className="text-xl font-bold text-white leading-none">{c.client}</div>
+                  )}
                   <div className="text-xs text-white/35 mt-1">{c.category}</div>
                 </div>
                 <div className="text-right">
