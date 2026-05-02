@@ -17,8 +17,8 @@
   --bg-2:          #111113;
   --bg-3:          #18181b;
   --bg-4:          #222226;
-  --ember:         #FF6B35;
-  --ember-dim:     #C75429;
+  --ember:         #AAFF00;
+  --ember-dim:     #88CC00;
   --cream:         #FFFDE8;
   --fg-1:          rgba(255,255,255,1);
   --fg-2:          rgba(255,255,255,0.72);
@@ -58,7 +58,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 .cover-glow {
   position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%);
   width: 800px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(255,107,53,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 .cover-grid {
@@ -81,8 +81,8 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 .cover-niche-pill {
   display: inline-flex; align-items: center;
   padding: 3px 10px; border-radius: 100px;
-  border: 1px solid rgba(255,107,53,0.3);
-  background: rgba(255,107,53,0.10);
+  border: 1px solid rgba(170,255,0,0.3);
+  background: rgba(170,255,0,0.10);
   font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ember);
 }
@@ -158,7 +158,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
   border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
   white-space: nowrap;
 }
-.timeline-pill.exceeded { background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.25); color: var(--ember); }
+.timeline-pill.exceeded { background: rgba(170,255,0,0.12); border: 1px solid rgba(170,255,0,0.25); color: var(--ember); }
 .timeline-pill.strong { background: rgba(255,255,255,0.06); border: 1px solid var(--border-mid); color: var(--fg-3); }
 
 /* ─── WORK GRID ─────────────────────────────────────────────────── */
@@ -176,7 +176,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 .funnel-step-label { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .funnel-step-number {
   width: 28px; height: 28px; border-radius: 50%;
-  background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.3);
+  background: rgba(170,255,0,0.12); border: 1px solid rgba(170,255,0,0.3);
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 700; color: var(--ember); flex-shrink: 0;
 }
@@ -211,7 +211,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
 }
 .analytics-card-badge.before { background: rgba(255,255,255,0.08); color: var(--fg-3); border: 1px solid var(--border-mid); }
-.analytics-card-badge.after { background: rgba(255,107,53,0.15); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+.analytics-card-badge.after { background: rgba(170,255,0,0.15); color: var(--ember); border: 1px solid rgba(170,255,0,0.3); }
 .analytics-card-meta { font-size: 11px; color: var(--fg-4); letter-spacing: 0.06em; padding: 10px 12px; background: var(--bg-2); border: 1px solid var(--border-ghost); border-top: none; border-radius: 0 0 12px 12px; }
 .analytics-img { width: 100%; display: block; border: 1px solid var(--border-ghost); border-radius: 12px 12px 0 0; background: var(--bg-3); }
 .analytics-placeholder {
@@ -239,7 +239,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 }
 .testimonial-glow {
   position: absolute; top: -60px; right: -60px; width: 300px; height: 300px;
-  background: radial-gradient(ellipse at center, rgba(255,107,53,0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 .testimonial-mark {
@@ -255,7 +255,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 .testimonial-video-note {
   display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
   padding: 6px 14px; border-radius: 100px;
-  background: rgba(255,107,53,0.08); border: 1px solid rgba(255,107,53,0.2);
+  background: rgba(170,255,0,0.08); border: 1px solid rgba(170,255,0,0.2);
   font-size: 12px; font-weight: 600; color: var(--ember); letter-spacing: 0.06em;
   position: relative; z-index: 1;
 }
@@ -263,7 +263,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 
 /* ─── TAKEAWAY ─────────────────────────────────────────────────── */
 .takeaway { background: var(--bg-2); border: 1px solid var(--border-ghost); border-radius: 20px; padding: 40px; margin-top: 40px; position: relative; overflow: hidden; }
-.takeaway-glow { position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(ellipse at center, rgba(255,107,53,0.06) 0%, transparent 70%); pointer-events: none; }
+.takeaway-glow { position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(ellipse at center, rgba(170,255,0,0.06) 0%, transparent 70%); pointer-events: none; }
 .takeaway p { font-family: var(--serif); font-style: italic; font-size: clamp(18px, 3vw, 24px); line-height: 1.5; letter-spacing: -0.01em; color: var(--fg-1); position: relative; z-index: 1; }
 .takeaway-attr { font-size: 12px; font-weight: 500; color: var(--fg-4); margin-top: 16px; letter-spacing: 0.1em; text-transform: uppercase; position: relative; z-index: 1; }
 
@@ -272,7 +272,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 .confirm-toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; user-select: none; padding: 20px 24px; background: var(--bg-2); border: 1px solid var(--border-mid); border-radius: 12px; transition: background 0.2s var(--ease); }
 .confirm-toggle:hover { background: var(--bg-3); }
 .confirm-toggle-left { display: flex; align-items: center; gap: 12px; }
-.confirm-toggle-badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 100px; background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.25); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ember); }
+.confirm-toggle-badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 100px; background: rgba(170,255,0,0.12); border: 1px solid rgba(170,255,0,0.25); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ember); }
 .confirm-toggle-title { font-size: 14px; font-weight: 600; color: var(--fg-2); }
 .confirm-chevron { font-size: 12px; color: var(--fg-4); transition: transform 0.25s var(--ease); }
 .confirm-chevron.open { transform: rotate(180deg); }

@@ -17,8 +17,8 @@
   --bg-2:          #111113;
   --bg-3:          #18181b;
   --bg-4:          #222226;
-  --ember:         #FF6B35;
-  --ember-dim:     #C75429;
+  --ember:         #AAFF00;
+  --ember-dim:     #88CC00;
   --cream:         #FFFDE8;
   --fg-1:          rgba(255,255,255,1);
   --fg-2:          rgba(255,255,255,0.72);
@@ -67,7 +67,7 @@ body {
 .cover-glow {
   position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%);
   width: 800px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(255,107,53,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 .cover-grid {
@@ -99,8 +99,8 @@ body {
 .cover-niche-pill {
   display: inline-flex; align-items: center;
   padding: 3px 10px; border-radius: 100px;
-  border: 1px solid rgba(255,107,53,0.3);
-  background: rgba(255,107,53,0.10);
+  border: 1px solid rgba(170,255,0,0.3);
+  background: rgba(170,255,0,0.10);
   font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ember);
 }
@@ -246,7 +246,7 @@ body {
 .funnel-group-toggle-left { display: flex; align-items: center; gap: 12px; }
 .funnel-step-number {
   width: 28px; height: 28px; border-radius: 50%;
-  background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.3);
+  background: rgba(170,255,0,0.12); border: 1px solid rgba(170,255,0,0.3);
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 700; color: var(--ember); letter-spacing: 0.05em;
   flex-shrink: 0;
@@ -277,7 +277,7 @@ body {
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
 }
 .funnel-page-label.before { background: rgba(255,255,255,0.06); color: var(--fg-3); border: 1px solid var(--border-mid); }
-.funnel-page-label.after { background: rgba(255,107,53,0.12); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+.funnel-page-label.after { background: rgba(170,255,0,0.12); color: var(--ember); border: 1px solid rgba(170,255,0,0.3); }
 
 /* Before / after grid */
 .funnel-before-after {
@@ -313,7 +313,7 @@ body {
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
 }
 .funnel-badge.before { background: rgba(255,255,255,0.08); color: var(--fg-3); border: 1px solid var(--border-mid); }
-.funnel-badge.after { background: rgba(255,107,53,0.15); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+.funnel-badge.after { background: rgba(170,255,0,0.15); color: var(--ember); border: 1px solid rgba(170,255,0,0.3); }
 
 .funnel-img {
   width: 100%; display: block; border-radius: 12px;
@@ -345,7 +345,7 @@ body {
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
 }
 .analytics-card-badge.before { background: rgba(255,255,255,0.08); color: var(--fg-3); border: 1px solid var(--border-mid); }
-.analytics-card-badge.after { background: rgba(255,107,53,0.15); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+.analytics-card-badge.after { background: rgba(170,255,0,0.15); color: var(--ember); border: 1px solid rgba(170,255,0,0.3); }
 .analytics-card-meta {
   font-size: 11px; color: var(--fg-4); letter-spacing: 0.06em;
   padding: 10px 12px; background: var(--bg-2);
@@ -415,7 +415,7 @@ body {
   align-self: flex-start;
 }
 .modal-badge.before { background: rgba(255,255,255,0.08); color: var(--fg-3); border: 1px solid var(--border-mid); }
-.modal-badge.after { background: rgba(255,107,53,0.12); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+.modal-badge.after { background: rgba(170,255,0,0.12); color: var(--ember); border: 1px solid rgba(170,255,0,0.3); }
 
 .modal-stat { }
 .modal-stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-4); margin-bottom: 4px; }
@@ -435,7 +435,7 @@ body {
   transition: background 0.15s, color 0.15s;
 }
 .modal-nav-btn:hover { background: var(--bg-4); color: var(--fg-1); }
-.modal-nav-btn.active { background: rgba(255,107,53,0.12); border-color: rgba(255,107,53,0.3); color: var(--ember); }
+.modal-nav-btn.active { background: rgba(170,255,0,0.12); border-color: rgba(170,255,0,0.3); color: var(--ember); }
 
 .modal-close {
   position: absolute; top: 16px; right: 16px; z-index: 2;
@@ -460,7 +460,7 @@ body {
 .takeaway-glow {
   position: absolute; top: -60px; right: -60px;
   width: 300px; height: 300px;
-  background: radial-gradient(ellipse at center, rgba(255,107,53,0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 .takeaway p {
@@ -487,7 +487,7 @@ body {
 }
 .confirm-gate-icon {
   width: 48px; height: 48px; border-radius: 14px;
-  background: rgba(255,107,53,0.10); border: 1px solid rgba(255,107,53,0.20);
+  background: rgba(170,255,0,0.10); border: 1px solid rgba(170,255,0,0.20);
   display: flex; align-items: center; justify-content: center;
   font-size: 20px;
 }
@@ -510,7 +510,7 @@ body {
 }
 .confirm-gate-input:focus {
   border-color: rgba(255,255,255,0.18);
-  box-shadow: 0 0 0 3px rgba(255,107,53,0.15);
+  box-shadow: 0 0 0 3px rgba(170,255,0,0.15);
 }
 .confirm-gate-input.error { border-color: rgba(255,91,107,0.5); }
 .confirm-gate-btn {
