@@ -242,6 +242,14 @@ body {
   font-size: 11px; font-weight: 500; color: var(--fg-3); letter-spacing: 0.02em;
 }
 .approach-pill::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
+.approach-pill-impact {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 12px; border-radius: 100px;
+  border: 1px solid rgba(170,255,0,0.35);
+  background: rgba(170,255,0,0.10);
+  font-size: 11px; font-weight: 600; color: var(--ember); letter-spacing: 0.02em;
+}
+.approach-pill-impact::before { content: '↑'; font-size: 10px; }
 
 /* ─── FUNNEL SECTION ─────────────────────────────────────────────── */
 .funnel-section { padding: 80px 0; border-top: 1px solid var(--border-ghost); }
@@ -749,6 +757,7 @@ body {
           <span class="approach-pill">0.016% → 3% search usage</span>
           <span class="approach-pill">30 → 5,158 item searches</span>
           <span class="approach-pill">10.8% search CVR</span>
+          <span class="approach-pill-impact">Est. E£900K+/month from search channel</span>
         </div>
       </div>
       <div class="approach-card">
@@ -758,6 +767,7 @@ body {
           <span class="approach-pill">Image swatches across all PDPs</span>
           <span class="approach-pill">Linked variant groups</span>
           <span class="approach-pill">Faster product decisions</span>
+          <span class="approach-pill-impact">Removes the biggest pre-click drop-off point</span>
         </div>
       </div>
       <div class="approach-card">
@@ -767,6 +777,7 @@ body {
           <span class="approach-pill">75.88% → 59% ATC abandonment</span>
           <span class="approach-pill">Tiered rewards bar</span>
           <span class="approach-pill">Cart add-ons</span>
+          <span class="approach-pill-impact">~70% more purchases per ATC event</span>
         </div>
       </div>
       <div class="approach-card">
@@ -776,6 +787,7 @@ body {
           <span class="approach-pill">Mobile-first rebuild</span>
           <span class="approach-pill">Mega menu + search</span>
           <span class="approach-pill">Support + returns in nav</span>
+          <span class="approach-pill-impact">Enabled 21% traffic scaling without CVR collapse</span>
         </div>
       </div>
       <div class="approach-card">
@@ -785,6 +797,7 @@ body {
           <span class="approach-pill">95.9% → 67% PDP abandonment</span>
           <span class="approach-pill">Full page rebuild</span>
           <span class="approach-pill">Recommendations + recently viewed</span>
+          <span class="approach-pill-impact">8× more PDP visitors completing purchase</span>
         </div>
       </div>
       <div class="approach-card">
@@ -794,6 +807,7 @@ body {
           <span class="approach-pill">98.45% → 70% collection abandonment</span>
           <span class="approach-pill">Spec-based filtering</span>
           <span class="approach-pill">Quick add with info drawer</span>
+          <span class="approach-pill-impact">~19× more collection visitors converting</span>
         </div>
       </div>
     </div>
