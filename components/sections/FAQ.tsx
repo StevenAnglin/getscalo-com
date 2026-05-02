@@ -33,16 +33,16 @@ const items = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="bg-[var(--scalo-bg-1)] py-24 lg:py-32 bg-cross-fade">
+    <section id="faq" className="py-24 lg:py-32" style={{ background: "#0C0C09" }}>
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Sticky heading */}
           <div className="lg:col-span-4" data-reveal>
-            <h2 className="display-md text-[var(--scalo-ink)] lg:sticky lg:top-24">
+            <h2 className="display-md text-white lg:sticky lg:top-24">
               Straight{" "}
-              <span className="italic-editorial text-[var(--scalo-ember)]">answers.</span>
+              <span className="italic-editorial text-[var(--scalo-accent)]">answers.</span>
             </h2>
-            <p className="text-sm text-[var(--scalo-fg-3)] mt-6 leading-relaxed max-w-[280px] lg:sticky lg:top-48">
+            <p className="text-sm text-white/40 mt-6 leading-relaxed max-w-[280px] lg:sticky lg:top-48">
               No marketing language. If we can&rsquo;t answer a question plainly, we probably can&rsquo;t serve you well.
             </p>
           </div>
@@ -54,21 +54,20 @@ export default function FAQ() {
                 <AccordionItem
                   key={i}
                   value={`q-${i}`}
-                  className="border-none border-b border-[var(--scalo-border-hairline)] last:border-b-0"
+                  className="border-none border-b border-white/[0.08] last:border-b-0"
                 >
-                  <AccordionTrigger className="text-left hover:no-underline py-6 gap-4 group data-[state=open]:text-[var(--scalo-ink)] transition-colors [&>svg]:text-[var(--scalo-fg-3)] [&>svg]:shrink-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-6 gap-4 group data-[state=open]:text-white transition-colors [&>svg]:text-white/30 [&>svg]:shrink-0">
                     <div className="flex items-start gap-4 flex-1">
-                      {/* Decorative question number */}
-                      <span className="tnum text-[11px] text-[var(--scalo-ember)] font-medium tracking-widest mt-0.5 shrink-0 opacity-70 group-data-[state=open]:opacity-100 transition-opacity">
+                      <span className="tnum text-[11px] text-[var(--scalo-accent)] font-medium tracking-widest mt-0.5 shrink-0 opacity-70 group-data-[state=open]:opacity-100 transition-opacity">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-base lg:text-lg text-[var(--scalo-fg-2)] group-hover:text-[var(--scalo-ink)] group-data-[state=open]:text-[var(--scalo-ink)] transition-colors">
+                      <span className="text-base lg:text-lg text-white/55 group-hover:text-white group-data-[state=open]:text-white transition-colors">
                         {item.q}
                       </span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-6 pl-8">
-                    <div className="border-l-2 border-[var(--scalo-ember)]/40 pl-4 text-sm text-[var(--scalo-fg-2)] leading-relaxed max-w-[560px]">
+                    <div className="border-l-2 border-[var(--scalo-accent)]/40 pl-4 text-sm text-white/50 leading-relaxed max-w-[560px]">
                       {item.a}
                     </div>
                   </AccordionContent>
