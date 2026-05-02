@@ -1,40 +1,42 @@
 import Image from "next/image";
 
-const col1 = [
-  { src: "/images/case-studies/y-studios/new/ys-01.png", alt: "Y Studios homepage" },
-  { src: "/images/case-studies/fit-tribe/new/ft-01.png", alt: "Fit Tribe homepage" },
-  { src: "/images/case-studies/y-studios/new/ys-05.png", alt: "Y Studios collections" },
-  { src: "/images/case-studies/fit-tribe/new/ft-05.png", alt: "Fit Tribe product" },
-  { src: "/images/case-studies/tet/new/tet-01.png", alt: "TET learning platform" },
+type ImgItem = { src: string; alt: string; aspect: string };
+
+const col1: ImgItem[] = [
+  { src: "/images/case-studies/fit-tribe/new/ft-01.png",  alt: "Fit Tribe homepage",          aspect: "16/9"  },
+  { src: "/images/case-studies/y-studios/new/ys-01.png",  alt: "Y Studios homepage",          aspect: "9/16"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-05.png",  alt: "Fit Tribe collections",       aspect: "16/9"  },
+  { src: "/images/case-studies/y-studios/new/ys-05.png",  alt: "Y Studios drop page",         aspect: "9/16"  },
+  { src: "/images/case-studies/tet/new/tet-01.png",       alt: "TET learning platform",       aspect: "16/9"  },
 ];
 
-const col2 = [
-  { src: "/images/case-studies/y-studios/new/ys-02.png", alt: "Y Studios product page" },
-  { src: "/images/case-studies/fit-tribe/new/ft-02.png", alt: "Fit Tribe collections" },
-  { src: "/images/case-studies/y-studios/new/ys-06.png", alt: "Y Studios cart" },
-  { src: "/images/case-studies/fit-tribe/new/ft-06.png", alt: "Fit Tribe product detail" },
+const col2: ImgItem[] = [
+  { src: "/images/case-studies/y-studios/new/ys-02.png",  alt: "Y Studios product page",     aspect: "9/16"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-09.png",  alt: "Fit Tribe lookbook",          aspect: "4/3"   },
+  { src: "/images/case-studies/y-studios/new/ys-04.png",  alt: "Y Studios navigation",        aspect: "16/9"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-06.png",  alt: "Fit Tribe product detail",    aspect: "9/16"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-12.png",  alt: "Fit Tribe new arrivals",      aspect: "9/16"  },
 ];
 
-const col3 = [
-  { src: "/images/case-studies/fit-tribe/new/ft-03.png", alt: "Fit Tribe homepage" },
-  { src: "/images/case-studies/y-studios/new/ys-03.png", alt: "Y Studios drop page" },
-  { src: "/images/case-studies/fit-tribe/new/ft-07.png", alt: "Fit Tribe cart" },
-  { src: "/images/case-studies/y-studios/new/ys-07.png", alt: "Y Studios search" },
-  { src: "/images/case-studies/fit-tribe/new/ft-10.png", alt: "Fit Tribe checkout" },
+const col3: ImgItem[] = [
+  { src: "/images/case-studies/y-studios/new/ys-07.png",  alt: "Y Studios search",            aspect: "16/9"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-03.png",  alt: "Fit Tribe homepage",          aspect: "9/16"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-07.png",  alt: "Fit Tribe cart",              aspect: "16/9"  },
+  { src: "/images/case-studies/y-studios/new/ys-03.png",  alt: "Y Studios collections",       aspect: "9/16"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-10.png",  alt: "Fit Tribe checkout",          aspect: "9/16"  },
 ];
 
-const col4 = [
-  { src: "/images/case-studies/y-studios/new/ys-04.png", alt: "Y Studios navigation" },
-  { src: "/images/case-studies/fit-tribe/new/ft-04.png", alt: "Fit Tribe navigation" },
-  { src: "/images/case-studies/y-studios/new/ys-08.png", alt: "Y Studios PDP" },
-  { src: "/images/case-studies/fit-tribe/new/ft-08.png", alt: "Fit Tribe lookbook" },
+const col4: ImgItem[] = [
+  { src: "/images/case-studies/fit-tribe/new/ft-08.png",  alt: "Fit Tribe product",           aspect: "9/16"  },
+  { src: "/images/case-studies/y-studios/new/ys-08.png",  alt: "Y Studios PDP",               aspect: "16/9"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-11.png",  alt: "Fit Tribe model shot",        aspect: "9/16"  },
+  { src: "/images/case-studies/y-studios/new/ys-06.png",  alt: "Y Studios cart",              aspect: "9/16"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-04.png",  alt: "Fit Tribe navigation",        aspect: "4/3"   },
 ];
 
-type ImgItem = { src: string; alt: string };
-
-function GalleryImage({ src, alt }: ImgItem) {
+function GalleryImage({ src, alt, aspect }: ImgItem) {
   return (
-    <div className="relative w-full overflow-hidden rounded-xl glass-card shrink-0" style={{ aspectRatio: "4/3" }}>
+    <div className="relative w-full overflow-hidden rounded-xl glass-card shrink-0" style={{ aspectRatio: aspect }}>
       <Image
         src={src}
         alt={alt}
@@ -42,7 +44,6 @@ function GalleryImage({ src, alt }: ImgItem) {
         className="object-cover object-top"
         sizes="400px"
       />
-      {/* Subtle inner border highlight */}
       <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/[0.08] pointer-events-none" />
     </div>
   );
