@@ -12,7 +12,7 @@ const featured = {
   quote: "Every drop now converts harder than the last.",
   attribution: "Y Studios, Founder",
   href: "/value/y-studios-case-study",
-  image: "/images/case-studies/y-studios/new/ys-01.png",
+  image: "/images/case-studies/y-studios/new/2026-05-02_15-15-01.png",
   floats: [
     { pos: "top left", label: "Revenue growth", value: "+183%", trend: "over 6 months" },
     { pos: "top right", label: "Drop CVR avg", value: "6%", trend: "Per drop" },
