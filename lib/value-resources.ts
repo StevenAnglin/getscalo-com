@@ -122,6 +122,9 @@ export interface ValueResource {
   audience: string[];
   password?: string;
   docPath?: string;
+  resultPill?: string;
+  caseStudyHeadline?: string;
+  niche?: string;
   sections: ValueSection[];
 }
 
@@ -457,26 +460,32 @@ Design rules:
   },
   {
     slug: "fit-tribe-case-study",
-    title: "8 Figure Brand Premium Redesign & Navigation Optimization",
+    title: "How Fit Tribe held 1.24% CVR while scaling TikTok traffic by 21%.",
     subtitle: "Fit Tribe",
     eyebrow: "CRO · Brand Redesign",
     description:
-      "30-day CRO project: rebuilt navigation, search, collection filtering, PDPs, and cart for a TikTok-scaling activewear brand. Started at 1.1% CVR and 25% product-page reach.",
+      "352K to 424K sessions. TikTok converted at 0.1%. Blended CVR still rose from 1.16% to 1.24% — and reached 1.86% after TikTok was removed.",
     tool: "CRO + Design",
     audience: ["Brands", "Agencies"],
     docPath: "/docs/fit-tribe-case-study.html",
+    resultPill: "+16% Revenue",
+    caseStudyHeadline: "How Fit Tribe held 1.24% CVR while scaling TikTok traffic by 21%.",
+    niche: "Activewear",
     sections: [],
   },
   {
     slug: "y-studios-case-study",
-    title: "8 Figure Premium Design & Full CRO + Site Management",
+    title: "How Y Studios went from $124K to $351K, with 4/7 drops breaking E£1M.",
     subtitle: "Y Studios",
     eyebrow: "CRO · Full Storefront",
     description:
-      "Full storefront rebuild and ongoing engagement — redesigned homepage, collections, PDPs, slide cart, and search. 5+ collection launches Oct 2025–May 2026.",
+      "Full storefront rebuild and ongoing drop management. Revenue grew 183% — $124K to $351K. 4 out of 7 drops broke E£1M. CVR held at 2% at scale.",
     tool: "CRO + Design + Management",
     audience: ["Brands", "Agencies"],
     docPath: "/docs/y-studios-case-study.html",
+    resultPill: "+183% Revenue",
+    caseStudyHeadline: "How Y Studios went from $124K to $351K, with 4/7 drops breaking E£1M.",
+    niche: "Streetwear",
     sections: [],
   },
   {

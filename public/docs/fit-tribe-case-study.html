@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fit Tribe — Product Discovery Overhaul & Premium Positioning | Scalo</title>
+<title>Fit Tribe — How Fit Tribe held CVR while scaling TikTok traffic by 21% | Scalo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -87,23 +87,38 @@ body {
   flex: 1; display: flex; flex-direction: column; justify-content: center;
   padding: 48px 0 40px; position: relative; z-index: 1;
 }
-.cover-eyebrow {
-  font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ember); margin-bottom: 20px;
-  display: flex; align-items: center; gap: 10px;
-}
-.cover-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ember); }
 
-.cover-client {
+/* Brand + niche row */
+.cover-brand-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+}
+.cover-brand-name {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-3);
+}
+.cover-niche-pill {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 100px;
+  border: 1px solid rgba(255,107,53,0.3);
+  background: rgba(255,107,53,0.10);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ember);
+}
+
+/* Main headline */
+.cover-headline {
   font-family: var(--serif); font-style: italic; font-weight: 400;
-  font-size: clamp(40px, 9vw, 80px); line-height: 0.9; letter-spacing: -0.03em;
-  color: var(--fg-1); margin-bottom: 8px;
-}
-.cover-title {
-  font-size: clamp(14px, 2.5vw, 20px); font-weight: 400; color: var(--fg-3);
-  letter-spacing: -0.01em; line-height: 1.4; max-width: 600px; margin-top: 16px;
+  font-size: clamp(32px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.025em;
+  color: var(--fg-1); margin-bottom: 24px; max-width: 820px;
 }
 
+/* Overview paragraph */
+.cover-overview {
+  font-size: clamp(14px, 2vw, 17px); font-weight: 400; color: var(--fg-3);
+  letter-spacing: -0.005em; line-height: 1.6; max-width: 640px;
+}
+
+/* Stats */
 .cover-stats {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
   background: var(--border-ghost);
@@ -113,10 +128,7 @@ body {
 }
 @media (min-width: 640px) { .cover-stats { grid-template-columns: repeat(4, 1fr); } }
 
-.stat {
-  background: var(--bg-1);
-  padding: 20px 24px;
-}
+.stat { background: var(--bg-1); padding: 20px 24px; }
 .stat-value {
   font-family: var(--serif); font-style: italic;
   font-size: clamp(28px, 5vw, 42px); line-height: 1; letter-spacing: -0.03em;
@@ -124,10 +136,10 @@ body {
 }
 .stat-value span { color: var(--ember); }
 .stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-4); }
+.stat-sub { font-size: 11px; color: var(--fg-4); margin-top: 4px; line-height: 1.4; }
 
 /* ─── SECTION ─────────────────────────────────────────────────── */
 .section { padding: 80px 0; border-top: 1px solid var(--border-ghost); }
-.section:first-of-type { border-top: none; }
 
 .section-eyebrow {
   font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
@@ -167,28 +179,71 @@ body {
 }
 .chip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
 
-/* ─── WORK GRID ─────────────────────────────────────────────────── */
-.work-grid { display: grid; gap: 1px; background: var(--border-ghost); margin-top: 40px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-ghost); }
-@media (min-width: 640px) { .work-grid { grid-template-columns: 1fr 1fr; } }
-
-.work-item { background: var(--bg-2); padding: 28px; }
-.work-item-label {
-  font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ember); margin-bottom: 10px;
+/* ─── NUMBERS ROW ─────────────────────────────────────────────── */
+.numbers-row {
+  display: grid; gap: 1px; background: var(--border-ghost);
+  border: 1px solid var(--border-ghost); border-radius: 16px; overflow: hidden;
+  margin-top: 40px;
 }
-.work-item-title { font-size: 16px; font-weight: 600; color: var(--fg-1); margin-bottom: 8px; line-height: 1.3; }
-.work-item-body { font-size: 14px; color: var(--fg-3); line-height: 1.65; }
+@media (min-width: 640px) { .numbers-row { grid-template-columns: repeat(4, 1fr); } }
+
+.number-block { background: var(--bg-2); padding: 32px 28px; }
+.number-value {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(32px, 5.5vw, 48px); line-height: 1; letter-spacing: -0.03em;
+  color: var(--fg-1); margin-bottom: 6px;
+}
+.number-value .accent { color: var(--ember); }
+.number-label { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-4); margin-bottom: 8px; }
+.number-context { font-size: 13px; color: var(--fg-3); line-height: 1.5; }
+
+/* ─── APPROACH GRID ─────────────────────────────────────────────── */
+.approach-grid {
+  display: grid; gap: 12px; margin-top: 40px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) { .approach-grid { grid-template-columns: 1fr 1fr; } }
+
+.approach-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border-ghost);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.approach-card-title { font-size: 15px; font-weight: 600; color: var(--fg-1); line-height: 1.3; }
+.approach-card-body { font-size: 14px; color: var(--fg-3); line-height: 1.65; flex: 1; }
+.approach-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.approach-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 12px; border-radius: 100px;
+  border: 1px solid var(--border-ghost);
+  background: var(--bg-3);
+  font-size: 11px; font-weight: 500; color: var(--fg-3); letter-spacing: 0.02em;
+}
+.approach-pill::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
 
 /* ─── FUNNEL SECTION ─────────────────────────────────────────────── */
 .funnel-section { padding: 80px 0; border-top: 1px solid var(--border-ghost); }
 .funnel-header { margin-bottom: 48px; }
 
-.funnel-step { margin-bottom: 80px; }
-.funnel-step:last-child { margin-bottom: 0; }
+.funnel-group { margin-bottom: 32px; }
+.funnel-group:last-child { margin-bottom: 0; }
 
-.funnel-step-label {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+.funnel-group-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 16px 20px;
+  background: var(--bg-2); border: 1px solid var(--border-mid);
+  border-radius: 12px;
+  cursor: pointer; user-select: none;
+  transition: background 0.2s var(--ease);
+  margin-bottom: 0;
 }
+.funnel-group-toggle:hover { background: var(--bg-3); }
+.funnel-group.collapsed .funnel-group-toggle { border-radius: 12px; }
+.funnel-group:not(.collapsed) .funnel-group-toggle { border-radius: 12px 12px 0 0; border-bottom: none; }
+
+.funnel-group-toggle-left { display: flex; align-items: center; gap: 12px; }
 .funnel-step-number {
   width: 28px; height: 28px; border-radius: 50%;
   background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.3);
@@ -197,16 +252,61 @@ body {
   flex-shrink: 0;
 }
 .funnel-step-name { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-2); }
-.funnel-step-desc { font-size: 14px; color: var(--fg-4); margin-left: auto; text-align: right; max-width: 300px; line-height: 1.4; }
+.funnel-step-desc { font-size: 13px; color: var(--fg-4); }
+.funnel-chevron { font-size: 11px; color: var(--fg-4); transition: transform 0.25s var(--ease); flex-shrink: 0; }
+.funnel-group.collapsed .funnel-chevron { transform: rotate(-90deg); }
 
+.funnel-group-body {
+  display: block;
+  border: 1px solid var(--border-mid); border-top: none;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  padding: 20px;
+  background: var(--bg-1);
+}
+.funnel-group.collapsed .funnel-group-body { display: none; }
+
+/* Pagination labels */
+.funnel-pagination {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 14px;
+}
+.funnel-page-label {
+  display: inline-flex; align-items: center;
+  padding: 4px 12px; border-radius: 100px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.funnel-page-label.before { background: rgba(255,255,255,0.06); color: var(--fg-3); border: 1px solid var(--border-mid); }
+.funnel-page-label.after { background: rgba(255,107,53,0.12); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+
+/* Before / after grid */
 .funnel-before-after {
   display: grid; gap: 16px;
 }
 @media (min-width: 640px) {
   .funnel-before-after { grid-template-columns: 1fr 1fr; }
 }
+@media (max-width: 639px) {
+  .funnel-before-after {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .funnel-before-after::-webkit-scrollbar { display: none; }
+}
 
-.funnel-img-wrap { position: relative; }
+.funnel-img-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+@media (max-width: 639px) {
+  .funnel-img-wrap { min-width: 82vw; scroll-snap-align: start; }
+}
+
 .funnel-badge {
   position: absolute; top: 12px; left: 12px; z-index: 2;
   padding: 4px 10px; border-radius: 100px;
@@ -219,7 +319,11 @@ body {
   width: 100%; display: block; border-radius: 12px;
   border: 1px solid var(--border-ghost);
   background: var(--bg-2);
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
+.funnel-img:hover { opacity: 0.9; }
+
 .funnel-img-placeholder {
   width: 100%; border-radius: 12px; border: 1px solid var(--border-mid);
   background: var(--bg-2); padding: 48px 24px;
@@ -234,7 +338,7 @@ body {
 .analytics-grid { display: grid; gap: 16px; margin-top: 40px; }
 @media (min-width: 640px) { .analytics-grid { grid-template-columns: 1fr 1fr; } }
 
-.analytics-card { position: relative; }
+.analytics-card { position: relative; cursor: pointer; }
 .analytics-card-badge {
   position: absolute; top: 12px; left: 12px; z-index: 2;
   padding: 4px 10px; border-radius: 100px;
@@ -253,25 +357,96 @@ body {
   width: 100%; display: block;
   border: 1px solid var(--border-ghost); border-radius: 12px 12px 0 0;
   background: var(--bg-3);
+  transition: opacity 0.2s;
+}
+.analytics-card:hover .analytics-img { opacity: 0.9; }
+
+/* ─── IMAGE MODAL ─────────────────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center; justify-content: center;
+  padding: 16px;
+}
+.modal-overlay.open { display: flex; }
+
+.modal-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%; max-width: 1100px;
+  max-height: 90svh;
+  gap: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-ghost);
+}
+@media (min-width: 768px) {
+  .modal-inner { flex-direction: row; max-height: 80svh; }
 }
 
-/* ─── NUMBERS ROW ─────────────────────────────────────────────── */
-.numbers-row {
-  display: grid; gap: 1px; background: var(--border-ghost);
-  border: 1px solid var(--border-ghost); border-radius: 16px; overflow: hidden;
-  margin-top: 40px;
+.modal-image-col {
+  flex: 1; min-width: 0;
+  background: var(--bg-1);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative;
 }
-@media (min-width: 640px) { .numbers-row { grid-template-columns: repeat(3, 1fr); } }
+.modal-image-col img {
+  max-width: 100%; max-height: 100%; object-fit: contain; display: block;
+}
 
-.number-block { background: var(--bg-2); padding: 32px 28px; }
-.number-value {
-  font-family: var(--serif); font-style: italic;
-  font-size: clamp(36px, 6vw, 52px); line-height: 1; letter-spacing: -0.03em;
-  color: var(--fg-1); margin-bottom: 6px;
+.modal-stat-col {
+  width: 100%; background: var(--bg-2);
+  padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 20px;
+  border-top: 1px solid var(--border-ghost);
+  overflow-y: auto;
 }
-.number-value .accent { color: var(--ember); }
-.number-label { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-4); margin-bottom: 8px; }
-.number-context { font-size: 13px; color: var(--fg-3); line-height: 1.5; }
+@media (min-width: 768px) {
+  .modal-stat-col { width: 260px; flex-shrink: 0; border-top: none; border-left: 1px solid var(--border-ghost); }
+}
+
+.modal-badge {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px; border-radius: 100px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  align-self: flex-start;
+}
+.modal-badge.before { background: rgba(255,255,255,0.08); color: var(--fg-3); border: 1px solid var(--border-mid); }
+.modal-badge.after { background: rgba(255,107,53,0.12); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+
+.modal-stat { }
+.modal-stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-4); margin-bottom: 4px; }
+.modal-stat-value { font-family: var(--serif); font-style: italic; font-size: 28px; line-height: 1; letter-spacing: -0.02em; color: var(--fg-1); }
+.modal-stat-value .accent { color: var(--ember); }
+.modal-divider { height: 1px; background: var(--border-ghost); }
+
+.modal-nav {
+  display: flex; gap: 8px; margin-top: auto; padding-top: 8px;
+}
+.modal-nav-btn {
+  flex: 1; height: 40px;
+  background: var(--bg-3); border: 1px solid var(--border-mid);
+  border-radius: 10px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fg-2); cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.modal-nav-btn:hover { background: var(--bg-4); color: var(--fg-1); }
+.modal-nav-btn.active { background: rgba(255,107,53,0.12); border-color: rgba(255,107,53,0.3); color: var(--ember); }
+
+.modal-close {
+  position: absolute; top: 16px; right: 16px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(0,0,0,0.5); border: 1px solid var(--border-mid);
+  color: var(--fg-2); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.1); color: var(--fg-1); }
 
 /* ─── TAKEAWAY ─────────────────────────────────────────────────── */
 .takeaway {
@@ -295,38 +470,63 @@ body {
 }
 .takeaway-attr { font-size: 12px; font-weight: 500; color: var(--fg-4); margin-top: 16px; letter-spacing: 0.1em; text-transform: uppercase; position: relative; z-index: 1; }
 
-/* ─── CONFIRMATION LAYER ─────────────────────────────────────────── */
-.confirm-section {
-  padding: 80px 0;
-  border-top: 1px solid var(--border-ghost);
-}
-.confirm-toggle {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; cursor: pointer; user-select: none;
-  padding: 20px 24px;
-  background: var(--bg-2); border: 1px solid var(--border-mid);
-  border-radius: 12px;
-  transition: background 0.2s var(--ease);
-}
-.confirm-toggle:hover { background: var(--bg-3); }
-.confirm-toggle-left { display: flex; align-items: center; gap: 12px; }
-.confirm-toggle-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 3px 10px; border-radius: 100px;
-  background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.25);
-  font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--ember);
-}
-.confirm-toggle-title { font-size: 14px; font-weight: 600; color: var(--fg-2); }
-.confirm-chevron { font-size: 12px; color: var(--fg-4); transition: transform 0.25s var(--ease); }
-.confirm-chevron.open { transform: rotate(180deg); }
+/* ─── PASSWORD GATE ─────────────────────────────────────────────── */
+.confirm-section { padding: 80px 0; border-top: 1px solid var(--border-ghost); }
 
-.confirm-body {
-  display: none; padding: 24px;
-  background: var(--bg-1); border: 1px solid var(--border-ghost); border-top: none;
-  border-radius: 0 0 12px 12px;
+.confirm-gate {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-top-color: rgba(255,255,255,0.14);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 420px;
+  display: flex; flex-direction: column; gap: 24px;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.06) inset, 0 32px 64px rgba(0,0,0,0.5);
 }
-.confirm-body.open { display: block; }
+.confirm-gate-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: rgba(255,107,53,0.10); border: 1px solid rgba(255,107,53,0.20);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.confirm-gate-heading {
+  font-family: var(--serif); font-style: italic;
+  font-size: 22px; color: #fff; letter-spacing: -0.02em; line-height: 1.1;
+}
+.confirm-gate-sub { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.confirm-gate-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+}
+.confirm-gate-form { display: flex; flex-direction: column; gap: 10px; }
+.confirm-gate-input {
+  width: 100%; padding: 14px 16px; border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff; font-family: var(--sans); font-size: 14px;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.confirm-gate-input:focus {
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.15);
+}
+.confirm-gate-input.error { border-color: rgba(255,91,107,0.5); }
+.confirm-gate-btn {
+  width: 100%; height: 48px; border-radius: 100px;
+  background: var(--ember); color: #000;
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.2s;
+}
+.confirm-gate-btn:hover { opacity: 0.85; }
+.confirm-gate-error { font-size: 12px; color: #FF8E97; text-align: center; display: none; }
+
+/* Hidden interview content */
+.confirm-body { display: none; }
+.confirm-body.unlocked { display: block; }
 
 .confirm-group { margin-bottom: 28px; }
 .confirm-group:last-child { margin-bottom: 0; }
@@ -347,13 +547,9 @@ body {
 .confirm-list.open-q li::before { color: var(--ember); content: '?'; }
 
 /* ─── FOOTER ─────────────────────────────────────────────────── */
-.footer {
-  padding: 40px 0;
-  border-top: 1px solid var(--border-ghost);
-}
+.footer { padding: 40px 0; border-top: 1px solid var(--border-ghost); }
 .footer-inner {
-  display: flex; flex-direction: column; gap: 12px;
-  align-items: flex-start;
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
 }
 @media (min-width: 640px) {
   .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; }
@@ -370,6 +566,42 @@ body {
 <body>
 <div class="grain"></div>
 
+<!-- ── IMAGE MODAL ──────────────────────────────────────────────── -->
+<div class="modal-overlay" id="imageModal" onclick="modalClickOutside(event)">
+  <div class="modal-inner">
+    <div class="modal-image-col" style="position:relative;">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <img id="modalImg" src="" alt="" style="width:100%;height:100%;object-fit:contain;">
+    </div>
+    <div class="modal-stat-col">
+      <span class="modal-badge" id="modalBadge">Before</span>
+      <div>
+        <div class="modal-stat-label">Sessions</div>
+        <div class="modal-stat-value" id="modalSessions">352<span class="accent">K</span></div>
+      </div>
+      <div class="modal-divider"></div>
+      <div>
+        <div class="modal-stat-label">Revenue</div>
+        <div class="modal-stat-value" id="modalRevenue">$170<span class="accent">K</span></div>
+      </div>
+      <div class="modal-divider"></div>
+      <div>
+        <div class="modal-stat-label">Blended CVR</div>
+        <div class="modal-stat-value" id="modalCvr">1.16<span class="accent">%</span></div>
+      </div>
+      <div class="modal-divider"></div>
+      <div id="modalTiktokRow">
+        <div class="modal-stat-label">TikTok CVR</div>
+        <div class="modal-stat-value" id="modalTiktok">0.1<span class="accent">%</span></div>
+      </div>
+      <div class="modal-nav">
+        <button class="modal-nav-btn active" id="modalBtnBefore" onclick="showModalState('before')">Before</button>
+        <button class="modal-nav-btn" id="modalBtnAfter" onclick="showModalState('after')">After</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── COVER ──────────────────────────────────────────────── -->
 <section class="cover">
   <div class="cover-grid"></div>
@@ -381,10 +613,15 @@ body {
   </div>
 
   <div class="cover-body">
-    <div class="cover-eyebrow">Case Study · CRO &amp; Product Discovery</div>
-    <div class="cover-client">Fit Tribe</div>
-    <div class="cover-title">
-      Product discovery overhaul and premium repositioning for a TikTok-first activewear brand — scaling traffic without sacrificing conversion.
+    <div class="cover-brand-row">
+      <span class="cover-brand-name">Fit Tribe</span>
+      <span class="cover-niche-pill">Activewear</span>
+    </div>
+    <div class="cover-headline">
+      How Fit Tribe held conversion while scaling TikTok traffic by 21%.
+    </div>
+    <div class="cover-overview">
+      Fit Tribe scaled from 352K to 424K sessions in one quarter. TikTok made up 40% of traffic and converted at 0.1% — down from 2%. Blended CVR still rose from 1.16% to 1.24%. After TikTok was removed, CVR reached 1.86%.
     </div>
   </div>
 
@@ -392,18 +629,22 @@ body {
     <div class="stat">
       <div class="stat-value">424<span>K</span></div>
       <div class="stat-label">Q1 Sessions</div>
+      <div class="stat-sub">Up from 352K</div>
     </div>
     <div class="stat">
       <div class="stat-value">$202<span>K</span></div>
       <div class="stat-label">Q1 Revenue</div>
+      <div class="stat-sub">Up from $170K</div>
     </div>
     <div class="stat">
       <div class="stat-value"><span>+</span>16<span>%</span></div>
       <div class="stat-label">Revenue Growth</div>
+      <div class="stat-sub">Q4 2025 → Q1 2026</div>
     </div>
     <div class="stat">
-      <div class="stat-value">1.24<span>%</span></div>
-      <div class="stat-label">CVR Held</div>
+      <div class="stat-value"><span>+</span>60<span>%</span></div>
+      <div class="stat-label">Est. CVR Growth</div>
+      <div class="stat-sub">1.16% → 1.86% (TikTok removed)</div>
     </div>
   </div>
 </section>
@@ -412,19 +653,17 @@ body {
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">The Brand</div>
-    <div class="section-title">A High-Volume Activewear Brand Built on TikTok</div>
+    <div class="section-title">A high-volume activewear brand</div>
     <div class="two-col">
       <div class="section-body">
-        <p>Fit Tribe is an Egyptian activewear brand scaling aggressively through TikTok-driven traffic. Their catalog spans performance leggings, flared pants, crop tops, and all-weather outerwear — positioned for women who train and want to look like they do.</p>
-        <p>By Q4 2025, the brand had built real traffic momentum: over 352K sessions in the quarter with $170K in revenue. But the site wasn't built to convert at scale. Product discovery was fragmented, navigation was undifferentiated, and the purchase path had too much friction — particularly on mobile, where most TikTok traffic lands.</p>
+        <p>Fit Tribe is an Egyptian activewear brand that built real traffic momentum on TikTok. By Q4 2025, they had 352K sessions and $170K in revenue — but TikTok traffic, which made up 40% of sessions, was converting at 0.1%. Their site wasn't built to absorb cold social traffic at scale.</p>
+        <p>Navigation was undifferentiated. Search was buried. Product pages didn't do the persuasion work needed for visitors who had zero prior brand familiarity. The cart lost people on mobile — which is where the majority of TikTok traffic lands.</p>
       </div>
       <div>
         <div class="result-chips">
           <span class="chip"><span class="chip-dot"></span>Activewear</span>
-          <span class="chip"><span class="chip-dot"></span>TikTok-driven traffic</span>
           <span class="chip"><span class="chip-dot"></span>Egyptian market</span>
           <span class="chip"><span class="chip-dot"></span>8-figure brand</span>
-          <span class="chip"><span class="chip-dot"></span>Shopify Prestige theme</span>
         </div>
       </div>
     </div>
@@ -435,13 +674,13 @@ body {
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">The Challenge</div>
-    <div class="section-title">Scaling Traffic Is Easy. Keeping CVR Alive Is the Hard Part.</div>
+    <div class="section-title">TikTok drove 40% of traffic — and converted at 0.1%.</div>
     <div class="section-body">
-      <p>TikTok traffic doesn't behave like search traffic. Visitors arrive mid-scroll with zero purchase intent — they need to be converted, not just received. As Fit Tribe scaled their TikTok spend and content output, sessions climbed but CVR came under pressure.</p>
-      <p>The site itself was the second problem. The navigation had no product logic behind it — no category filtering, no search architecture, and no clear path from "saw it on TikTok" to "added to cart." The PDP wasn't doing the persuasion work needed to convert cold traffic. The cart didn't build order value. And the collection experience buried product in an undifferentiated grid.</p>
+      <p>TikTok visitors arrived with zero purchase intent. As Fit Tribe scaled TikTok spend, sessions climbed but CVR dropped. TikTok had previously converted around 2% — by the time of the engagement it had fallen to 0.1%. TikTok made up 40% of total traffic, which dragged blended CVR to 1.16%.</p>
+      <p>The site had no mechanism to recover those visitors. Navigation was undifferentiated. Search was buried. Product pages didn't do persuasion work. The cart lost people on mobile.</p>
     </div>
     <div class="callout">
-      <p>"Aggressive traffic scaling normally lowers CVR. TikTok in particular severely impacts metrics as you scale — the audience is colder and the purchase journey is longer."</p>
+      <p>"TikTok accounted for 40% of traffic and had a 0.1% conversion rate. That was the drag. Fix the site for cold traffic, and blended CVR goes up even as TikTok scales."</p>
     </div>
     <div class="numbers-row" style="margin-top: 32px;">
       <div class="number-block">
@@ -455,9 +694,14 @@ body {
         <div class="number-context">Q4 2025 baseline</div>
       </div>
       <div class="number-block">
-        <div class="number-label">CVR</div>
+        <div class="number-label">Blended CVR</div>
         <div class="number-value">1.16<span class="accent">%</span></div>
         <div class="number-context">Baseline conversion rate</div>
+      </div>
+      <div class="number-block">
+        <div class="number-label">TikTok conversion rate</div>
+        <div class="number-value">2<span class="accent">%</span> → 0.1<span class="accent">%</span></div>
+        <div class="number-context">Baseline TikTok CVR fall</div>
       </div>
     </div>
   </div>
@@ -467,42 +711,59 @@ body {
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">The Approach</div>
-    <div class="section-title">Rebuild the Discovery Path. Sharpen the Brand. Hold the Numbers.</div>
+    <div class="section-title">We optimized product discovery and navigation.</div>
     <div class="section-body">
-      <p>The brief was clear: Fit Tribe was scaling fast and needed their site to keep up. That meant solving two things at once — fixing the conversion infrastructure that was leaking revenue, and elevating the brand positioning to match the premium price point they were moving toward.</p>
-      <p>We ran a 30-day sprint: audit the full funnel, identify the highest-leverage changes, and ship them. The goal wasn't to rebuild from scratch — it was to fix what was breaking, add what was missing, and move on.</p>
+      <p>30-day sprint. We audited the full funnel, found the highest-leverage gaps, and shipped the fixes. The focus: get TikTok visitors to the right product faster, and make the purchase path work for cold traffic on mobile.</p>
     </div>
 
-    <div class="work-grid">
-      <div class="work-item">
-        <div class="work-item-label">01 · Navigation</div>
-        <div class="work-item-title">Category-First Architecture</div>
-        <div class="work-item-body">Rebuilt the main nav around product categories shoppers actually use — leggings, flared pants, tops, outerwear — instead of season or campaign-based tabs. Added quick access to bestsellers and clearance.</div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-card-title">Search visibility optimization</div>
+        <div class="approach-card-body">Search usage started at 0.08%. It wasn't discoverable enough for TikTok visitors who arrived looking for something specific.</div>
+        <div class="approach-pills">
+          <span class="approach-pill">0.08% search usage → significant adoption</span>
+          <span class="approach-pill">Higher CVR for search users</span>
+        </div>
       </div>
-      <div class="work-item">
-        <div class="work-item-label">02 · Search</div>
-        <div class="work-item-title">Intent-Matched Search</div>
-        <div class="work-item-body">Restructured search to surface relevant products quickly. TikTok visitors who arrive looking for a specific item they saw need to find it in one step — not scroll through 80 SKUs.</div>
+      <div class="approach-card">
+        <div class="approach-card-title">Color swatches to real image thumbnails</div>
+        <div class="approach-card-body">Replaced abstract color swatches on the collections page with real product images per variant.</div>
+        <div class="approach-pills">
+          <span class="approach-pill">Faster product decision-making</span>
+          <span class="approach-pill">Lower bounce on collection pages</span>
+        </div>
       </div>
-      <div class="work-item">
-        <div class="work-item-label">03 · Collections</div>
-        <div class="work-item-title">Filterable, Scannable Grids</div>
-        <div class="work-item-body">Added collection-level filtering by size, color, and style. Restructured the grid for faster scanning. Reduced the time from landing → right product.</div>
+      <div class="approach-card">
+        <div class="approach-card-title">Cart cross-sell optimization</div>
+        <div class="approach-card-body">Rebuilt the slide cart with upsells that don't disrupt checkout. Mobile-optimized to keep the path to purchase clean.</div>
+        <div class="approach-pills">
+          <span class="approach-pill">+2.85% revenue uplift</span>
+          <span class="approach-pill">+€400K per year</span>
+        </div>
       </div>
-      <div class="work-item">
-        <div class="work-item-label">04 · PDP</div>
-        <div class="work-item-title">Built to Convert Cold Traffic</div>
-        <div class="work-item-body">Rewrote the product page persuasion layer: size guidance, social proof placement, UGC positioning, and trust signals positioned to convert visitors with no prior brand familiarity.</div>
+      <div class="approach-card">
+        <div class="approach-card-title">Category-first navigation</div>
+        <div class="approach-card-body">Rebuilt nav around product categories shoppers actually use — leggings, flared pants, tops, outerwear — instead of season or campaign tabs.</div>
+        <div class="approach-pills">
+          <span class="approach-pill">Reduced time to right product</span>
+          <span class="approach-pill">Lower exit rate from nav</span>
+        </div>
       </div>
-      <div class="work-item">
-        <div class="work-item-label">05 · Cart</div>
-        <div class="work-item-title">Higher Average Order, Fewer Exits</div>
-        <div class="work-item-body">Rebuilt the cart experience to reduce friction, surface upsells without disruption, and keep the checkout path clean on mobile — where the majority of Fit Tribe's traffic converts.</div>
+      <div class="approach-card">
+        <div class="approach-card-title">PDP built for cold traffic</div>
+        <div class="approach-card-body">Rewrote the PDP persuasion layer: size guidance, social proof, UGC, and trust signals for visitors with no prior brand familiarity.</div>
+        <div class="approach-pills">
+          <span class="approach-pill">Higher add-to-cart rate</span>
+          <span class="approach-pill">Lower sizing-related drop-off</span>
+        </div>
       </div>
-      <div class="work-item">
-        <div class="work-item-label">06 · Positioning</div>
-        <div class="work-item-title">Premium Visual Elevation</div>
-        <div class="work-item-body">Tightened the visual language across all surfaces to match the premium price tier Fit Tribe was targeting. Hero sections, product photography handling, and typography hierarchy all elevated.</div>
+      <div class="approach-card">
+        <div class="approach-card-title">Filterable, scannable collections</div>
+        <div class="approach-card-body">Added size, color, and style filters. Restructured the grid layout. TikTok visitors landing on a category page now reach the right product in fewer taps.</div>
+        <div class="approach-pills">
+          <span class="approach-pill">Faster path to product</span>
+          <span class="approach-pill">Lower collection-page exit</span>
+        </div>
       </div>
     </div>
   </div>
@@ -513,94 +774,129 @@ body {
   <div class="container">
     <div class="funnel-header">
       <div class="section-eyebrow">The Funnel — Before &amp; After</div>
-      <div class="section-title">What the Site Looked Like Before. What It Looks Like Now.</div>
+      <div class="section-title">What the site looked like before. What it looks like now.</div>
       <p class="section-body">Every screen is a decision point. Here's how Fit Tribe's key funnel pages changed — homepage, collections, product detail, and cart.</p>
     </div>
 
     <!-- Homepage -->
-    <div class="funnel-step">
-      <div class="funnel-step-label">
-        <div class="funnel-step-number">01</div>
-        <div class="funnel-step-name">Homepage</div>
-        <div class="funnel-step-desc">Navigation clarity + category-led hierarchy</div>
-      </div>
-      <div class="funnel-before-after">
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge before">Before</span>
-          <img src="/images/case-studies/fit-tribe/homepage-before-desktop.png" alt="Fit Tribe homepage before redesign" class="funnel-img" loading="lazy">
+    <div class="funnel-group" id="group-homepage">
+      <div class="funnel-group-toggle" onclick="toggleGroup('group-homepage')">
+        <div class="funnel-group-toggle-left">
+          <div class="funnel-step-number">01</div>
+          <div class="funnel-step-name">Homepage</div>
+          <div class="funnel-step-desc">Navigation clarity + category-led hierarchy</div>
         </div>
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge after">After</span>
-          <!-- PLACEHOLDER: Replace src with homepage-after-desktop.png when available -->
-          <div class="funnel-img-placeholder">
-            <div class="ph-icon">🖥</div>
-            <div class="ph-label">After screenshot</div>
-            <div class="ph-hint">homepage-after-desktop.png</div>
+        <span class="funnel-chevron">▼</span>
+      </div>
+      <div class="funnel-group-body">
+        <div class="funnel-pagination">
+          <span class="funnel-page-label before">Before</span>
+          <span class="funnel-page-label after">After</span>
+        </div>
+        <div class="funnel-before-after">
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge before">Before</span>
+            <img src="/images/case-studies/fit-tribe/homepage-before-desktop.png" alt="Fit Tribe homepage before redesign" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+          </div>
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge after">After</span>
+            <div class="funnel-img-placeholder">
+              <div class="ph-icon">🖥</div>
+              <div class="ph-label">After screenshot</div>
+              <div class="ph-hint">homepage-after-desktop.png</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Collections -->
-    <div class="funnel-step">
-      <div class="funnel-step-label">
-        <div class="funnel-step-number">02</div>
-        <div class="funnel-step-name">Collections</div>
-        <div class="funnel-step-desc">Filterable grid + faster discovery</div>
-      </div>
-      <div class="funnel-before-after">
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge before">Before</span>
-          <img src="/images/case-studies/fit-tribe/collections-before-desktop.png" alt="Fit Tribe collections before" class="funnel-img" loading="lazy">
+    <div class="funnel-group" id="group-collections">
+      <div class="funnel-group-toggle" onclick="toggleGroup('group-collections')">
+        <div class="funnel-group-toggle-left">
+          <div class="funnel-step-number">02</div>
+          <div class="funnel-step-name">Collections</div>
+          <div class="funnel-step-desc">Filterable grid + faster discovery</div>
         </div>
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge after">After</span>
-          <img src="/images/case-studies/fit-tribe/collections-after-desktop.png" alt="Fit Tribe collections after" class="funnel-img" loading="lazy">
+        <span class="funnel-chevron">▼</span>
+      </div>
+      <div class="funnel-group-body">
+        <div class="funnel-pagination">
+          <span class="funnel-page-label before">Before</span>
+          <span class="funnel-page-label after">After</span>
+        </div>
+        <div class="funnel-before-after">
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge before">Before</span>
+            <img src="/images/case-studies/fit-tribe/collections-before-desktop.png" alt="Fit Tribe collections before" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+          </div>
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge after">After</span>
+            <img src="/images/case-studies/fit-tribe/collections-after-desktop.png" alt="Fit Tribe collections after" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'after')">
+          </div>
         </div>
       </div>
     </div>
 
     <!-- PDP -->
-    <div class="funnel-step">
-      <div class="funnel-step-label">
-        <div class="funnel-step-number">03</div>
-        <div class="funnel-step-name">Product Detail Page</div>
-        <div class="funnel-step-desc">Social proof, size clarity, cold-traffic persuasion</div>
-      </div>
-      <div class="funnel-before-after">
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge before">Before</span>
-          <img src="/images/case-studies/fit-tribe/pdp-before-desktop.png" alt="Fit Tribe PDP before" class="funnel-img" loading="lazy">
+    <div class="funnel-group" id="group-pdp">
+      <div class="funnel-group-toggle" onclick="toggleGroup('group-pdp')">
+        <div class="funnel-group-toggle-left">
+          <div class="funnel-step-number">03</div>
+          <div class="funnel-step-name">Product Detail Page</div>
+          <div class="funnel-step-desc">Social proof, size clarity, cold-traffic persuasion</div>
         </div>
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge after">After</span>
-          <div class="funnel-img-placeholder">
-            <div class="ph-icon">🖥</div>
-            <div class="ph-label">After screenshot</div>
-            <div class="ph-hint">pdp-after-desktop.png</div>
+        <span class="funnel-chevron">▼</span>
+      </div>
+      <div class="funnel-group-body">
+        <div class="funnel-pagination">
+          <span class="funnel-page-label before">Before</span>
+          <span class="funnel-page-label after">After</span>
+        </div>
+        <div class="funnel-before-after">
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge before">Before</span>
+            <img src="/images/case-studies/fit-tribe/pdp-before-desktop.png" alt="Fit Tribe PDP before" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+          </div>
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge after">After</span>
+            <div class="funnel-img-placeholder">
+              <div class="ph-icon">🖥</div>
+              <div class="ph-label">After screenshot</div>
+              <div class="ph-hint">pdp-after-desktop.png</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Cart -->
-    <div class="funnel-step">
-      <div class="funnel-step-label">
-        <div class="funnel-step-number">04</div>
-        <div class="funnel-step-name">Cart</div>
-        <div class="funnel-step-desc">Friction removed, upsells added, mobile-optimized</div>
-      </div>
-      <div class="funnel-before-after">
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge before">Before</span>
-          <img src="/images/case-studies/fit-tribe/cart-before-desktop.png" alt="Fit Tribe cart before" class="funnel-img" loading="lazy">
+    <div class="funnel-group" id="group-cart">
+      <div class="funnel-group-toggle" onclick="toggleGroup('group-cart')">
+        <div class="funnel-group-toggle-left">
+          <div class="funnel-step-number">04</div>
+          <div class="funnel-step-name">Cart</div>
+          <div class="funnel-step-desc">Friction removed, upsells added, mobile-optimized</div>
         </div>
-        <div class="funnel-img-wrap">
-          <span class="funnel-badge after">After</span>
-          <div class="funnel-img-placeholder">
-            <div class="ph-icon">🖥</div>
-            <div class="ph-label">After screenshot</div>
-            <div class="ph-hint">cart-after-desktop.png</div>
+        <span class="funnel-chevron">▼</span>
+      </div>
+      <div class="funnel-group-body">
+        <div class="funnel-pagination">
+          <span class="funnel-page-label before">Before</span>
+          <span class="funnel-page-label after">After</span>
+        </div>
+        <div class="funnel-before-after">
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge before">Before</span>
+            <img src="/images/case-studies/fit-tribe/cart-before-desktop.png" alt="Fit Tribe cart before" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+          </div>
+          <div class="funnel-img-wrap">
+            <span class="funnel-badge after">After</span>
+            <div class="funnel-img-placeholder">
+              <div class="ph-icon">🖥</div>
+              <div class="ph-label">After screenshot</div>
+              <div class="ph-hint">cart-after-desktop.png</div>
+            </div>
           </div>
         </div>
       </div>
@@ -609,23 +905,23 @@ body {
   </div>
 </section>
 
-<!-- ── ANALYTICS RESULTS ──────────────────────────────────── -->
+<!-- ── THE RESULTS ────────────────────────────────────────── -->
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">The Results</div>
     <div class="section-title">Traffic Up 21%. Revenue Up 16%. CVR Held.</div>
     <div class="section-body">
-      <p>The comparison covers Q4 2025 (baseline, before Scalo engagement) vs. Q1 2026 (first full quarter post-implementation). Traffic grew 21% — more TikTok scale, more cold visitors. Revenue grew 16%. CVR not only held, it improved slightly from 1.16% to 1.24%.</p>
-      <p>That's the hardest outcome to produce in aggressive traffic scaling: CVR going up while traffic volume and traffic quality both shift.</p>
+      <p>The comparison is Q4 2025 vs. Q1 2026. Sessions grew 21% — driven by more TikTok scaling. Blended CVR rose from 1.16% to 1.24% despite TikTok accounting for 40% of traffic and converting at 0.1%. TikTok was dragging the number down. Product discovery and navigation improvements pulled it back up.</p>
+      <p>After TikTok was removed from the channel mix, CVR rose to 1.86%. The optimization had compounded — the site was converting better on its own traffic, not just compensating for TikTok's drag.</p>
     </div>
 
     <div class="analytics-grid">
-      <div class="analytics-card">
+      <div class="analytics-card" onclick="openModal(this.querySelector('img').src, 'before')">
         <span class="analytics-card-badge before">Before — Q4 2025</span>
         <img src="/images/case-studies/fit-tribe/analytics-before.webp" alt="Fit Tribe analytics before — Q4 2025: 352K sessions, $170K revenue, 1.16% CVR" class="analytics-img" loading="lazy">
         <div class="analytics-card-meta">Q4 2025 · 352K sessions · $170K revenue · 1.16% CVR</div>
       </div>
-      <div class="analytics-card">
+      <div class="analytics-card" onclick="openModal(this.querySelector('img').src, 'after')">
         <span class="analytics-card-badge after">After — Q1 2026</span>
         <img src="/images/case-studies/fit-tribe/analytics-after.webp" alt="Fit Tribe analytics after — Q1 2026: 424K sessions, $202K revenue, 1.24% CVR" class="analytics-img" loading="lazy">
         <div class="analytics-card-meta">Q1 2026 · 424K sessions · $202K revenue · 1.24% CVR</div>
@@ -641,60 +937,62 @@ body {
       <div class="number-block">
         <div class="number-label">Revenue Growth</div>
         <div class="number-value"><span class="accent">+</span>16<span class="accent">%</span></div>
-        <div class="number-context">$170K → $202K. Revenue followed traffic — not always a given.</div>
+        <div class="number-context">$170K → $202K. Revenue followed traffic.</div>
       </div>
       <div class="number-block">
-        <div class="number-label">CVR</div>
-        <div class="number-value">1.24<span class="accent">%</span></div>
-        <div class="number-context">Up from 1.16%. Held and improved despite heavier cold-traffic load.</div>
+        <div class="number-label">CVR Improvement</div>
+        <div class="number-value">1.16<span class="accent">%</span> → 1.86<span class="accent">%</span></div>
+        <div class="number-context">1.24% with TikTok (40% of traffic at 0.1% CVR). 1.86% after TikTok removed.</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ── THE TAKEAWAY ───────────────────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="section-eyebrow">The Takeaway</div>
-    <div class="section-title">The Site Has to Earn the Traffic You're Buying</div>
-    <div class="section-body">
-      <p>Most brands think of CRO as squeezing a percentage point out of the same traffic. Fit Tribe needed something harder: a site that could absorb aggressive TikTok scaling without bleeding conversion.</p>
-      <p>The work wasn't glamorous — better navigation, faster discovery, cleaner product pages, a cart that didn't lose people. But those fundamentals compound. When your product-page reach goes up and your CVR holds, that's the site earning its keep at scale.</p>
-    </div>
     <div class="takeaway">
       <div class="takeaway-glow"></div>
-      <p>"When you're scaling TikTok traffic, the question isn't just how many people land on the site. It's whether the site can convert them. Fix the product discovery path, tighten the purchase journey, and hold CVR — that's the job."</p>
+      <p>"TikTok made up 40% of traffic and converted at 0.1%. The blended CVR still went up because we fixed what the site was losing on its own traffic. When TikTok was eventually removed, CVR jumped to 1.86%."</p>
       <div class="takeaway-attr">— Scalo · Fit Tribe Engagement, Q4 2025 – Q1 2026</div>
     </div>
   </div>
 </section>
 
-<!-- ── CONFIRMATION LAYER ─────────────────────────────────── -->
+<!-- ── INTERNAL USE — PASSWORD GATED ─────────────────────── -->
 <section class="confirm-section">
   <div class="container">
-    <div class="section-eyebrow" style="margin-bottom: 20px;">Internal Use</div>
-    <div
-      class="confirm-toggle"
-      onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.confirm-chevron').classList.toggle('open')"
-    >
-      <div class="confirm-toggle-left">
-        <span class="confirm-toggle-badge">Interview Layer</span>
-        <span class="confirm-toggle-title">Confirmation questions &amp; sourcing notes</span>
-      </div>
-      <span class="confirm-chevron">▼</span>
-    </div>
-    <div class="confirm-body">
+    <div class="section-eyebrow" style="margin-bottom: 24px;">Internal Use</div>
 
+    <div class="confirm-gate" id="confirmGate">
+      <div class="confirm-gate-icon">🔒</div>
+      <div>
+        <div class="confirm-gate-heading">Enter passphrase</div>
+        <div class="confirm-gate-sub">This section is access-controlled.</div>
+      </div>
+      <div class="confirm-gate-label">Interview Layer · Confirmation Questions &amp; Sourcing Notes</div>
+      <div class="confirm-gate-form">
+        <input
+          type="password"
+          id="confirmPw"
+          class="confirm-gate-input"
+          placeholder="Passphrase"
+          autocomplete="current-password"
+          onkeydown="if(event.key==='Enter')unlockConfirm()"
+        >
+        <p class="confirm-gate-error" id="confirmErr">Incorrect passphrase.</p>
+        <button class="confirm-gate-btn" onclick="unlockConfirm()">Unlock →</button>
+      </div>
+    </div>
+
+    <div class="confirm-body" id="confirmBody">
       <div class="confirm-group">
         <div class="confirm-group-title confirmed">✓ Confirmed — Sourced from Steven's brief</div>
         <ul class="confirm-list">
           <li>Q4 2025 baseline: 352K sessions / $170K revenue / 1.16% CVR</li>
           <li>Q1 2026 result: 424K sessions / $202K revenue / 1.24% CVR</li>
           <li>+21% traffic, +16% revenue, CVR maintained and improved</li>
-          <li>Project scope: 30-day sprint (exact dates TBC)</li>
+          <li>TikTok made up ~40% of traffic during engagement</li>
+          <li>TikTok CVR previously ~2%, fell to ~0.1% at time of engagement</li>
+          <li>After TikTok removed from channel mix: CVR rose to 1.86%</li>
+          <li>Project scope: 30-day sprint</li>
           <li>Work included: navigation, search, collection filtering, PDPs, cart rebuild</li>
-          <li>Challenge: TikTok scaling puts downward pressure on CVR</li>
-          <li>Client site: fittribeeg.com · Shopify Prestige theme</li>
+          <li>Client site: fittribeeg.com</li>
           <li>Comparison period: Q4 2025 (before) vs. Q1 2026 (after Scalo engagement)</li>
         </ul>
       </div>
@@ -702,10 +1000,9 @@ body {
       <div class="confirm-group">
         <div class="confirm-group-title inferred">⚠ Inferred — Needs confirmation before publishing</div>
         <ul class="confirm-list">
-          <li>"8-figure brand" label used in copy — confirm Fit Tribe is comfortable with this characterization</li>
-          <li>CVR described as "held and improved" — the 0.08% gain is real but small; confirm framing is accurate</li>
-          <li>Copy implies traffic growth is TikTok-driven — confirm this is the primary channel or qualify</li>
-          <li>Product-page reach mentioned in internal brief (25% → ?) but not reflected in Q4/Q1 comparison data; held for now</li>
+          <li>"8-figure brand" label — confirm Fit Tribe is comfortable with this characterization</li>
+          <li>TikTok CVR numbers (2% → 0.1%) — confirm exact figures or adjust framing to "approximately"</li>
+          <li>CVR rise to 1.86% after TikTok removed — confirm timing and attribution</li>
           <li>"Premium positioning" language — confirm Fit Tribe's price tier/positioning intent</li>
         </ul>
       </div>
@@ -714,18 +1011,14 @@ body {
         <div class="confirm-group-title open-q">? Open Questions — Required before finalizing</div>
         <ul class="confirm-list open-q">
           <li>What is the single most important result Fit Tribe wants highlighted on this page?</li>
-          <li>What were the exact project start and end dates? (Known: Q4 2025 → Q1 2026, ~30 days)</li>
-          <li>Product-page reach: before was 25% — what was it after?</li>
+          <li>What were the exact project start and end dates?</li>
           <li>Are there any results or metrics that should NOT be publicly disclosed?</li>
-          <li>What does each funnel screenshot in the "after" state represent? (Labels needed for placeholder sections)</li>
-          <li>Can we name the TikTok channel or show TikTok-specific performance data?</li>
+          <li>Can we name TikTok specifically, or should it be "social traffic"?</li>
           <li>Is there a client quote or testimonial we can use?</li>
-          <li>Are the WhatsApp images (Feb 2026) and March 2026 collection screenshot approved for use?</li>
-          <li>What should the after homepage screenshot be? (Currently using placeholder — need file path)</li>
-          <li>After PDP and after cart screenshots — where are they saved?</li>
+          <li>After homepage, PDP, and cart screenshots — where are they saved?</li>
+          <li>What should the after homepage screenshot be? (Currently placeholder)</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
@@ -740,5 +1033,108 @@ body {
   </div>
 </footer>
 
+<script>
+// ── FUNNEL GROUP TOGGLE ──────────────────────────────────────
+function toggleGroup(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle('collapsed');
+}
+
+// ── IMAGE MODAL ──────────────────────────────────────────────
+var modalData = {
+  before: {
+    badge: 'before', label: 'Before — Q4 2025',
+    sessions: '352<span class="accent">K</span>',
+    revenue: '$170<span class="accent">K</span>',
+    cvr: '1.16<span class="accent">%</span>',
+    tiktok: '0.1<span class="accent">%</span>',
+    showTiktok: true,
+  },
+  after: {
+    badge: 'after', label: 'After — Q1 2026',
+    sessions: '424<span class="accent">K</span>',
+    revenue: '$202<span class="accent">K</span>',
+    cvr: '1.24<span class="accent">%</span>',
+    tiktok: null,
+    showTiktok: false,
+  }
+};
+var currentModalSrc = '';
+var currentModalState = 'before';
+
+function openModal(src, state) {
+  currentModalSrc = src;
+  currentModalState = state || 'before';
+  document.getElementById('imageModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderModal();
+}
+
+function closeModal() {
+  document.getElementById('imageModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showModalState(state) {
+  currentModalState = state;
+  renderModal();
+}
+
+function renderModal() {
+  var d = modalData[currentModalState];
+  var img = document.getElementById('modalImg');
+  img.src = currentModalSrc;
+
+  var badge = document.getElementById('modalBadge');
+  badge.className = 'modal-badge ' + d.badge;
+  badge.textContent = d.label;
+
+  document.getElementById('modalSessions').innerHTML = d.sessions;
+  document.getElementById('modalRevenue').innerHTML = d.revenue;
+  document.getElementById('modalCvr').innerHTML = d.cvr;
+
+  var tiktokRow = document.getElementById('modalTiktokRow');
+  if (d.showTiktok) {
+    tiktokRow.style.display = '';
+    document.getElementById('modalTiktok').innerHTML = d.tiktok;
+  } else {
+    tiktokRow.style.display = 'none';
+  }
+
+  document.getElementById('modalBtnBefore').className = 'modal-nav-btn' + (currentModalState === 'before' ? ' active' : '');
+  document.getElementById('modalBtnAfter').className = 'modal-nav-btn' + (currentModalState === 'after' ? ' active' : '');
+}
+
+function modalClickOutside(e) {
+  if (e.target === document.getElementById('imageModal')) closeModal();
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ── PASSWORD GATE ────────────────────────────────────────────
+(function() {
+  var key = 'fit-tribe-interview-unlocked';
+  if (sessionStorage.getItem(key) === '1') {
+    document.getElementById('confirmGate').style.display = 'none';
+    document.getElementById('confirmBody').classList.add('unlocked');
+  }
+})();
+
+function unlockConfirm() {
+  var pw = document.getElementById('confirmPw').value;
+  var errEl = document.getElementById('confirmErr');
+  if (pw === 'godandmoney') {
+    sessionStorage.setItem('fit-tribe-interview-unlocked', '1');
+    document.getElementById('confirmGate').style.display = 'none';
+    document.getElementById('confirmBody').classList.add('unlocked');
+  } else {
+    errEl.style.display = 'block';
+    document.getElementById('confirmPw').value = '';
+    document.getElementById('confirmPw').classList.add('error');
+  }
+}
+</script>
 </body>
 </html>
