@@ -27,7 +27,7 @@ const secondary = [
     client: "Fit Tribe",
     category: "Activewear · Egypt",
     metric: "+16%",
-    sub: "Revenue while TikTok traffic 21%↑",
+    sub: "TikTok CVR ↓ as traffic scaled — we reversed it",
     image: "/images/case-studies/fit-tribe/collections-after-desktop.png",
     href: "/value/fit-tribe-case-study",
   },
