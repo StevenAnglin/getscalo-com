@@ -121,6 +121,7 @@ export interface ValueResource {
   tool: string;
   audience: string[];
   password?: string;
+  docPath?: string;
   sections: ValueSection[];
 }
 
@@ -452,6 +453,43 @@ Design rules:
     tool: "CRO Framework",
     audience: ["Internal"],
     password: "godandmoney",
+    sections: [],
+  },
+  {
+    slug: "fit-tribe-case-study",
+    title: "8 Figure Brand Premium Redesign & Navigation Optimization",
+    subtitle: "Fit Tribe",
+    eyebrow: "CRO · Brand Redesign",
+    description:
+      "30-day CRO project: rebuilt navigation, search, collection filtering, PDPs, and cart for a TikTok-scaling activewear brand. Started at 1.1% CVR and 25% product-page reach.",
+    tool: "CRO + Design",
+    audience: ["Brands", "Agencies"],
+    docPath: "/docs/fit-tribe-case-study.html",
+    sections: [],
+  },
+  {
+    slug: "y-studios-case-study",
+    title: "8 Figure Premium Design & Full CRO + Site Management",
+    subtitle: "Y Studios",
+    eyebrow: "CRO · Full Storefront",
+    description:
+      "Full storefront rebuild and ongoing engagement — redesigned homepage, collections, PDPs, slide cart, and search. 5+ collection launches Oct 2025–May 2026.",
+    tool: "CRO + Design + Management",
+    audience: ["Brands", "Agencies"],
+    docPath: "/docs/y-studios-case-study.html",
+    sections: [],
+  },
+  {
+    slug: "tet-case-study",
+    title: "Learning Courses Platform Migration",
+    subtitle: "TET / Trusted English Trainers",
+    eyebrow: "Platform Migration · Custom Build",
+    description:
+      "Migrated from Teachable to Shopify. Custom Figma-to-Shopify build: new theme, blog, product pages, mobile-optimized components.",
+    tool: "Custom Theme Dev",
+    audience: ["Internal"],
+    password: "godandmoney",
+    docPath: "/docs/tet-case-study.html",
     sections: [],
   },
 ];

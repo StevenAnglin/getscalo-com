@@ -53,24 +53,32 @@ export default function ValueResourcePage({
     </Head>
   );
 
-  // Password-gated: skip header/footer, gate fills the viewport below the nav
-  if (resource.password) {
+  // HTML-doc page: either password-gated or public, served via iframe
+  if (resource.password || resource.docPath) {
+    const docSrc = resource.docPath ?? "/docs/vital-collagen-plan.html";
+    const iframeEl = (
+      <iframe
+        src={docSrc}
+        title={resource.title}
+        style={{ display: "block", width: "100%", flex: 1, border: "none", minHeight: "calc(100svh - 72px)" }}
+      />
+    );
     return (
       <>
         {head}
         <div className="flex flex-col bg-[var(--scalo-bg-0)]" style={{ minHeight: "100svh" }}>
           <Nav />
           <div className="flex flex-1 flex-col">
-            <PasswordGate
-              password={resource.password}
-              storageKey={`value-resource-${resource.slug}`}
-            >
-              <iframe
-                src="/docs/vital-collagen-plan.html"
-                title={resource.title}
-                style={{ display: "block", width: "100%", flex: 1, border: "none", minHeight: "calc(100svh - 72px)" }}
-              />
-            </PasswordGate>
+            {resource.password ? (
+              <PasswordGate
+                password={resource.password}
+                storageKey={`value-resource-${resource.slug}`}
+              >
+                {iframeEl}
+              </PasswordGate>
+            ) : (
+              iframeEl
+            )}
           </div>
         </div>
       </>

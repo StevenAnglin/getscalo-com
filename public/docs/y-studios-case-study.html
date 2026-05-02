@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y Studios — 8 Figure Premium Design & Full CRO + Site Management | Scalo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── TOKENS ─────────────────────────────────────────────────── */
+:root {
+  --black:         #000000;
+  --bg-1:          #0a0a0a;
+  --bg-2:          #111113;
+  --bg-3:          #18181b;
+  --bg-4:          #222226;
+  --ember:         #FF6B35;
+  --ember-dim:     #C75429;
+  --cream:         #FFFDE8;
+  --fg-1:          rgba(255,255,255,1);
+  --fg-2:          rgba(255,255,255,0.72);
+  --fg-3:          rgba(255,255,255,0.48);
+  --fg-4:          rgba(255,255,255,0.28);
+  --border-strong: rgba(255,255,255,0.18);
+  --border-mid:    rgba(255,255,255,0.10);
+  --border-ghost:  rgba(255,255,255,0.06);
+  --serif:         "Instrument Serif", Georgia, serif;
+  --sans:          "Barlow", system-ui, sans-serif;
+  --ease:          cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── BASE ───────────────────────────────────────────────────── */
+html { font-size: 15px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { background: var(--black); color: var(--fg-1); font-family: var(--sans); font-weight: 400; line-height: 1.65; }
+
+/* ─── GRAIN ──────────────────────────────────────────────────── */
+.grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9998; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ─── LAYOUT ─────────────────────────────────────────────────── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+@media (min-width: 640px) { .container { padding: 0 48px; } }
+
+/* ─── COVER ──────────────────────────────────────────────────── */
+.cover {
+  min-height: 100svh; background: var(--black);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 40px 24px; position: relative; overflow: hidden;
+}
+@media (min-width: 640px) { .cover { padding: 56px 64px; } }
+
+.cover-glow {
+  position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 500px;
+  background: radial-gradient(ellipse at center, rgba(255,107,53,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-grid {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='rgba(255%2C255%2C255%2C0.04)'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 30%, transparent 100%);
+  pointer-events: none;
+}
+
+.cover-wordmark { display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+.wordmark-serif { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--fg-2); letter-spacing: -0.02em; }
+.wordmark-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
+
+.cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 48px 0 40px; position: relative; z-index: 1; }
+.cover-eyebrow {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ember); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.cover-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ember); }
+.cover-client {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(40px, 9vw, 80px); line-height: 0.9; letter-spacing: -0.03em;
+  color: var(--fg-1); margin-bottom: 8px;
+}
+.cover-title { font-size: clamp(14px, 2.5vw, 20px); font-weight: 400; color: var(--fg-3); letter-spacing: -0.01em; line-height: 1.4; max-width: 600px; margin-top: 16px; }
+
+.cover-stats {
+  display: grid; gap: 1px; background: var(--border-ghost);
+  border: 1px solid var(--border-ghost); border-radius: 16px; overflow: hidden;
+  position: relative; z-index: 1;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 640px) { .cover-stats { grid-template-columns: repeat(4, 1fr); } }
+
+.stat { background: var(--bg-1); padding: 20px 24px; }
+.stat-value { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 4.5vw, 40px); line-height: 1; letter-spacing: -0.03em; color: var(--fg-1); margin-bottom: 6px; }
+.stat-value span { color: var(--ember); }
+.stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-4); }
+.stat-sub { font-size: 11px; color: var(--fg-4); margin-top: 4px; opacity: 0.7; }
+
+/* ─── SECTION ─────────────────────────────────────────────────── */
+.section { padding: 80px 0; border-top: 1px solid var(--border-ghost); }
+
+.section-eyebrow {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ember); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+}
+.section-eyebrow::before { content: ''; display: block; width: 16px; height: 1px; background: var(--ember); }
+
+.section-title { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(28px, 5vw, 44px); line-height: 1.05; letter-spacing: -0.02em; color: var(--fg-1); margin-bottom: 24px; }
+.section-body { font-size: 16px; font-weight: 400; color: var(--fg-2); line-height: 1.75; max-width: 680px; }
+.section-body p + p { margin-top: 16px; }
+.section-body strong { color: var(--fg-1); font-weight: 600; }
+
+/* ─── CALLOUT ─────────────────────────────────────────────────── */
+.callout { border-left: 2px solid var(--ember); padding-left: 20px; margin: 28px 0; }
+.callout p { font-size: 17px; font-style: italic; color: var(--fg-2); line-height: 1.6; }
+
+/* ─── RESULT CHIPS ─────────────────────────────────────────────── */
+.result-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 100px; border: 1px solid var(--border-mid); background: var(--bg-2); font-size: 12px; font-weight: 500; color: var(--fg-2); letter-spacing: 0.02em; }
+.chip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
+
+/* ─── DROPS TIMELINE ─────────────────────────────────────────────── */
+.timeline { margin-top: 40px; display: flex; flex-direction: column; gap: 1px; background: var(--border-ghost); border: 1px solid var(--border-ghost); border-radius: 16px; overflow: hidden; }
+.timeline-row { display: grid; grid-template-columns: 1fr 2fr auto; align-items: center; gap: 0; background: var(--bg-2); }
+.timeline-row.header { background: var(--bg-3); }
+.timeline-cell { padding: 14px 20px; font-size: 14px; color: var(--fg-2); }
+.timeline-cell.label { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-4); }
+.timeline-cell.drop-name { font-weight: 600; color: var(--fg-1); font-size: 14px; }
+.timeline-cell.revenue { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--fg-1); letter-spacing: -0.01em; white-space: nowrap; }
+.timeline-cell.revenue.milestone { color: var(--ember); }
+.timeline-pill {
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px;
+  border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.timeline-pill.exceeded { background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.25); color: var(--ember); }
+.timeline-pill.strong { background: rgba(255,255,255,0.06); border: 1px solid var(--border-mid); color: var(--fg-3); }
+
+/* ─── WORK GRID ─────────────────────────────────────────────────── */
+.work-grid { display: grid; gap: 1px; background: var(--border-ghost); margin-top: 40px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-ghost); }
+@media (min-width: 640px) { .work-grid { grid-template-columns: 1fr 1fr; } }
+.work-item { background: var(--bg-2); padding: 28px; }
+.work-item-label { font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ember); margin-bottom: 10px; }
+.work-item-title { font-size: 16px; font-weight: 600; color: var(--fg-1); margin-bottom: 8px; line-height: 1.3; }
+.work-item-body { font-size: 14px; color: var(--fg-3); line-height: 1.65; }
+
+/* ─── FUNNEL SECTION ─────────────────────────────────────────────── */
+.funnel-section { padding: 80px 0; border-top: 1px solid var(--border-ghost); }
+.funnel-step { margin-bottom: 64px; }
+.funnel-step:last-child { margin-bottom: 0; }
+.funnel-step-label { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.funnel-step-number {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--ember); flex-shrink: 0;
+}
+.funnel-step-name { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-2); }
+.funnel-step-desc { font-size: 13px; color: var(--fg-4); margin-left: auto; text-align: right; max-width: 260px; line-height: 1.4; }
+
+.funnel-grid { display: grid; gap: 12px; }
+@media (min-width: 640px) { .funnel-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .funnel-grid.four-col { grid-template-columns: repeat(4, 1fr); } }
+
+.funnel-img-wrap { position: relative; }
+.funnel-device-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-4); margin-bottom: 8px; padding-left: 2px;
+}
+.funnel-img { width: 100%; display: block; border-radius: 10px; border: 1px solid var(--border-ghost); background: var(--bg-2); }
+.funnel-img-placeholder {
+  width: 100%; border-radius: 10px; border: 1px solid var(--border-mid);
+  background: var(--bg-2); padding: 40px 20px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 10px; min-height: 160px;
+}
+.funnel-img-placeholder .ph-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-4); }
+
+/* ─── ANALYTICS SECTION ─────────────────────────────────────────── */
+.analytics-grid { display: grid; gap: 16px; margin-top: 40px; }
+@media (min-width: 640px) { .analytics-grid { grid-template-columns: 1fr 1fr; } }
+.analytics-card { position: relative; }
+.analytics-card-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  padding: 4px 10px; border-radius: 100px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.analytics-card-badge.before { background: rgba(255,255,255,0.08); color: var(--fg-3); border: 1px solid var(--border-mid); }
+.analytics-card-badge.after { background: rgba(255,107,53,0.15); color: var(--ember); border: 1px solid rgba(255,107,53,0.3); }
+.analytics-card-meta { font-size: 11px; color: var(--fg-4); letter-spacing: 0.06em; padding: 10px 12px; background: var(--bg-2); border: 1px solid var(--border-ghost); border-top: none; border-radius: 0 0 12px 12px; }
+.analytics-img { width: 100%; display: block; border: 1px solid var(--border-ghost); border-radius: 12px 12px 0 0; background: var(--bg-3); }
+.analytics-placeholder {
+  width: 100%; border-radius: 12px 12px 0 0; border: 1px solid var(--border-mid);
+  background: var(--bg-2); padding: 56px 24px;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+}
+.analytics-placeholder .ph-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-4); }
+.analytics-placeholder .ph-hint { font-size: 12px; color: var(--fg-4); opacity: 0.6; }
+
+/* ─── NUMBERS ROW ─────────────────────────────────────────────── */
+.numbers-row { display: grid; gap: 1px; background: var(--border-ghost); border: 1px solid var(--border-ghost); border-radius: 16px; overflow: hidden; margin-top: 40px; }
+@media (min-width: 640px) { .numbers-row { grid-template-columns: repeat(3, 1fr); } }
+.number-block { background: var(--bg-2); padding: 32px 28px; }
+.number-value { font-family: var(--serif); font-style: italic; font-size: clamp(32px, 6vw, 48px); line-height: 1; letter-spacing: -0.03em; color: var(--fg-1); margin-bottom: 6px; }
+.number-value .accent { color: var(--ember); }
+.number-label { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-4); margin-bottom: 8px; }
+.number-context { font-size: 13px; color: var(--fg-3); line-height: 1.5; }
+
+/* ─── TESTIMONIAL ─────────────────────────────────────────────── */
+.testimonial {
+  background: var(--bg-2); border: 1px solid var(--border-ghost);
+  border-radius: 20px; padding: 36px 40px; margin-top: 40px;
+  position: relative; overflow: hidden;
+}
+.testimonial-glow {
+  position: absolute; top: -60px; right: -60px; width: 300px; height: 300px;
+  background: radial-gradient(ellipse at center, rgba(255,107,53,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.testimonial-mark {
+  font-family: var(--serif); font-style: italic; font-size: 64px;
+  line-height: 0.7; color: var(--ember); opacity: 0.4; margin-bottom: 8px;
+  position: relative; z-index: 1;
+}
+.testimonial-text {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(17px, 2.5vw, 22px); line-height: 1.55; letter-spacing: -0.01em;
+  color: var(--fg-1); position: relative; z-index: 1;
+}
+.testimonial-video-note {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+  padding: 6px 14px; border-radius: 100px;
+  background: rgba(255,107,53,0.08); border: 1px solid rgba(255,107,53,0.2);
+  font-size: 12px; font-weight: 600; color: var(--ember); letter-spacing: 0.06em;
+  position: relative; z-index: 1;
+}
+.testimonial-attr { font-size: 12px; font-weight: 500; color: var(--fg-4); margin-top: 16px; letter-spacing: 0.1em; text-transform: uppercase; position: relative; z-index: 1; }
+
+/* ─── TAKEAWAY ─────────────────────────────────────────────────── */
+.takeaway { background: var(--bg-2); border: 1px solid var(--border-ghost); border-radius: 20px; padding: 40px; margin-top: 40px; position: relative; overflow: hidden; }
+.takeaway-glow { position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(ellipse at center, rgba(255,107,53,0.06) 0%, transparent 70%); pointer-events: none; }
+.takeaway p { font-family: var(--serif); font-style: italic; font-size: clamp(18px, 3vw, 24px); line-height: 1.5; letter-spacing: -0.01em; color: var(--fg-1); position: relative; z-index: 1; }
+.takeaway-attr { font-size: 12px; font-weight: 500; color: var(--fg-4); margin-top: 16px; letter-spacing: 0.1em; text-transform: uppercase; position: relative; z-index: 1; }
+
+/* ─── CONFIRMATION LAYER ─────────────────────────────────────────── */
+.confirm-section { padding: 80px 0; border-top: 1px solid var(--border-ghost); }
+.confirm-toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; user-select: none; padding: 20px 24px; background: var(--bg-2); border: 1px solid var(--border-mid); border-radius: 12px; transition: background 0.2s var(--ease); }
+.confirm-toggle:hover { background: var(--bg-3); }
+.confirm-toggle-left { display: flex; align-items: center; gap: 12px; }
+.confirm-toggle-badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 100px; background: rgba(255,107,53,0.12); border: 1px solid rgba(255,107,53,0.25); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ember); }
+.confirm-toggle-title { font-size: 14px; font-weight: 600; color: var(--fg-2); }
+.confirm-chevron { font-size: 12px; color: var(--fg-4); transition: transform 0.25s var(--ease); }
+.confirm-chevron.open { transform: rotate(180deg); }
+.confirm-body { display: none; padding: 24px; background: var(--bg-1); border: 1px solid var(--border-ghost); border-top: none; border-radius: 0 0 12px 12px; }
+.confirm-body.open { display: block; }
+.confirm-group { margin-bottom: 28px; }
+.confirm-group:last-child { margin-bottom: 0; }
+.confirm-group-title { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-ghost); }
+.confirm-group-title.confirmed { color: #4ade80; }
+.confirm-group-title.inferred { color: #facc15; }
+.confirm-group-title.open-q { color: var(--ember); }
+.confirm-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.confirm-list li { font-size: 14px; color: var(--fg-3); line-height: 1.55; padding-left: 20px; position: relative; }
+.confirm-list li::before { content: '–'; position: absolute; left: 0; color: var(--fg-4); }
+.confirm-list.open-q li::before { color: var(--ember); content: '?'; }
+
+/* ─── FOOTER ─────────────────────────────────────────────────── */
+.footer { padding: 40px 0; border-top: 1px solid var(--border-ghost); }
+.footer-inner { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+@media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+.footer-brand { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--fg-3); letter-spacing: -0.02em; }
+.footer-link { font-size: 13px; color: var(--fg-4); text-decoration: none; border-bottom: 1px solid var(--border-ghost); transition: color 0.2s var(--ease), border-color 0.2s var(--ease); }
+.footer-link:hover { color: var(--fg-1); border-color: var(--ember); }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- ── COVER ──────────────────────────────────────────────── -->
+<section class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+
+  <div class="cover-wordmark">
+    <span class="wordmark-serif">scalo</span>
+    <span class="wordmark-dot"></span>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">Case Study · CRO, Design &amp; Drop Management</div>
+    <div class="cover-client">Y Studios</div>
+    <div class="cover-title">
+      Full storefront optimization, premium redesign, and drop-by-drop site management for an Egyptian streetwear brand — ongoing since October 2025.
+    </div>
+  </div>
+
+  <div class="cover-stats">
+    <div class="stat">
+      <div class="stat-value">4<span>/7</span></div>
+      <div class="stat-label">Drops Over E£1M</div>
+      <div class="stat-sub">Was 0 before engagement</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value"><span>+</span>183<span>%</span></div>
+      <div class="stat-label">Revenue Growth</div>
+      <div class="stat-sub">$124K → $351K</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">E£<span>1M</span><span>+</span></div>
+      <div class="stat-label">Top Drop</div>
+      <div class="stat-sub">Was E£500K before</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">2<span>%</span></div>
+      <div class="stat-label">CVR Held</div>
+      <div class="stat-sub">At scale across all drops</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE BRAND ──────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">The Brand</div>
+    <div class="section-title">Egyptian Streetwear Built on Limited Drops</div>
+    <div class="section-body">
+      <p>Y Studios is a premium streetwear brand operating out of Egypt, known for limited-drop releases that sell out within hours. Their model is high-urgency: each collection launches at a fixed time, traffic spikes sharply, and the site has a narrow window to convert it.</p>
+      <p>Before Scalo, Y Studios had real demand — their best single drop had reached E£500K — but the site wasn't keeping pace with the brand. The design was underperforming relative to the product, the purchase flow had friction, and each new drop required significant manual preparation to launch properly.</p>
+    </div>
+    <div class="result-chips">
+      <span class="chip"><span class="chip-dot"></span>Streetwear · Limited drops</span>
+      <span class="chip"><span class="chip-dot"></span>Egyptian market</span>
+      <span class="chip"><span class="chip-dot"></span>8-figure brand</span>
+      <span class="chip"><span class="chip-dot"></span>Ongoing engagement</span>
+      <span class="chip"><span class="chip-dot"></span>ystudios.net</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE CHALLENGE ──────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">The Challenge</div>
+    <div class="section-title">Every Drop Is a High-Stakes Launch. The Site Has to Be Ready.</div>
+    <div class="section-body">
+      <p>The limited-drop model creates a unique conversion problem. You get one shot — traffic comes in a wave, stays for minutes, and either converts or leaves. There's no retargeting window. No "I'll come back tomorrow." Each drop is its own event, and the site needs to be built for it.</p>
+      <p>Y Studios had built a loyal audience and real demand. But their site wasn't optimized for peak-traffic conversion, and each new collection required significant hands-on work to launch. There was no system — just scrambling before each drop.</p>
+    </div>
+    <div class="callout">
+      <p>"The limited drop model means you're not optimizing for return visits. You're optimizing for the 60-minute window when your entire audience is on the site at the same time. The site has to be ready."</p>
+    </div>
+
+    <div class="numbers-row" style="margin-top: 32px;">
+      <div class="number-block">
+        <div class="number-label">Best Single Drop — Before</div>
+        <div class="number-value">E£500<span class="accent">K</span></div>
+        <div class="number-context">Peak performance before Scalo engagement</div>
+      </div>
+      <div class="number-block">
+        <div class="number-label">6-Month Revenue — Before</div>
+        <div class="number-value">$124<span class="accent">K</span></div>
+        <div class="number-context">Q2–Q3 2025 total (before engagement)</div>
+      </div>
+      <div class="number-block">
+        <div class="number-label">Max CVR — Before</div>
+        <div class="number-value">2<span class="accent">%</span></div>
+        <div class="number-context">Peak rate; rarely sustained across drops</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE APPROACH ───────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">The Approach</div>
+    <div class="section-title">Optimize the Site. Build a Drop System. Launch Every Collection Right.</div>
+    <div class="section-body">
+      <p>The engagement has two parallel tracks. The first is ongoing site optimization — improving the permanent conversion infrastructure: navigation, collection pages, product detail pages, slide cart, and search. The second is drop management — preparing, building, and launching each new collection so the site is always ready when traffic arrives.</p>
+      <p>For some drops, we did full site rebuilds. For others, targeted optimization. The work compounds: each drop gets a better foundation than the last one.</p>
+    </div>
+
+    <div class="work-grid">
+      <div class="work-item">
+        <div class="work-item-label">01 · Homepage</div>
+        <div class="work-item-title">Drop-Ready Homepage Architecture</div>
+        <div class="work-item-body">Rebuilt the homepage to function as a launchpad for each drop — high-impact hero, clear new arrival hierarchy, and fast paths to the active collection. Updated before each release.</div>
+      </div>
+      <div class="work-item">
+        <div class="work-item-label">02 · Collections</div>
+        <div class="work-item-title">Clean, Fast Collection Pages</div>
+        <div class="work-item-body">Designed for limited-drop browsing: fast product discovery, clear sold-out states, and urgency handling built into the page structure. No confusion, no friction when traffic is peaking.</div>
+      </div>
+      <div class="work-item">
+        <div class="work-item-label">03 · Product Pages</div>
+        <div class="work-item-title">PDPs Built to Convert at Drop Speed</div>
+        <div class="work-item-body">Product detail pages rebuilt with size confidence, social proof, and checkout urgency positioned for cold visitors who have 90 seconds to decide. Mobile-first implementation.</div>
+      </div>
+      <div class="work-item">
+        <div class="work-item-label">04 · Slide Cart</div>
+        <div class="work-item-title">Faster Path to Checkout</div>
+        <div class="work-item-body">Rebuilt the cart experience as a slide-out — no navigation break, faster checkout entry, upsell surface for complementary pieces. Reduces exit risk at the highest-intent moment.</div>
+      </div>
+      <div class="work-item">
+        <div class="work-item-label">05 · Search</div>
+        <div class="work-item-title">Instant Product Discovery</div>
+        <div class="work-item-body">Search rebuilt to surface active collection items instantly. During a drop, search intent is high — visitors know what they're looking for. We made sure they found it in under 2 seconds.</div>
+      </div>
+      <div class="work-item">
+        <div class="work-item-label">06 · Drop Management</div>
+        <div class="work-item-title">Full Launch Preparation, Every Time</div>
+        <div class="work-item-body">5+ collections launched Oct 2025–May 2026. For each: new collection page, updated homepage, product cards, mobile QA, and final launch checks. The site is never caught unprepared.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FUNNEL SCREENSHOTS ─────────────────────────────────── -->
+<section class="funnel-section">
+  <div class="container">
+    <div class="section-eyebrow">The Site</div>
+    <div class="section-title">What We Built — Desktop &amp; Mobile</div>
+    <p class="section-body" style="margin-bottom: 48px;">Every surface optimized for limited-drop conversion: fast navigation, clean product discovery, a cart that doesn't interrupt the flow.</p>
+
+    <!-- Homepage -->
+    <div class="funnel-step">
+      <div class="funnel-step-label">
+        <div class="funnel-step-number">01</div>
+        <div class="funnel-step-name">Homepage</div>
+        <div class="funnel-step-desc">Drop-launchpad architecture · Updated per collection</div>
+      </div>
+      <div class="funnel-grid">
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Desktop</div>
+          <img src="/images/case-studies/y-studios/homepage-desktop.png" alt="Y Studios homepage desktop" class="funnel-img" loading="lazy">
+        </div>
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Mobile</div>
+          <img src="/images/case-studies/y-studios/homepage-mobile.png" alt="Y Studios homepage mobile" class="funnel-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="funnel-step">
+      <div class="funnel-step-label">
+        <div class="funnel-step-number">02</div>
+        <div class="funnel-step-name">Navigation</div>
+        <div class="funnel-step-desc">Clear hierarchy · Drop-aware structure</div>
+      </div>
+      <div class="funnel-grid">
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Desktop</div>
+          <img src="/images/case-studies/y-studios/navigation-desktop.png" alt="Y Studios navigation desktop" class="funnel-img" loading="lazy">
+        </div>
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Mobile</div>
+          <img src="/images/case-studies/y-studios/navigation-mobile.png" alt="Y Studios navigation mobile" class="funnel-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Collection Page -->
+    <div class="funnel-step">
+      <div class="funnel-step-label">
+        <div class="funnel-step-number">03</div>
+        <div class="funnel-step-name">Collection Page</div>
+        <div class="funnel-step-desc">Fast discovery · Urgency handling</div>
+      </div>
+      <div class="funnel-grid">
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Desktop</div>
+          <img src="/images/case-studies/y-studios/collections-desktop.png" alt="Y Studios collection desktop" class="funnel-img" loading="lazy">
+        </div>
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Mobile</div>
+          <img src="/images/case-studies/y-studios/collections-mobile.png" alt="Y Studios collection mobile" class="funnel-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Page -->
+    <div class="funnel-step">
+      <div class="funnel-step-label">
+        <div class="funnel-step-number">04</div>
+        <div class="funnel-step-name">Product Detail Page</div>
+        <div class="funnel-step-desc">Cold-traffic PDPs · Size confidence · Mobile-first</div>
+      </div>
+      <div class="funnel-grid">
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Desktop</div>
+          <img src="/images/case-studies/y-studios/pdp-desktop.png" alt="Y Studios PDP desktop" class="funnel-img" loading="lazy">
+        </div>
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Mobile</div>
+          <img src="/images/case-studies/y-studios/pdp-mobile.png" alt="Y Studios PDP mobile" class="funnel-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart -->
+    <div class="funnel-step">
+      <div class="funnel-step-label">
+        <div class="funnel-step-number">05</div>
+        <div class="funnel-step-name">Slide Cart</div>
+        <div class="funnel-step-desc">Faster checkout · No navigation break</div>
+      </div>
+      <div class="funnel-grid">
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Desktop</div>
+          <img src="/images/case-studies/y-studios/cart-desktop.png" alt="Y Studios cart desktop" class="funnel-img" loading="lazy">
+        </div>
+        <div class="funnel-img-wrap">
+          <div class="funnel-device-label">Mobile</div>
+          <img src="/images/case-studies/y-studios/cart-mobile.png" alt="Y Studios cart mobile" class="funnel-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── DROPS TIMELINE ─────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">Drop Performance</div>
+    <div class="section-title">7 Drops. 4 Broke E£1M. 2 Did E£740K in a Day.</div>
+    <div class="section-body">
+      <p>The drop model means every launch is a test. Before Scalo, the best single drop was E£500K. After the engagement started, 4 of 7 drops exceeded E£1M — and two others hit E£740K in a single day.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-row header">
+        <div class="timeline-cell label">Period</div>
+        <div class="timeline-cell label">Drop</div>
+        <div class="timeline-cell label">Performance</div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-cell" style="color: var(--fg-4); font-size: 12px;">Before</div>
+        <div class="timeline-cell drop-name">Best single drop (2024 – Aug 2025)</div>
+        <div class="timeline-cell revenue">E£500K</div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-cell" style="color: var(--ember); font-size: 12px; font-weight: 600;">Drop 1</div>
+        <div class="timeline-cell drop-name">Oct 2025 collection</div>
+        <div class="timeline-cell revenue milestone">E£1M<span style="font-size: 14px; font-style: normal; color: var(--fg-3); margin-left: 8px;">+</span></div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-cell" style="color: var(--ember); font-size: 12px; font-weight: 600;">Drop 2–3</div>
+        <div class="timeline-cell drop-name">Two drops — E£740K combined in one day</div>
+        <div class="timeline-cell revenue">E£740K <span style="font-size: 13px; font-style: normal; color: var(--fg-4);">/ day</span></div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-cell" style="color: var(--ember); font-size: 12px; font-weight: 600;">Drop 4–7</div>
+        <div class="timeline-cell drop-name">3 of 4 remaining drops exceeded E£1M</div>
+        <div class="timeline-cell revenue milestone">E£1M<span style="font-size: 14px; font-style: normal; color: var(--fg-3); margin-left: 8px;">+ each</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ANALYTICS RESULTS ──────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">The Numbers</div>
+    <div class="section-title">$124K to $351K. CVR Held. Drops Doubled.</div>
+    <div class="section-body">
+      <p>Comparing Q2–Q3 2025 (before engagement) to Q4 2025–Q1 2026 (with Scalo): revenue nearly tripled from $124K to $351K across the same number of months. The best single drop went from E£500K to consistently breaking E£1M. CVR held at 2% across all drops — maintained as revenue and traffic both scaled.</p>
+    </div>
+
+    <div class="analytics-grid">
+      <div class="analytics-card">
+        <span class="analytics-card-badge before">Before — 2024–Aug 2025</span>
+        <div class="analytics-placeholder">
+          <div class="ph-label">Analytics screenshot</div>
+          <div class="ph-hint">analytics-before.webp — add when available</div>
+        </div>
+        <div class="analytics-card-meta">Q2–Q3 2025 · $124K revenue · Best drop E£500K · Max CVR 2%</div>
+      </div>
+      <div class="analytics-card">
+        <span class="analytics-card-badge after">After — Oct 2025–Mar 2026</span>
+        <div class="analytics-placeholder">
+          <div class="ph-label">Analytics screenshot</div>
+          <div class="ph-hint">analytics-after.webp — add when available</div>
+        </div>
+        <div class="analytics-card-meta">Q4 2025–Q1 2026 · $351K revenue · 4 of 7 drops E£1M+ · CVR held</div>
+      </div>
+    </div>
+
+    <div class="numbers-row">
+      <div class="number-block">
+        <div class="number-label">Revenue (6-month comparison)</div>
+        <div class="number-value"><span class="accent">+</span>183<span class="accent">%</span></div>
+        <div class="number-context">$124K (Q2–Q3 2025) → $351K (Q4 2025–Q1 2026)</div>
+      </div>
+      <div class="number-block">
+        <div class="number-label">Drops Over E£1M</div>
+        <div class="number-value">4<span class="accent">/7</span></div>
+        <div class="number-context">0 of any drops hit E£1M before the engagement</div>
+      </div>
+      <div class="number-block">
+        <div class="number-label">CVR Maintained</div>
+        <div class="number-value">2<span class="accent">%</span></div>
+        <div class="number-context">Held across all drops as volume and stakes scaled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIAL ────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">The Client</div>
+    <div class="section-title">Direct from the Founder</div>
+    <div class="testimonial">
+      <div class="testimonial-glow"></div>
+      <div class="testimonial-mark">"</div>
+      <div class="testimonial-text">
+        [Founder testimonial to be added — video testimonial available from Y Studios founder. Transcribe and place here, or embed video directly.]
+      </div>
+      <div class="testimonial-video-note">
+        ▶ Video testimonial available
+      </div>
+      <div class="testimonial-attr">— Y Studios Founder</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE TAKEAWAY ───────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">The Takeaway</div>
+    <div class="section-title">Limited Drops Don't Forgive a Broken Site</div>
+    <div class="section-body">
+      <p>The limited drop model is unforgiving. Traffic comes in a spike, attention lasts minutes, and the window to convert closes fast. Y Studios had the audience. They had the product. What they needed was a site that could hold up when it mattered most.</p>
+      <p>The compounding effect of ongoing optimization shows in the data: each drop outperforms the last because the foundation keeps improving. Revenue nearly tripled not from more drops, but from the same drops converting better.</p>
+    </div>
+    <div class="takeaway">
+      <div class="takeaway-glow"></div>
+      <p>"In the limited drop model, the site is the bottleneck. Every point of friction during a drop is revenue walking out the door. Fix the funnel, hold the CVR, and the drop results compound over time."</p>
+      <div class="takeaway-attr">— Scalo · Y Studios Engagement, Oct 2025–Ongoing</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONFIRMATION LAYER ─────────────────────────────────── -->
+<section class="confirm-section">
+  <div class="container">
+    <div class="section-eyebrow" style="margin-bottom: 20px;">Internal Use</div>
+    <div
+      class="confirm-toggle"
+      onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.confirm-chevron').classList.toggle('open')"
+    >
+      <div class="confirm-toggle-left">
+        <span class="confirm-toggle-badge">Interview Layer</span>
+        <span class="confirm-toggle-title">Confirmation questions &amp; sourcing notes</span>
+      </div>
+      <span class="confirm-chevron">▼</span>
+    </div>
+    <div class="confirm-body">
+
+      <div class="confirm-group">
+        <div class="confirm-group-title confirmed">✓ Confirmed — From Steven's brief</div>
+        <ul class="confirm-list">
+          <li>Before (2024–Aug 2025): Best single drop E£500K, Q2–Q3 2025 total $124K, max CVR 2%</li>
+          <li>After (Oct 2025–Mar 2026): 4 of 7 drops exceeded E£1M; E£740K on two drops in one day; $351K total Q4 2025–Q1 2026</li>
+          <li>CVR maintained at scale (confirmed in brief)</li>
+          <li>Engagement is ongoing as of May 2026</li>
+          <li>5+ collection launches Oct 2025–May 2026</li>
+          <li>Video testimonial available from Y Studios founder</li>
+          <li>Work included: homepage, collections, PDPs, slide cart, search rebuilds</li>
+        </ul>
+      </div>
+
+      <div class="confirm-group">
+        <div class="confirm-group-title inferred">⚠ Inferred — Needs confirmation</div>
+        <ul class="confirm-list">
+          <li>"8-figure brand" label — confirm Y Studios is comfortable with this characterization in a public context</li>
+          <li>Drop timeline in the table (Oct 2025 = Drop 1, etc.) — exact drop dates TBC, confirm the order is right</li>
+          <li>Two E£740K drops — brief says "E£740K on two other drops in a single day" — confirm: both happened on the same day? Or each hit E£740K on their respective launch days?</li>
+          <li>CVR held "at 2%" — brief says max CVR was 2% before; confirm this was maintained, not declined further</li>
+          <li>The "8 Figure" label in the page title — confirm this is based on EGP annual volume, not USD</li>
+        </ul>
+      </div>
+
+      <div class="confirm-group">
+        <div class="confirm-group-title open-q">? Open Questions — Required before publishing</div>
+        <ul class="confirm-list open-q">
+          <li>What is the single most important result the Y Studios founder wants highlighted?</li>
+          <li>Can you share the exact collection drop names and dates (Oct 2025–May 2026)?</li>
+          <li>What is the founder's video testimonial transcript? (Or permission to embed the video directly?)</li>
+          <li>Do you have analytics before/after screenshots for Y Studios? (Like the Fit Tribe webp files)</li>
+          <li>Are there any results or metrics that should NOT be publicly disclosed?</li>
+          <li>The funnel screenshots in the Funnel folder — are these design mockups (pre-launch) or live screenshots (post-launch)?</li>
+          <li>Is there a "before" screenshot of the site from 2024 or early 2025 for the before/after comparison?</li>
+          <li>Is Y Studios comfortable being named publicly on a case study page?</li>
+          <li>What was the CVR per drop? Was it consistently 2% or did it vary?</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">scalo.</div>
+      <a href="https://getscalo.com/value" class="footer-link" target="_blank" rel="noopener">More case studies →</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
