@@ -7,17 +7,17 @@ const featured = {
   client: "Y Studios",
   category: "Streetwear · Cairo, Egypt",
   metric: "+183%",
-  metricSub: "Revenue · $124K → $351K",
-  result: "4 out of 7 drops broke E£1M. CVR held at 2% across all drops at scale.",
+  metricSub: "Revenue · E£4.6M → E£13M ($124K → $351K)",
+  result: "4 of 7 drops broke E£1M (~$27K). Drop CVR averaged 6%. Ongoing in-stock CVR hit 2.3% across 197.7K sessions — revenue flowing between drops too.",
   quote: "Every drop now converts harder than the last.",
   attribution: "Y Studios, Founder",
   href: "/value/y-studios-case-study",
   image: "/images/case-studies/y-studios/homepage-after-desktop.png",
   floats: [
-    { pos: "top left", label: "Revenue growth", value: "+183%", trend: "Full year" },
-    { pos: "top right", label: "Drop CVR", value: "2.0%", trend: "At scale" },
-    { pos: "bottom left", label: "Peak drop", value: "E£1M+", trend: "4 of 7 drops" },
-    { pos: "bottom right", label: "Build time", value: "<30d", trend: "Full storefront" },
+    { pos: "top left", label: "Revenue growth", value: "+183%", trend: "E£4.6M → E£13M" },
+    { pos: "top right", label: "Drop CVR avg", value: "6%", trend: "Per drop" },
+    { pos: "bottom left", label: "Ongoing CVR", value: "2.3%", trend: "197.7K sessions" },
+    { pos: "bottom right", label: "Peak drop", value: "E£1M+", trend: "4 of 7 drops" },
   ],
 };
 
@@ -27,7 +27,7 @@ const secondary = [
     client: "Fit Tribe",
     category: "Activewear · Egypt",
     metric: "+16%",
-    sub: "Revenue · Q4 2025 → Q1 2026",
+    sub: "Revenue while TikTok traffic 21%↑",
     image: "/images/case-studies/fit-tribe/collections-after-desktop.png",
     href: "/value/fit-tribe-case-study",
   },
@@ -151,16 +151,16 @@ export default function Cases() {
 
               {/* Floating result cards — positioned around the mockup */}
               <div className="absolute top-8 left-4 z-20">
-                <FloatCard label="Revenue growth" value="+183%" trend="Full year" />
+                <FloatCard label="Revenue growth" value="+183%" trend="E£4.6M → E£13M" />
               </div>
               <div className="absolute top-8 right-4 z-20">
-                <FloatCard label="Drop CVR" value="2.0%" trend="At scale" />
+                <FloatCard label="Drop CVR avg" value="6%" trend="Per drop" />
               </div>
               <div className="absolute bottom-8 left-4 z-20">
-                <FloatCard label="Peak drop" value="E£1M+" trend="4 of 7 drops" />
+                <FloatCard label="Ongoing CVR" value="2.3%" trend="197.7K sessions" />
               </div>
               <div className="absolute bottom-8 right-4 z-20">
-                <FloatCard label="Build time" value="<30d" trend="Full storefront" />
+                <FloatCard label="Peak drop" value="E£1M+" trend="4 of 7 drops" />
               </div>
             </div>
           </div>
