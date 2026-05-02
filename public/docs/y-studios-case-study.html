@@ -93,6 +93,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 48px 0 40px; position: relative; z-index: 1; }
 /* Brand + niche row */
 .cover-brand-row { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.cover-brand-logo { height: 28px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.8; }
 .cover-brand-name { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-3); }
 .cover-niche-pill {
   display: inline-flex; align-items: center;
@@ -330,7 +331,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 
   <div class="cover-body">
     <div class="cover-brand-row">
-      <span class="cover-brand-name">Y Studios</span>
+      <img class="cover-brand-logo" src="/images/logos/y-studios.svg" alt="Y Studios">
       <span class="cover-niche-pill">Streetwear</span>
     </div>
     <div class="cover-headline">

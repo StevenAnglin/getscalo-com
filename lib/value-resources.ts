@@ -120,6 +120,7 @@ export interface ValueResource {
   description: string;
   tool: string;
   audience: string[];
+  logo?: string;
   password?: string;
   bypassToken?: string;
   docPath?: string;
@@ -462,6 +463,7 @@ Design rules:
   },
   {
     slug: "fit-tribe-case-study",
+    logo: "/images/logos/fit-tribe.svg",
     title: "How Fit Tribe held 1.24% CVR while scaling TikTok traffic by 21%.",
     subtitle: "Fit Tribe",
     eyebrow: "CRO · Brand Redesign",
@@ -477,6 +479,7 @@ Design rules:
   },
   {
     slug: "y-studios-case-study",
+    logo: "/images/logos/y-studios.svg",
     title: "How Y Studios went from $124K to $351K, with 4/7 drops breaking E£1M.",
     subtitle: "Y Studios",
     eyebrow: "CRO · Full Storefront",
@@ -492,6 +495,7 @@ Design rules:
   },
   {
     slug: "tet-case-study",
+    logo: "/images/logos/tet.svg",
     title: "Learning Courses Platform Migration",
     subtitle: "TET / Trusted English Trainers",
     eyebrow: "Platform Migration · Custom Build",

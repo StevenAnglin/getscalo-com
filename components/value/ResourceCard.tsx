@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getValueResourceHref, type ValueResource } from "@/lib/value-resources";
@@ -31,9 +32,21 @@ export default function ResourceCard({ resource, dark }: ResourceCardProps) {
       {/* Top bar */}
       <div className={`flex items-center justify-between border-b ${topBorder} px-6 py-4 lg:px-7`}>
         <div className="flex items-center gap-3">
-          <span className={`text-sm font-medium ${subtitleText}`}>
-            {resource.subtitle || resource.niche || resource.eyebrow}
-          </span>
+          {resource.logo ? (
+            <Image
+              src={resource.logo}
+              alt={resource.subtitle}
+              width={100}
+              height={24}
+              className="h-5 w-auto object-contain"
+              style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+              unoptimized
+            />
+          ) : (
+            <span className={`text-sm font-medium ${subtitleText}`}>
+              {resource.subtitle || resource.niche || resource.eyebrow}
+            </span>
+          )}
           {resource.resultPill && (
             <span className="inline-flex items-center rounded-full border border-[var(--scalo-accent)]/30 bg-[var(--scalo-accent)]/10 px-2.5 py-0.5 text-[11px] font-medium tracking-wide text-[var(--scalo-accent)]">
               {resource.resultPill}
