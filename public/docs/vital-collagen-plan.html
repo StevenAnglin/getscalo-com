@@ -124,6 +124,22 @@ body {
   border: 1px solid;
 }
 
+
+.cover-glow-top {
+  position: absolute; top: -120px; left: -80px;
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse at 20% 20%, rgba(170,255,0,0.13) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cover-accent {
+  background: #AAFF00;
+  color: #0C0C09;
+  padding: 0 6px 2px;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
 .cover-grid {
   position: absolute;
   inset: 0;
@@ -965,6 +981,7 @@ p:last-child { margin-bottom: 0; }
 <div class="cover">
   <div class="cover-grid"></div>
   <div class="cover-glow"></div>
+  <div class="cover-glow-top"></div>
   <div class="cover-rings">
     <div class="cover-ring" style="inset:0;border-color:rgba(255,255,255,0.03)"></div>
     <div class="cover-ring" style="inset:70px;border-color:rgba(255,255,255,0.04)"></div>
@@ -980,7 +997,7 @@ p:last-child { margin-bottom: 0; }
 
   <div class="cover-body">
     <div class="cover-eyebrow">Internal Strategy Document — CRO</div>
-    <div class="cover-title">Vital Collagen<br>Website<br>Optimization Plan</div>
+    <div class="cover-title">Vital Collagen<br>Website<br><span class="cover-accent" style="font-size:inherit;font-style:normal">Optimization Plan</span></div>
     <div class="cover-subtitle">Full Test Suite — 62 Tests Across All Pages</div>
     <div class="cover-rule"></div>
     <div class="cover-desc">

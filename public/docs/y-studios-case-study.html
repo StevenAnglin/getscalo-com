@@ -58,8 +58,24 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 .cover-glow {
   position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%);
   width: 800px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(170,255,0,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.18) 0%, transparent 65%);
   pointer-events: none;
+}
+
+.cover-glow-top {
+  position: absolute; top: -120px; left: -80px;
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse at 20% 20%, rgba(170,255,0,0.13) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover-accent {
+  background: #AAFF00;
+  color: #0C0C09;
+  padding: 0 6px 2px;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  font-style: normal;
 }
 .cover-grid {
   position: absolute; inset: 0;
@@ -305,6 +321,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
 <section class="cover">
   <div class="cover-grid"></div>
   <div class="cover-glow"></div>
+  <div class="cover-glow-top"></div>
 
   <div class="cover-wordmark">
     <span class="wordmark-serif">scalo</span>
@@ -317,7 +334,7 @@ body { background: var(--black); color: var(--fg-1); font-family: var(--sans); f
       <span class="cover-niche-pill">Streetwear</span>
     </div>
     <div class="cover-headline">
-      How Y Studios went from $124K to $351K, with 4 out of 7 drops breaking E£1M.
+      How Y Studios went from $124K to <span class="cover-accent">$351K</span>, with 4 out of 7 drops breaking E£1M.
     </div>
     <div class="cover-overview">
       Y Studios is an Egyptian streetwear brand built on limited drops. We've managed the site since October 2025 — full storefront redesign, premium repositioning, and drop-by-drop management. Revenue grew 183% across the engagement.

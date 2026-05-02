@@ -67,8 +67,24 @@ body {
 .cover-glow {
   position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%);
   width: 800px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(170,255,0,0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(170,255,0,0.18) 0%, transparent 65%);
   pointer-events: none;
+}
+
+.cover-glow-top {
+  position: absolute; top: -120px; left: -80px;
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse at 20% 20%, rgba(170,255,0,0.13) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover-accent {
+  background: #AAFF00;
+  color: #0C0C09;
+  padding: 0 6px 2px;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  font-style: normal;
 }
 .cover-grid {
   position: absolute; inset: 0;
@@ -606,6 +622,7 @@ body {
 <section class="cover">
   <div class="cover-grid"></div>
   <div class="cover-glow"></div>
+  <div class="cover-glow-top"></div>
 
   <div class="cover-wordmark">
     <span class="wordmark-serif">scalo</span>
@@ -618,7 +635,7 @@ body {
       <span class="cover-niche-pill">Activewear</span>
     </div>
     <div class="cover-headline">
-      How Fit Tribe held conversion while scaling TikTok traffic by 21%.
+      How Fit Tribe held conversion while scaling TikTok traffic by <span class="cover-accent">21%</span>.
     </div>
     <div class="cover-overview">
       Fit Tribe scaled from 352K to 424K sessions in one quarter. TikTok made up 40% of traffic and converted at 0.1% — down from 2%. Blended CVR still rose from 1.16% to 1.24%. After TikTok was removed, CVR reached 1.86%.

@@ -35,7 +35,7 @@ export default function Hero() {
         {/* Headline */}
         <div className="hero-animate" style={{ animationDelay: "90ms" }}>
           <h1 className="display-xl text-white max-w-[1060px] mx-auto lg:mx-0">
-            Your store loses{" "}
+            <span style={{ background: "var(--scalo-accent)", color: "#0C0C09", padding: "0 8px 4px", display: "inline", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>Your store loses</span>{" "}
             <span className="italic-editorial text-[var(--scalo-accent)]">revenue</span>{" "}
             every day.
             <br />

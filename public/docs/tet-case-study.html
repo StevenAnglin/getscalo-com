@@ -70,6 +70,22 @@ body {
   background: radial-gradient(ellipse at center, rgba(170,255,0,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
+
+.cover-glow-top {
+  position: absolute; top: -120px; left: -80px;
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse at 20% 20%, rgba(170,255,0,0.13) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover-accent {
+  background: #AAFF00;
+  color: #0C0C09;
+  padding: 0 6px 2px;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  font-style: normal;
+}
 .cover-grid {
   position: absolute; inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='rgba(255%2C255%2C255%2C0.04)'/%3E%3C/svg%3E");
@@ -293,6 +309,7 @@ body {
 <section class="cover">
   <div class="cover-grid"></div>
   <div class="cover-glow"></div>
+  <div class="cover-glow-top"></div>
 
   <div class="cover-wordmark">
     <span class="wordmark-serif">scalo</span>
@@ -305,7 +322,7 @@ body {
       <span class="cover-niche-pill">EdTech</span>
     </div>
     <div class="cover-headline">
-      How TET migrated from Teachable to Shopify with a full custom build.
+      How TET migrated from Teachable to <span class="cover-accent">Shopify</span> with a full custom build.
     </div>
     <div class="cover-overview">
       TET — Trusted English Trainers — had outgrown Teachable. We migrated the full platform to Shopify: custom Figma-to-Shopify theme, blog, product pages, and mobile-optimized components.
