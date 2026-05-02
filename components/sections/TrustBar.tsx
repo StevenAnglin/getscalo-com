@@ -1,20 +1,40 @@
-const logos = [
-  { name: "Y Studios", sub: "+$340K recovered" },
-  { name: "Fit Tribe", sub: "+23% RPV" },
-  { name: "Marble & Co", sub: "+18% CVR" },
-  { name: "Peak Form", sub: "+$120K/mo" },
-  { name: "Craft Supply Co", sub: "+31% AOV" },
-  { name: "The Mod Collective", sub: "+$67K recovered" },
+import Image from "next/image";
+
+type LogoEntry = {
+  name: string;
+  sub: string;
+  logo?: string; // path to flat-color logo image
+};
+
+const logos: LogoEntry[] = [
+  { name: "Y Studios",               sub: "+183% revenue",         logo: "/images/logos/y-studios.svg"          },
+  { name: "Fit Tribe",               sub: "+23% RPV",              logo: "/images/logos/fit-tribe.svg"          },
+  { name: "Sulb",                    sub: "Active project",        logo: "/images/logos/sulb.svg"               },
+  { name: "Tykes Collections",       sub: "8-figure exit",         logo: "/images/logos/tykes-collections.svg"  },
+  { name: "Vital Collagen",          sub: "Active project",        logo: "/images/logos/vital-collagen.svg"     },
+  { name: "Trusted English Trainer", sub: "Seamless migration",    logo: "/images/logos/tet.svg"                },
 ];
 
 const track = [...logos, ...logos];
 
-function LogoItem({ name, sub }: { name: string; sub: string }) {
+function LogoItem({ name, sub, logo }: LogoEntry) {
   return (
     <div className="flex items-center gap-3 mx-8 shrink-0">
-      <span className="text-lg font-medium tracking-tight text-white/55 whitespace-nowrap">
-        {name}
-      </span>
+      {logo ? (
+        <Image
+          src={logo}
+          alt={name}
+          width={120}
+          height={32}
+          className="h-7 w-auto object-contain"
+          style={{ opacity: 0.5, filter: "brightness(0) invert(1)" }}
+          unoptimized
+        />
+      ) : (
+        <span className="text-lg font-medium tracking-tight text-white/55 whitespace-nowrap">
+          {name}
+        </span>
+      )}
       <span className="text-[10px] text-[var(--scalo-accent)] tnum bg-[var(--scalo-accent)]/10 border border-[var(--scalo-accent)]/25 px-2 py-0.5 rounded-full font-medium whitespace-nowrap">
         {sub}
       </span>
