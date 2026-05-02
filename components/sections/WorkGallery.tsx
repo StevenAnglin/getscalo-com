@@ -34,6 +34,14 @@ const col4: ImgItem[] = [
   { src: "/images/case-studies/fit-tribe/new/ft-04.png",  alt: "Fit Tribe navigation",        aspect: "4/3"   },
 ];
 
+const col5: ImgItem[] = [
+  { src: "/images/case-studies/fit-tribe/new/ft-02.png",  alt: "Fit Tribe PDP",               aspect: "9/16"  },
+  { src: "/images/case-studies/y-studios/new/ys-04.png",  alt: "Y Studios nav desktop",       aspect: "16/9"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-13.png",  alt: "Fit Tribe collections",       aspect: "9/16"  },
+  { src: "/images/case-studies/tet/new/tet-01.png",       alt: "TET platform desktop",        aspect: "16/9"  },
+  { src: "/images/case-studies/fit-tribe/new/ft-12.png",  alt: "Fit Tribe new arrivals",      aspect: "9/16"  },
+];
+
 function GalleryImage({ src, alt, aspect }: ImgItem) {
   return (
     <div className="relative w-full overflow-hidden rounded-xl glass-card shrink-0" style={{ aspectRatio: aspect }}>
@@ -65,7 +73,7 @@ function GalleryColumn({ items, direction }: { items: ImgItem[]; direction: "up"
 export default function WorkGallery() {
   return (
     <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "#0C0C09" }}>
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1680px] mx-auto px-6 lg:px-10">
 
         {/* Header */}
         <div className="flex items-end justify-between mb-12 lg:mb-16" data-reveal>
@@ -81,12 +89,13 @@ export default function WorkGallery() {
           </p>
         </div>
 
-        {/* 4-column scrolling gallery */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 h-[520px] lg:h-[640px]" data-reveal data-delay="100">
+        {/* 5-column scrolling gallery — 2 cols on mobile */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 h-[520px] lg:h-[660px]" data-reveal data-delay="100">
           <GalleryColumn items={col1} direction="up" />
           <GalleryColumn items={col2} direction="down" />
           <GalleryColumn items={col3} direction="up" />
           <GalleryColumn items={col4} direction="down" />
+          <GalleryColumn items={col5} direction="up" />
         </div>
 
       </div>

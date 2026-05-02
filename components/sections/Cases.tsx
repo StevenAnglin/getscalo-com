@@ -28,7 +28,7 @@ const secondary = [
     category: "Activewear · Egypt",
     metric: "+16%",
     sub: "TikTok CVR ↓ as traffic scaled — we reversed it",
-    image: "/images/case-studies/fit-tribe/collections-after-desktop.png",
+    image: "/images/case-studies/fit-tribe/new/ft-07.png",
     href: "/value/fit-tribe-case-study",
   },
   {
@@ -37,7 +37,7 @@ const secondary = [
     category: "EdTech · Learning Platform",
     metric: "Full Migration",
     sub: "Teachable → Shopify",
-    image: null as string | null,
+    image: "/images/case-studies/tet/new/tet-01.png" as string | null,
     href: "/value/tet-case-study",
   },
 ];
@@ -75,7 +75,36 @@ export default function Cases() {
 
         {/* Featured hero case */}
         <div className="relative rounded-3xl overflow-hidden glass-card" data-reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+
+          {/* Mobile: image-centric overlay card */}
+          <Link href={featured.href} className="lg:hidden relative block" style={{ aspectRatio: "4/3" }}>
+            <Image
+              src={featured.image}
+              alt={featured.client}
+              fill
+              className="object-cover object-top"
+              sizes="800px"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C09] via-[#0C0C09]/40 to-transparent" />
+            <div className="absolute bottom-0 inset-x-0 p-5 flex items-end justify-between">
+              <div>
+                <div className="text-[10px] uppercase tracking-widest text-[var(--scalo-accent)] mb-1 font-medium">{featured.tag}</div>
+                <div className="text-2xl font-bold text-white leading-none">{featured.client}</div>
+                <div className="text-xs text-white/40 mt-1">{featured.category}</div>
+              </div>
+              <div className="text-right shrink-0 ml-4">
+                <div className="tnum text-3xl font-bold text-[var(--scalo-accent)]">{featured.metric}</div>
+                <div className="text-[10px] text-white/35 uppercase tracking-widest mt-0.5">Revenue</div>
+              </div>
+            </div>
+            <div className="absolute top-4 right-4 w-8 h-8 rounded-full glass-card flex items-center justify-center">
+              <ArrowUpRight className="w-3.5 h-3.5 text-[var(--scalo-accent)]" />
+            </div>
+          </Link>
+
+          {/* Desktop: full two-column layout */}
+          <div className="hidden lg:grid grid-cols-2">
 
             {/* Left: copy */}
             <div className="flex flex-col justify-between p-10 lg:p-14 xl:p-16">
@@ -160,7 +189,7 @@ export default function Cases() {
                 <FloatCard label="Ongoing CVR" value="2.3%" trend="197.7K sessions" />
               </div>
               <div className="absolute bottom-8 right-4 z-20">
-                <FloatCard label="Peak drop" value="E£1M+" trend="4 of 7 drops" />
+                <FloatCard label="Peak drop" value="E£1.4M" trend="~$30K · 1 drop" />
               </div>
             </div>
           </div>
