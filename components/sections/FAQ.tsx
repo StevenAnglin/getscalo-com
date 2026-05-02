@@ -38,7 +38,7 @@ export default function FAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Sticky heading */}
           <div className="lg:col-span-4" data-reveal>
-            <h2 className="display-md text-[var(--scalo-cream)] lg:sticky lg:top-24">
+            <h2 className="display-md text-[var(--scalo-ink)] lg:sticky lg:top-24">
               Straight{" "}
               <span className="italic-editorial text-[var(--scalo-ember)]">answers.</span>
             </h2>
@@ -56,13 +56,13 @@ export default function FAQ() {
                   value={`q-${i}`}
                   className="border-none border-b border-[var(--scalo-border-hairline)] last:border-b-0"
                 >
-                  <AccordionTrigger className="text-left hover:no-underline py-6 gap-4 group data-[state=open]:text-[var(--scalo-cream)] transition-colors [&>svg]:text-[var(--scalo-fg-3)] [&>svg]:shrink-0">
+                  <AccordionTrigger className="text-left hover:no-underline py-6 gap-4 group data-[state=open]:text-[var(--scalo-ink)] transition-colors [&>svg]:text-[var(--scalo-fg-3)] [&>svg]:shrink-0">
                     <div className="flex items-start gap-4 flex-1">
                       {/* Decorative question number */}
                       <span className="tnum text-[11px] text-[var(--scalo-ember)] font-medium tracking-widest mt-0.5 shrink-0 opacity-70 group-data-[state=open]:opacity-100 transition-opacity">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-base lg:text-lg text-[var(--scalo-fg-2)] group-hover:text-[var(--scalo-cream)] group-data-[state=open]:text-[var(--scalo-cream)] transition-colors">
+                      <span className="text-base lg:text-lg text-[var(--scalo-fg-2)] group-hover:text-[var(--scalo-ink)] group-data-[state=open]:text-[var(--scalo-ink)] transition-colors">
                         {item.q}
                       </span>
                     </div>

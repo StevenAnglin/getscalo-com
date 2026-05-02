@@ -46,14 +46,15 @@ export default function Nav() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "backdrop-blur-xl bg-[var(--scalo-bg-0)]/88 border-b border-[var(--scalo-border-hairline)] shadow-[0_1px_24px_rgba(0,0,0,0.4)]"
+            ? "bg-[var(--scalo-bg-0)]/95 border-b border-[var(--scalo-border-ghost)] shadow-[0_1px_0_rgba(20,20,15,0.06),0_4px_16px_rgba(20,20,15,0.06)]"
             : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
           <a
             href={resolveHref("#home", isHomePage)}
-            className="text-2xl font-medium tracking-tight text-[var(--scalo-cream)] z-10"
+            className="text-2xl font-medium tracking-tight text-[var(--scalo-ink)] z-10"
+            style={{ fontFamily: 'var(--font-serif)', fontStyle: "italic" }}
           >
             scalo.
           </a>
@@ -64,7 +65,7 @@ export default function Nav() {
               <a
                 key={l.href}
                 href={resolveHref(l.href, isHomePage)}
-                className="relative py-1 hover:text-[var(--scalo-cream)] transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-[var(--scalo-ember)] after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100"
+                className="relative py-1 hover:text-[var(--scalo-ink)] transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-[var(--scalo-accent)] after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100"
               >
                 {l.label}
               </a>
@@ -74,7 +75,7 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <a
               href={resolveHref("#book", isHomePage)}
-              className="hidden md:inline-flex items-center gap-1.5 bg-[var(--scalo-ember)] hover:bg-[var(--scalo-ember)]/90 text-[var(--scalo-bg-0)] rounded-full font-medium h-10 px-5 text-sm transition-colors btn-press"
+              className="hidden md:inline-flex items-center gap-1.5 bg-[var(--scalo-accent)] hover:bg-[var(--scalo-accent-dim)] text-[var(--scalo-ink)] rounded-full font-semibold h-10 px-5 text-sm transition-colors btn-press"
             >
               Book an audit <ArrowUpRight className="w-4 h-4" />
             </a>
@@ -82,7 +83,7 @@ export default function Nav() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden w-10 h-10 flex items-center justify-center text-[var(--scalo-fg-2)] hover:text-[var(--scalo-cream)] transition-colors"
+              className="md:hidden w-10 h-10 flex items-center justify-center text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] transition-colors"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -99,12 +100,12 @@ export default function Nav() {
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-[var(--scalo-bg-0)]/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-[var(--scalo-bg-0)]/70"
           onClick={() => setMobileOpen(false)}
         />
         {/* Drawer */}
         <div
-          className={`absolute top-16 left-0 right-0 bg-[var(--scalo-bg-1)] border-b border-[var(--scalo-border-ghost)] transition-transform duration-400 ${
+          className={`absolute top-16 left-0 right-0 bg-[var(--scalo-bg-0)] border-b border-[var(--scalo-border-ghost)] transition-transform duration-400 ${
             mobileOpen ? "translate-y-0" : "-translate-y-4"
           }`}
         >
@@ -114,7 +115,7 @@ export default function Nav() {
                 key={l.href}
                 href={resolveHref(l.href, isHomePage)}
                 onClick={() => setMobileOpen(false)}
-                className="text-lg font-medium text-[var(--scalo-fg-2)] hover:text-[var(--scalo-cream)] py-3 border-b border-[var(--scalo-border-hairline)] last:border-b-0 transition-colors"
+                className="text-lg font-medium text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] py-3 border-b border-[var(--scalo-border-hairline)] last:border-b-0 transition-colors"
               >
                 {l.label}
               </a>
@@ -122,7 +123,7 @@ export default function Nav() {
             <a
               href={resolveHref("#book", isHomePage)}
               onClick={() => setMobileOpen(false)}
-              className="mt-6 inline-flex items-center justify-center gap-1.5 bg-[var(--scalo-ember)] hover:bg-[var(--scalo-ember)]/90 text-[var(--scalo-bg-0)] rounded-full h-12 px-6 text-sm font-medium transition-colors"
+              className="mt-6 inline-flex items-center justify-center gap-1.5 bg-[var(--scalo-accent)] hover:bg-[var(--scalo-accent-dim)] text-[var(--scalo-ink)] rounded-full h-12 px-6 text-sm font-semibold transition-colors"
             >
               Book an audit <ArrowUpRight className="w-4 h-4" />
             </a>

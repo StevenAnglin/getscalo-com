@@ -15,7 +15,7 @@ const rows: [string, string, string, string, string][] = [
 function Cell({ value, highlighted }: { value: string; highlighted?: boolean }) {
   if (value === "✓") {
     return (
-      <div className={`inline-flex items-center justify-center w-7 h-7 rounded-full ${highlighted ? "bg-[var(--scalo-ember)] text-[var(--scalo-bg-0)]" : "bg-[var(--scalo-bg-3)] text-[var(--scalo-fg-2)]"}`}>
+      <div className={`inline-flex items-center justify-center w-7 h-7 rounded-full ${highlighted ? "bg-[var(--scalo-ember)] text-[var(--scalo-ink)]" : "bg-[var(--scalo-bg-3)] text-[var(--scalo-fg-2)]"}`}>
         <Check className="w-4 h-4" strokeWidth={2.5} />
       </div>
     );
@@ -23,7 +23,7 @@ function Cell({ value, highlighted }: { value: string; highlighted?: boolean }) 
   if (value === "—") {
     return <Minus className="w-4 h-4 text-[var(--scalo-fg-3)]" strokeWidth={1.5} />;
   }
-  return <span className={`text-sm ${highlighted ? "text-[var(--scalo-cream)] font-medium" : "text-[var(--scalo-fg-3)]"}`}>{value}</span>;
+  return <span className={`text-sm ${highlighted ? "text-[var(--scalo-ink)] font-medium" : "text-[var(--scalo-fg-3)]"}`}>{value}</span>;
 }
 
 export default function Comparison() {
@@ -31,7 +31,7 @@ export default function Comparison() {
     <section id="compare" className="py-24 lg:py-32 bg-grid-fade">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-20 max-w-[800px]" data-reveal>
-          <h2 className="display-lg text-[var(--scalo-cream)]">
+          <h2 className="display-lg text-[var(--scalo-ink)]">
             Scalo vs.{" "}
             <span className="italic-editorial text-[var(--scalo-ember)]">the alternatives.</span>
           </h2>
@@ -77,7 +77,7 @@ export default function Comparison() {
           </table>
         </div>
 
-        <a href="#book" className="inline-flex items-center gap-1.5 text-sm text-[var(--scalo-fg-2)] hover:text-[var(--scalo-cream)] mt-12 border-b border-[var(--scalo-border-ghost)] hover:border-[var(--scalo-ember)] pb-1 transition-colors" data-reveal data-delay="200">
+        <a href="#book" className="inline-flex items-center gap-1.5 text-sm text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] mt-12 border-b border-[var(--scalo-border-ghost)] hover:border-[var(--scalo-ember)] pb-1 transition-colors" data-reveal data-delay="200">
           Book a 30-min audit call →
         </a>
       </div>

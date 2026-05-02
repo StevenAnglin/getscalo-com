@@ -14,7 +14,7 @@ export default function Team() {
 
               {/* Ember corner wash */}
               <div className="absolute -bottom-10 -right-10 w-80 h-80 pointer-events-none"
-                style={{ background: "radial-gradient(circle at 70% 70%, rgba(139,28,28,0.28) 0%, rgba(139,28,28,0) 70%)" }} />
+                style={{ background: "radial-gradient(circle at 70% 70%, rgba(170,255,0,0.28) 0%, rgba(170,255,0,0) 70%)" }} />
 
               {/* Avatar block */}
               <div className="relative flex flex-col items-center gap-3 pt-10 pb-8 px-8">
@@ -36,7 +36,7 @@ export default function Team() {
                   <div key={i}>
                     <div className="flex items-center justify-between py-4">
                       <span className="text-[10px] uppercase tracking-widest text-[var(--scalo-fg-3)]">{s.label}</span>
-                      <span className={`tnum text-sm font-medium ${s.ember ? "text-[var(--scalo-ember)]" : "text-[var(--scalo-cream)]"}`}>{s.value}</span>
+                      <span className={`tnum text-sm font-medium ${s.ember ? "text-[var(--scalo-ember)]" : "text-[var(--scalo-ink)]"}`}>{s.value}</span>
                     </div>
                     <div className="h-px bg-[var(--scalo-border-hairline)]" />
                   </div>
@@ -59,7 +59,7 @@ export default function Team() {
 
           {/* Text column */}
           <div className="lg:col-span-7 order-1 lg:order-2" data-reveal data-delay="150">
-            <h2 className="display-lg text-[var(--scalo-cream)]">
+            <h2 className="display-lg text-[var(--scalo-ink)]">
               Steven personally audits{" "}
               <span className="italic-editorial text-[var(--scalo-ember)]">every store.</span>
             </h2>
@@ -75,7 +75,7 @@ export default function Team() {
                 { value: "5%", label: "Min RPV Guarantee" },
               ].map((s) => (
                 <div key={s.label} className="border-l-2 border-[var(--scalo-border-strong)] pl-4">
-                  <div className="tnum text-2xl font-medium text-[var(--scalo-cream)]">{s.value}</div>
+                  <div className="tnum text-2xl font-medium text-[var(--scalo-ink)]">{s.value}</div>
                   <div className="text-[11px] uppercase tracking-widest text-[var(--scalo-fg-3)] mt-1">{s.label}</div>
                 </div>
               ))}

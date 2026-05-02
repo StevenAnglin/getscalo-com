@@ -10,7 +10,7 @@ export default function Resources() {
     <section id="resources" className="py-24 lg:py-32 bg-[var(--scalo-bg-1)]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-20 max-w-[800px]" data-reveal>
-          <h2 className="display-lg text-[var(--scalo-cream)]">
+          <h2 className="display-lg text-[var(--scalo-ink)]">
             Real results,{" "}
             <span className="italic-editorial text-[var(--scalo-ember)]">documented.</span>
           </h2>

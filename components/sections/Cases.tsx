@@ -64,7 +64,7 @@ function CaseCard({ index, client, category, tag, metric, metricLabel, goal, app
   return (
     <Card className="bg-[var(--scalo-bg-2)] border-[var(--scalo-border-ghost)] ring-0 rounded-2xl overflow-hidden">
       <CardHeader className="px-8 pt-8 pb-0 relative">
-        <div className="absolute top-4 right-6 tnum text-[80px] font-medium leading-none text-[var(--scalo-cream)]/[0.04] select-none pointer-events-none tracking-tight">
+        <div className="absolute top-4 right-6 tnum text-[80px] font-medium leading-none text-[var(--scalo-ink)]/[0.04] select-none pointer-events-none tracking-tight">
           {index.replace("CASE ", "")}
         </div>
         <div className="flex items-center justify-between relative">
@@ -73,7 +73,7 @@ function CaseCard({ index, client, category, tag, metric, metricLabel, goal, app
             {tag}
           </Badge>
         </div>
-        <CardTitle className="text-2xl sm:text-3xl font-medium text-[var(--scalo-cream)] tracking-tight mt-4">{client}</CardTitle>
+        <CardTitle className="text-2xl sm:text-3xl font-medium text-[var(--scalo-ink)] tracking-tight mt-4">{client}</CardTitle>
         <CardDescription className="text-[var(--scalo-fg-3)] text-sm mt-1">{category}</CardDescription>
       </CardHeader>
 
@@ -90,7 +90,7 @@ function CaseCard({ index, client, category, tag, metric, metricLabel, goal, app
             <span className="text-[var(--scalo-fg-3)] font-medium">Approach — </span>{approach}
           </p>
         </div>
-        <blockquote className="border-l-2 border-[var(--scalo-ember)] pl-5 italic-editorial text-base leading-relaxed text-[var(--scalo-cream)]">
+        <blockquote className="border-l-2 border-[var(--scalo-ember)] pl-5 italic-editorial text-base leading-relaxed text-[var(--scalo-ink)]">
           &ldquo;{quote}&rdquo;
           <footer className="text-xs not-italic text-[var(--scalo-fg-3)] mt-3 tracking-wide font-sans">— {attribution}</footer>
         </blockquote>
@@ -98,11 +98,11 @@ function CaseCard({ index, client, category, tag, metric, metricLabel, goal, app
 
       <CardFooter className="px-8 pb-8 pt-0 border-none bg-transparent">
         {href ? (
-          <Link href={href} className="inline-flex items-center gap-1.5 text-sm text-[var(--scalo-cream)] border-b border-[var(--scalo-border-strong)] pb-1 hover:border-[var(--scalo-ember)] transition-colors">
+          <Link href={href} className="inline-flex items-center gap-1.5 text-sm text-[var(--scalo-ink)] border-b border-[var(--scalo-border-strong)] pb-1 hover:border-[var(--scalo-ember)] transition-colors">
             Read case study <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         ) : (
-          <span className="inline-flex items-center gap-1.5 text-sm text-[var(--scalo-cream)] border-b border-[var(--scalo-border-strong)] pb-1">
+          <span className="inline-flex items-center gap-1.5 text-sm text-[var(--scalo-ink)] border-b border-[var(--scalo-border-strong)] pb-1">
             Read case study <ArrowUpRight className="w-3.5 h-3.5" />
           </span>
         )}
@@ -166,7 +166,7 @@ export default function Cases() {
 
         {/* Header */}
         <div className="flex items-end justify-between mb-12 lg:mb-16" data-reveal>
-          <h2 className="display-lg text-[var(--scalo-cream)] max-w-[620px]">
+          <h2 className="display-lg text-[var(--scalo-ink)] max-w-[620px]">
             Real clients.{" "}
             <span className="italic-editorial text-[var(--scalo-ember)]">Real numbers.</span>
           </h2>
@@ -177,11 +177,11 @@ export default function Cases() {
             </span>
             <div className="flex gap-2">
               <button onClick={prev} aria-label="Previous"
-                className="w-10 h-10 rounded-full border border-[var(--scalo-border-strong)] flex items-center justify-center text-[var(--scalo-fg-2)] hover:text-[var(--scalo-cream)] hover:border-[var(--scalo-cream)] transition-colors">
+                className="w-10 h-10 rounded-full border border-[var(--scalo-border-strong)] flex items-center justify-center text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] hover:border-[var(--scalo-ink)] transition-colors">
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button onClick={next} aria-label="Next"
-                className="w-10 h-10 rounded-full border border-[var(--scalo-border-strong)] flex items-center justify-center text-[var(--scalo-fg-2)] hover:text-[var(--scalo-cream)] hover:border-[var(--scalo-cream)] transition-colors">
+                className="w-10 h-10 rounded-full border border-[var(--scalo-border-strong)] flex items-center justify-center text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] hover:border-[var(--scalo-ink)] transition-colors">
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>

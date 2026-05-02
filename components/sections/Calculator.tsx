@@ -11,7 +11,7 @@ export default function Calculator() {
     <section id="calculator" className="bg-[var(--scalo-bg-1)] py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="mb-12 lg:mb-16 max-w-[760px] mx-auto text-center" data-reveal>
-          <h2 className="display-md text-[var(--scalo-cream)]">
+          <h2 className="display-md text-[var(--scalo-ink)]">
             See what 1% looks like{" "}
             <span className="italic-editorial text-[var(--scalo-ember)]">for your store.</span>
           </h2>
@@ -34,7 +34,7 @@ export default function Calculator() {
                     type="number"
                     value={revenue}
                     onChange={(e) => setRevenue(Number(e.target.value) || 0)}
-                    className="bg-transparent text-3xl font-medium text-[var(--scalo-cream)] outline-none flex-1 tnum"
+                    className="bg-transparent text-3xl font-medium text-[var(--scalo-ink)] outline-none flex-1 tnum"
                     placeholder="100,000"
                   />
                 </div>
@@ -68,7 +68,7 @@ export default function Calculator() {
               {/* Output — ember number with subtle glow */}
               <div className="pt-8 border-t border-[var(--scalo-border-ghost)] text-center relative">
                 <div className="pointer-events-none absolute inset-0"
-                  style={{ background: "radial-gradient(ellipse 60% 60% at 50% 80%, rgba(139,28,28,0.08) 0%, transparent 100%)" }} />
+                  style={{ background: "radial-gradient(ellipse 60% 60% at 50% 80%, rgba(170,255,0,0.08) 0%, transparent 100%)" }} />
                 <div className="text-xs uppercase tracking-widest text-[var(--scalo-fg-3)] mb-4">
                   Additional Revenue / Year
                 </div>
@@ -82,7 +82,7 @@ export default function Calculator() {
 
               <a
                 href="#book"
-                className="flex items-center justify-center gap-1.5 w-full bg-[var(--scalo-ember)] hover:bg-[var(--scalo-ember)]/90 text-[var(--scalo-bg-0)] rounded-full h-12 text-sm font-medium transition-colors btn-press"
+                className="flex items-center justify-center gap-1.5 w-full bg-[var(--scalo-ember)] hover:bg-[var(--scalo-ember)]/90 text-[var(--scalo-ink)] rounded-full h-12 text-sm font-medium transition-colors btn-press"
               >
                 Ready? Book a teardown <ArrowUpRight className="w-4 h-4" />
               </a>

@@ -12,7 +12,7 @@ const track = [...logos, ...logos];
 function LogoItem({ name, sub }: { name: string; sub: string }) {
   return (
     <div className="flex items-center gap-3 mx-8 shrink-0">
-      <span className="text-lg font-medium tracking-tight text-[var(--scalo-cream)]/65 whitespace-nowrap">
+      <span className="text-lg font-medium tracking-tight text-[var(--scalo-ink)]/65 whitespace-nowrap">
         {name}
       </span>
       <span className="text-[10px] text-[var(--scalo-ember)] tnum bg-[var(--scalo-ember)]/10 border border-[var(--scalo-ember)]/25 px-2 py-0.5 rounded-full font-medium whitespace-nowrap">
