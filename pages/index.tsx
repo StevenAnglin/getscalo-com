@@ -2,6 +2,7 @@ import Nav from "@/components/sections/Nav";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import Cases from "@/components/sections/Cases";
+import WorkGallery from "@/components/sections/WorkGallery";
 import Stats from "@/components/sections/Stats";
 import Method from "@/components/sections/Method";
 import Services from "@/components/sections/Services";
@@ -22,6 +23,7 @@ export default function ScaloHome() {
         <Hero />
         <TrustBar />
         <Cases />
+        <WorkGallery />
         <Stats />
         <Method />
         <Services />

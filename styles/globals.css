@@ -201,8 +201,29 @@
   animation: marquee 28s linear infinite;
   will-change: transform;
 }
+
+/* ── Vertical gallery scroll ── */
+@keyframes scroll-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+@keyframes scroll-down {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+.animate-scroll-up {
+  animation: scroll-up 50s linear infinite;
+  will-change: transform;
+}
+.animate-scroll-down {
+  animation: scroll-down 50s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee { animation-play-state: paused; }
+  .animate-marquee,
+  .animate-scroll-up,
+  .animate-scroll-down { animation-play-state: paused; }
 }
 
 /* Numeric tabular */
