@@ -464,7 +464,7 @@ Design rules:
   {
     slug: "fit-tribe-case-study",
     logo: "/images/logos/fit-tribe.svg",
-    title: "How Fit Tribe held 1.24% CVR while scaling TikTok traffic by 21%.",
+    title: "How Fit Tribe held conversion while TikTok CVR went from 2% to 0.1%.",
     subtitle: "Fit Tribe",
     eyebrow: "CRO · Brand Redesign",
     description:
@@ -473,7 +473,7 @@ Design rules:
     audience: ["Brands", "Agencies"],
     docPath: "/docs/fit-tribe-case-study.html",
     resultPill: "+16% Revenue",
-    caseStudyHeadline: "How Fit Tribe held 1.24% CVR while scaling TikTok traffic by 21%.",
+    caseStudyHeadline: "How Fit Tribe held conversion while TikTok CVR went from 2% to 0.1%.",
     niche: "Activewear",
     sections: [],
   },
