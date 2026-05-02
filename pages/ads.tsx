@@ -240,7 +240,7 @@ export default function AdsPage() {
                   {s.ember && (
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(139,28,28,0.07) 0%, transparent 100%)" }}
+                      style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(170,255,0,0.06) 0%, transparent 100%)" }}
                     />
                   )}
                   <div className={`tnum text-4xl lg:text-5xl font-medium tracking-tight whitespace-pre-line ${s.ember ? "text-[var(--scalo-ember)]" : "text-[var(--scalo-cream)]"}`}>
@@ -281,7 +281,7 @@ export default function AdsPage() {
                   <div className="absolute top-0 left-8 right-8 h-px bg-[var(--scalo-ember)] opacity-70" />
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{ background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139,28,28,0.05) 0%, transparent 100%)" }}
+                    style={{ background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(170,255,0,0.04) 0%, transparent 100%)" }}
                   />
 
                   {/* Header */}
@@ -339,7 +339,7 @@ export default function AdsPage() {
                   <div className="absolute top-0 left-10 right-10 h-px bg-[var(--scalo-ember)] opacity-60" />
                   <div
                     className="pointer-events-none absolute bottom-0 right-0 w-48 h-48 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{ background: "radial-gradient(circle at 80% 80%, rgba(139,28,28,0.08) 0%, transparent 70%)" }}
+                    style={{ background: "radial-gradient(circle at 80% 80%, rgba(170,255,0,0.07) 0%, transparent 70%)" }}
                   />
                   <div className="text-[11px] uppercase tracking-widest text-[var(--scalo-ember)] mb-4 font-medium">0{i + 1}</div>
                   <h3 className="text-2xl font-medium text-[var(--scalo-cream)] mb-4">{p.name}</h3>
@@ -369,7 +369,7 @@ export default function AdsPage() {
                   <div className="absolute top-0 left-8 right-8 h-px bg-[var(--scalo-ember)]" />
                   <div
                     className="pointer-events-none absolute -bottom-10 -right-10 w-64 h-64"
-                    style={{ background: "radial-gradient(circle at 70% 70%, rgba(139,28,28,0.12) 0%, transparent 70%)" }}
+                    style={{ background: "radial-gradient(circle at 70% 70%, rgba(170,255,0,0.09) 0%, transparent 70%)" }}
                   />
                   <div className="text-[11px] uppercase tracking-widest text-[var(--scalo-fg-3)] mb-5 font-medium">Who qualifies</div>
                   <ul className="space-y-3">

@@ -28,7 +28,7 @@ const secondary = [
     category: "Activewear · Egypt",
     metric: "+16%",
     sub: "TikTok CVR ↓ as traffic scaled — we reversed it",
-    image: "/images/case-studies/fit-tribe/new/ft-07.png",
+    image: "/images/case-studies/fit-tribe/new/ft-03.png",
     href: "/value/fit-tribe-case-study",
   },
   {

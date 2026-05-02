@@ -46,26 +46,26 @@ export default function Nav() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[var(--scalo-bg-0)]/95 border-b border-[var(--scalo-border-ghost)] shadow-[0_1px_0_rgba(20,20,15,0.06),0_4px_16px_rgba(20,20,15,0.06)]"
+            ? "bg-[var(--scalo-bg-0)]/95 border-b border-[var(--scalo-border-ghost)] shadow-[0_1px_0_rgba(255,255,255,0.04),0_4px_16px_rgba(0,0,0,0.4)]"
             : "bg-transparent border-b border-transparent"
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
           <a
             href={resolveHref("#home", isHomePage)}
-            className={`text-2xl font-medium tracking-tight z-10 transition-colors duration-500 ${scrolled ? "text-[var(--scalo-ink)]" : "text-white"}`}
+            className={`text-2xl font-medium tracking-tight z-10 transition-colors duration-500 ${scrolled ? "text-white" : "text-white"}`}
             style={{ fontFamily: 'var(--font-serif)', fontStyle: "italic" }}
           >
             scalo.
           </a>
 
           {/* Desktop links */}
-          <div className={`hidden md:flex items-center gap-8 text-sm transition-colors duration-500 ${scrolled ? "text-[var(--scalo-fg-2)]" : "text-white/55"}`}>
+          <div className="hidden md:flex items-center gap-8 text-sm text-white/55">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={resolveHref(l.href, isHomePage)}
-                className={`relative py-1 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-[var(--scalo-accent)] after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 ${scrolled ? "hover:text-[var(--scalo-ink)]" : "hover:text-white"}`}
+                className="relative py-1 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-[var(--scalo-accent)] after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 hover:text-white"
               >
                 {l.label}
               </a>
@@ -83,7 +83,7 @@ export default function Nav() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className={`md:hidden w-10 h-10 flex items-center justify-center transition-colors ${scrolled ? "text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)]" : "text-white/55 hover:text-white"}`}
+              className="md:hidden w-10 h-10 flex items-center justify-center transition-colors text-white/55 hover:text-white"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -113,7 +113,7 @@ export default function Nav() {
                 key={l.href}
                 href={resolveHref(l.href, isHomePage)}
                 onClick={() => setMobileOpen(false)}
-                className="text-lg font-medium text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] py-3 border-b border-[var(--scalo-border-hairline)] last:border-b-0 transition-colors"
+                className="text-lg font-medium text-white/55 hover:text-white py-3 border-b border-[var(--scalo-border-hairline)] last:border-b-0 transition-colors"
               >
                 {l.label}
               </a>

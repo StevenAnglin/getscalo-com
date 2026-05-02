@@ -41,7 +41,7 @@ export default function ValueIndexPage() {
             <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2">
               {valueResources.map((resource, index) => (
                 <div key={resource.slug} data-reveal data-delay={`${index * 100}`}>
-                  <ResourceCard resource={resource} index={index + 1} />
+                  <ResourceCard resource={resource} index={index + 1} dark />
                 </div>
               ))}
             </div>
