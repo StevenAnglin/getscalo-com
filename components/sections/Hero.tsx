@@ -14,8 +14,10 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col justify-between pt-32 sm:pt-36 pb-16 overflow-hidden"
       style={{ background: "#0C0C09" }}
     >
-      {/* Volt green glow — left quadrant */}
+      {/* Volt green glow — left quadrant ambient */}
       <div className="pointer-events-none absolute -top-32 -left-28 w-[1200px] h-[1100px] glow-volt-headline" />
+      {/* Strong centered glow under headline */}
+      <div className="pointer-events-none absolute inset-0 glow-ember-cta" />
 
       {/* Main content */}
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full text-center lg:text-left">

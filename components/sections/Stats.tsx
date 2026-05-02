@@ -21,12 +21,12 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="proof" className="py-24 lg:py-32 bg-grid-fade">
+    <section id="proof" className="py-24 lg:py-32" style={{ background: "#0C0C09" }}>
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="mb-16 lg:mb-20" data-reveal>
-          <h2 className="display-lg text-[var(--scalo-ink)]">
+          <h2 className="display-lg text-white">
             Numbers don&rsquo;t{" "}
-            <span className="italic-editorial text-[var(--scalo-ember)]">lie.</span>
+            <span className="italic-editorial text-[var(--scalo-accent)]">lie.</span>
           </h2>
         </div>
 
@@ -36,29 +36,26 @@ export default function Stats() {
               key={s.label}
               data-reveal
               data-delay={`${i * 100}`}
-              className="relative bg-[var(--scalo-bg-2)] rounded-2xl p-10 overflow-hidden border border-[var(--scalo-border-hairline)] group hover:border-[var(--scalo-border-ghost)] transition-colors"
+              className="relative bg-white/[0.04] rounded-2xl p-10 overflow-hidden border border-white/[0.08] group hover:border-white/[0.14] transition-colors"
             >
-              {/* Ember top accent */}
-              <div className={`absolute top-0 left-10 right-10 h-px ${s.ember ? "bg-[var(--scalo-ember)]" : "bg-[var(--scalo-border-strong)]"}`} />
+              <div className={`absolute top-0 left-10 right-10 h-px ${s.ember ? "bg-[var(--scalo-accent)]" : "bg-white/[0.12]"}`} />
 
-              {/* Hover glow — only on ember card */}
               {s.ember && (
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(170,255,0,0.07) 0%, transparent 100%)" }} />
+                  style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(170,255,0,0.09) 0%, transparent 100%)" }} />
               )}
 
-              {/* Decorative large background number */}
-              <div className="absolute bottom-4 right-6 tnum text-[100px] font-medium leading-none text-[var(--scalo-ink)]/[0.03] select-none pointer-events-none">
+              <div className="absolute bottom-4 right-6 tnum text-[100px] font-medium leading-none text-white/[0.03] select-none pointer-events-none">
                 {i + 1}
               </div>
 
-              <div className={`tnum text-[clamp(56px,8vw,96px)] leading-none font-medium tracking-tight ${s.ember ? "text-[var(--scalo-ember)]" : "text-[var(--scalo-ink)]"}`}>
+              <div className={`tnum text-[clamp(56px,8vw,96px)] leading-none font-bold tracking-tight ${s.ember ? "text-[var(--scalo-accent)]" : "text-white"}`}>
                 {s.value}
               </div>
-              <div className="text-sm uppercase tracking-widest text-[var(--scalo-ink)] mt-5 font-medium">
+              <div className="text-sm uppercase tracking-widest text-white mt-5 font-medium">
                 {s.label}
               </div>
-              <p className="text-sm text-[var(--scalo-fg-3)] mt-2 leading-relaxed max-w-[240px]">
+              <p className="text-sm text-white/45 mt-2 leading-relaxed max-w-[240px]">
                 {s.sub}
               </p>
             </div>
@@ -66,7 +63,7 @@ export default function Stats() {
         </div>
 
         <div className="mt-10" data-reveal>
-          <a href="#calculator" className="inline-flex items-center gap-1.5 text-sm text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] border-b border-[var(--scalo-border-ghost)] hover:border-[var(--scalo-ember)] pb-1 transition-colors">
+          <a href="#calculator" className="inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-white border-b border-white/[0.15] hover:border-[var(--scalo-accent)] pb-1 transition-colors">
             See what this looks like for your store →
           </a>
         </div>
