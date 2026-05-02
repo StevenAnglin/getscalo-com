@@ -35,7 +35,7 @@ export default function PasswordGate({ password, storageKey, bypassToken, childr
     }
   }
 
-  // Render gate on first paint (SSR + initial client), then swap on mount if already unlocked
+  if (!checked) return null;
   if (unlocked) return <>{children}</>;
 
   return (
