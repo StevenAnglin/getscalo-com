@@ -318,9 +318,11 @@ body {
 .funnel-img-wrap {
   position: relative;
   flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 @media (max-width: 639px) {
-  .funnel-img-wrap { min-width: 82vw; scroll-snap-align: start; }
+  .funnel-img-wrap { min-width: 100%; scroll-snap-align: start; }
 }
 
 .funnel-badge {
@@ -577,6 +579,13 @@ body {
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 .footer-link:hover { color: var(--fg-1); border-color: var(--ember); }
+
+@media (min-width: 768px) {
+  .confirm-gate {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -638,7 +647,7 @@ body {
       How Fit Tribe held conversion while scaling TikTok traffic by <span class="cover-accent">21%</span>.
     </div>
     <div class="cover-overview">
-      Fit Tribe scaled from 352K to 424K sessions in one quarter. TikTok made up 40% of traffic and converted at 0.1% — down from 2%. Blended CVR still rose from 1.16% to 1.24%. After TikTok was removed, CVR reached 1.86%.
+      Fit Tribe was scaling fast — sessions up, TikTok spend increasing, more revenue every month. But as traffic scaled, blended CVR fell. General scaling dropped CVR ~16% on its own. TikTok — at 40% of traffic and converting at 0.1%, down from 2% — compounded the drag. We rebuilt product discovery in 30 days. Blended CVR held at 1.24% despite continued scaling. After TikTok budget was re-allocated, CVR reached 1.86%. Fit Tribe did E£143K in a single day last week.
     </div>
   </div>
 
@@ -649,9 +658,9 @@ body {
       <div class="stat-sub">Up from 352K</div>
     </div>
     <div class="stat">
-      <div class="stat-value">$202<span>K</span></div>
+      <div class="stat-value">E£10.3<span>M</span></div>
       <div class="stat-label">Q1 Revenue</div>
-      <div class="stat-sub">Up from $170K</div>
+      <div class="stat-sub">Up from E£8.67M (~$170K USD)</div>
     </div>
     <div class="stat">
       <div class="stat-value"><span>+</span>16<span>%</span></div>
@@ -659,9 +668,9 @@ body {
       <div class="stat-sub">Q4 2025 → Q1 2026</div>
     </div>
     <div class="stat">
-      <div class="stat-value"><span>+</span>60<span>%</span></div>
+      <div class="stat-value"><span>+</span>166<span>%</span></div>
       <div class="stat-label">Est. CVR Growth</div>
-      <div class="stat-sub">1.16% → 1.86% (TikTok removed)</div>
+      <div class="stat-sub">~0.70% estimated floor → 1.86% after re-allocation</div>
     </div>
   </div>
 </section>
@@ -673,14 +682,14 @@ body {
     <div class="section-title">A high-volume activewear brand</div>
     <div class="two-col">
       <div class="section-body">
-        <p>Fit Tribe is an Egyptian activewear brand that built real traffic momentum on TikTok. By Q4 2025, they had 352K sessions and $170K in revenue — but TikTok traffic, which made up 40% of sessions, was converting at 0.1%. Their site wasn't built to absorb cold social traffic at scale.</p>
-        <p>Navigation was undifferentiated. Search was buried. Product pages didn't do the persuasion work needed for visitors who had zero prior brand familiarity. The cart lost people on mobile — which is where the majority of TikTok traffic lands.</p>
+        <p>Fit Tribe is an E£60M+ Egyptian activewear brand (~$1.18M USD) that built real traffic momentum on TikTok. By Q4 2025, they had 352K sessions and E£8.67M in revenue (~$170K USD) — but TikTok traffic, which made up 40% of sessions, was converting at 0.1%. Their site wasn't built to absorb cold social traffic at scale.</p>
+        <p>Navigation was undifferentiated. Search was buried. Product pages didn't do the persuasion work needed for visitors with zero prior brand familiarity. TikTok traffic landed on collection pages with no clear path to the right product. Mobile visitors were dropping off before they ever made a decision.</p>
       </div>
       <div>
         <div class="result-chips">
           <span class="chip"><span class="chip-dot"></span>Activewear</span>
           <span class="chip"><span class="chip-dot"></span>Egyptian market</span>
-          <span class="chip"><span class="chip-dot"></span>8-figure brand</span>
+          <span class="chip"><span class="chip-dot"></span>E£60M+ brand</span>
         </div>
       </div>
     </div>
@@ -691,13 +700,13 @@ body {
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">The Challenge</div>
-    <div class="section-title">TikTok drove 40% of traffic — and converted at 0.1%.</div>
+    <div class="section-title">Scaling Traffic Lowered CVR by 52% — TikTok Accelerated the Drop.</div>
     <div class="section-body">
-      <p>TikTok visitors arrived with zero purchase intent. As Fit Tribe scaled TikTok spend, sessions climbed but CVR dropped. TikTok had previously converted around 2% — by the time of the engagement it had fallen to 0.1%. TikTok made up 40% of total traffic, which dragged blended CVR to 1.16%.</p>
-      <p>The site had no mechanism to recover those visitors. Navigation was undifferentiated. Search was buried. Product pages didn't do persuasion work. The cart lost people on mobile.</p>
+      <p>General scaling across all channels dropped CVR ~16% from Jan 2025 to Jan 2026, independent of TikTok. On top of that, TikTok — 40% of traffic — had fallen from ~2% CVR to 0.1%. Together, blended CVR dropped from ~1.46% to ~0.70%, a ~52% collapse. <strong>[(1.46 − 0.70) / 1.46 ≈ 52%]</strong></p>
+      <p>The site had no mechanism to recover those visitors. Navigation was undifferentiated. Search was buried. Product pages didn't do persuasion work. TikTok traffic landed on collection pages with no clear path to the right product. Mobile visitors were dropping off before they ever made a decision.</p>
     </div>
     <div class="callout">
-      <p>"TikTok accounted for 40% of traffic and had a 0.1% conversion rate. That was the drag. Fix the site for cold traffic, and blended CVR goes up even as TikTok scales."</p>
+      <p>TikTok accounted for 40% of traffic and had a 0.1% conversion rate. That was the drag. Fix the site for cold traffic, and blended CVR goes up even as TikTok scales.</p>
     </div>
     <div class="numbers-row" style="margin-top: 32px;">
       <div class="number-block">
@@ -707,13 +716,13 @@ body {
       </div>
       <div class="number-block">
         <div class="number-label">Revenue</div>
-        <div class="number-value">$170<span class="accent">K</span></div>
-        <div class="number-context">Q4 2025 baseline</div>
+        <div class="number-value">E£8.67<span class="accent">M</span></div>
+        <div class="number-context">Q4 2025 baseline (~$170K USD)</div>
       </div>
       <div class="number-block">
         <div class="number-label">Blended CVR</div>
         <div class="number-value">1.16<span class="accent">%</span></div>
-        <div class="number-context">Baseline conversion rate</div>
+        <div class="number-context">Measured after TikTok had already started to underperform.</div>
       </div>
       <div class="number-block">
         <div class="number-label">TikTok conversion rate</div>
@@ -730,56 +739,62 @@ body {
     <div class="section-eyebrow">The Approach</div>
     <div class="section-title">We optimized product discovery and navigation.</div>
     <div class="section-body">
-      <p>30-day sprint. We audited the full funnel, found the highest-leverage gaps, and shipped the fixes. The focus: get TikTok visitors to the right product faster, and make the purchase path work for cold traffic on mobile.</p>
+      <p>30-day sprint. We audited the full funnel and found the highest-leverage gap: visitors couldn't find exactly what they were looking for. Navigation, search, and collections weren't built for people arriving with intent but no brand familiarity. We rebuilt product discovery for all traffic — the fix served cold visitors and returning customers equally.</p>
     </div>
 
     <div class="approach-grid">
       <div class="approach-card">
-        <div class="approach-card-title">Search visibility optimization</div>
-        <div class="approach-card-body">Search usage started at 0.08%. It wasn't discoverable enough for TikTok visitors who arrived looking for something specific.</div>
+        <div class="approach-card-title">Search rebuilt as a discovery channel</div>
+        <div class="approach-card-body">Search was practically invisible — 30 total item searches at 0.016% of sessions. We elevated it in the UI, rebuilt the search modal with optimized product cards, and improved search suggestions. Search usage grew from 30 to 5,158 searches. 3% of users now use search — and they convert at 10.8%.</div>
         <div class="approach-pills">
-          <span class="approach-pill">0.08% search usage → significant adoption</span>
-          <span class="approach-pill">Higher CVR for search users</span>
+          <span class="approach-pill">0.016% → 3% search usage</span>
+          <span class="approach-pill">30 → 5,158 item searches</span>
+          <span class="approach-pill">10.8% search CVR</span>
         </div>
       </div>
       <div class="approach-card">
-        <div class="approach-card-title">Color swatches to real image thumbnails</div>
-        <div class="approach-card-body">Replaced abstract color swatches on the collections page with real product images per variant.</div>
+        <div class="approach-card-title">Color options shown as real product images</div>
+        <div class="approach-card-body">Abstract color dots were replaced with real product images per variant. We linked products that shared the same silhouette but different colorways, then surfaced them as image swatches across PDPs and collection cards. Shoppers see exactly what they're buying before they click.</div>
         <div class="approach-pills">
-          <span class="approach-pill">Faster product decision-making</span>
-          <span class="approach-pill">Lower bounce on collection pages</span>
+          <span class="approach-pill">Image swatches across all PDPs</span>
+          <span class="approach-pill">Linked variant groups</span>
+          <span class="approach-pill">Faster product decisions</span>
         </div>
       </div>
       <div class="approach-card">
-        <div class="approach-card-title">Cart cross-sell optimization</div>
-        <div class="approach-card-body">Rebuilt the slide cart with upsells that don't disrupt checkout. Mobile-optimized to keep the path to purchase clean.</div>
+        <div class="approach-card-title">Cart rebuilt to convert, not just collect</div>
+        <div class="approach-card-body">ATC abandonment was at 75.88%. We added a tiered rewards progress bar to create purchase momentum, rebuilt line items with visual color previews and price highlights, added cart add-on options, and handled pre-order/standard split checkout. ATC abandonment fell to 59%.</div>
         <div class="approach-pills">
-          <span class="approach-pill">+2.85% revenue uplift</span>
-          <span class="approach-pill">+€400K per year</span>
+          <span class="approach-pill">75.88% → 59% ATC abandonment</span>
+          <span class="approach-pill">Tiered rewards bar</span>
+          <span class="approach-pill">Cart add-ons</span>
         </div>
       </div>
       <div class="approach-card">
-        <div class="approach-card-title">Category-first navigation</div>
-        <div class="approach-card-body">Rebuilt nav around product categories shoppers actually use — leggings, flared pants, tops, outerwear — instead of season or campaign tabs.</div>
+        <div class="approach-card-title">Mobile navigation rebuilt for intent-driven traffic</div>
+        <div class="approach-card-body">The previous nav had no clear path for visitors arriving with intent but zero brand familiarity. We rebuilt it mobile-first: search in the nav, mega menu cards with product imagery, a support menu, returns portal, and re-routed all destinations to the highest-value pages. Bounce rate dropped — though TikTok's outsized volume made clean attribution difficult.</div>
         <div class="approach-pills">
-          <span class="approach-pill">Reduced time to right product</span>
-          <span class="approach-pill">Lower exit rate from nav</span>
+          <span class="approach-pill">Mobile-first rebuild</span>
+          <span class="approach-pill">Mega menu + search</span>
+          <span class="approach-pill">Support + returns in nav</span>
         </div>
       </div>
       <div class="approach-card">
-        <div class="approach-card-title">PDP built for cold traffic</div>
-        <div class="approach-card-body">Rewrote the PDP persuasion layer: size guidance, social proof, UGC, and trust signals for visitors with no prior brand familiarity.</div>
+        <div class="approach-card-title">PDP rebuilt to close cold traffic</div>
+        <div class="approach-card-body">PDP abandonment was 95.9% in December 2025. We rebuilt the page entirely — image overlays for zoom and care instructions, a pill-design media gallery, product badges with a badge drawer, highlighted payment options, image swatches, optimized reviews, cleaner variant picker, inventory status, improved size guide, accordion descriptions, and a product recommendations + recently viewed section. PDP abandonment is now 67%.</div>
         <div class="approach-pills">
-          <span class="approach-pill">Higher add-to-cart rate</span>
-          <span class="approach-pill">Lower sizing-related drop-off</span>
+          <span class="approach-pill">95.9% → 67% PDP abandonment</span>
+          <span class="approach-pill">Full page rebuild</span>
+          <span class="approach-pill">Recommendations + recently viewed</span>
         </div>
       </div>
       <div class="approach-card">
-        <div class="approach-card-title">Filterable, scannable collections</div>
-        <div class="approach-card-body">Added size, color, and style filters. Restructured the grid layout. TikTok visitors landing on a category page now reach the right product in fewer taps.</div>
+        <div class="approach-card-title">Collections rebuilt as a real discovery layer</div>
+        <div class="approach-card-body">Large 100+ product collections had no real discovery infrastructure. We added subcollections, infinite scroll, spec-based filtering, image scrolling on product cards, a multi-step quick add with an info drawer before cart commitment, in-stock-only defaults, product tags, a features tab for badge control, and an optimized sorting menu. Collection abandonment dropped from 98.45% to 70% — and will fall further as ad traffic stabilizes.</div>
         <div class="approach-pills">
-          <span class="approach-pill">Faster path to product</span>
-          <span class="approach-pill">Lower collection-page exit</span>
+          <span class="approach-pill">98.45% → 70% collection abandonment</span>
+          <span class="approach-pill">Spec-based filtering</span>
+          <span class="approach-pill">Quick add with info drawer</span>
         </div>
       </div>
     </div>
@@ -806,10 +821,6 @@ body {
         <span class="funnel-chevron">▼</span>
       </div>
       <div class="funnel-group-body">
-        <div class="funnel-pagination">
-          <span class="funnel-page-label before">Before</span>
-          <span class="funnel-page-label after">After</span>
-        </div>
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
@@ -838,10 +849,6 @@ body {
         <span class="funnel-chevron">▼</span>
       </div>
       <div class="funnel-group-body">
-        <div class="funnel-pagination">
-          <span class="funnel-page-label before">Before</span>
-          <span class="funnel-page-label after">After</span>
-        </div>
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
@@ -866,10 +873,6 @@ body {
         <span class="funnel-chevron">▼</span>
       </div>
       <div class="funnel-group-body">
-        <div class="funnel-pagination">
-          <span class="funnel-page-label before">Before</span>
-          <span class="funnel-page-label after">After</span>
-        </div>
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
@@ -898,10 +901,6 @@ body {
         <span class="funnel-chevron">▼</span>
       </div>
       <div class="funnel-group-body">
-        <div class="funnel-pagination">
-          <span class="funnel-page-label before">Before</span>
-          <span class="funnel-page-label after">After</span>
-        </div>
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
@@ -928,20 +927,20 @@ body {
     <div class="section-eyebrow">The Results</div>
     <div class="section-title">Traffic Up 21%. Revenue Up 16%. CVR Held.</div>
     <div class="section-body">
-      <p>The comparison is Q4 2025 vs. Q1 2026. Sessions grew 21% — driven by more TikTok scaling. Blended CVR rose from 1.16% to 1.24% despite TikTok accounting for 40% of traffic and converting at 0.1%. TikTok was dragging the number down. Product discovery and navigation improvements pulled it back up.</p>
-      <p>After TikTok was removed from the channel mix, CVR rose to 1.86%. The optimization had compounded — the site was converting better on its own traffic, not just compensating for TikTok's drag.</p>
+      <p>The comparison is Q4 2025 vs. Q1 2026. Sessions grew 21% — driven by continued traffic scaling across channels, TikTok the largest driver. Blended CVR rose from 1.16% to 1.24% despite TikTok accounting for 40% of traffic at 0.1% CVR. General scaling was compressing CVR on its own — TikTok compounded that. Product discovery and navigation improvements pulled it back up for all traffic.</p>
+      <p>After TikTok budget was re-allocated, CVR rose to 1.86%. The optimization had compounded — the site was converting better across all channels, not just compensating for TikTok's drag.</p>
     </div>
 
     <div class="analytics-grid">
       <div class="analytics-card" onclick="openModal(this.querySelector('img').src, 'before')">
         <span class="analytics-card-badge before">Before — Q4 2025</span>
-        <img src="/images/case-studies/fit-tribe/analytics-before.webp" alt="Fit Tribe analytics before — Q4 2025: 352K sessions, $170K revenue, 1.16% CVR" class="analytics-img" loading="lazy">
-        <div class="analytics-card-meta">Q4 2025 · 352K sessions · $170K revenue · 1.16% CVR</div>
+        <img src="/images/case-studies/fit-tribe/analytics-before.webp" alt="Fit Tribe analytics before — Q4 2025: 352K sessions, E£8.67M revenue, 1.16% CVR" class="analytics-img" loading="lazy">
+        <div class="analytics-card-meta">Q4 2025 · 352K sessions · E£8.67M revenue (~$170K USD) · 1.16% CVR</div>
       </div>
       <div class="analytics-card" onclick="openModal(this.querySelector('img').src, 'after')">
         <span class="analytics-card-badge after">After — Q1 2026</span>
-        <img src="/images/case-studies/fit-tribe/analytics-after.webp" alt="Fit Tribe analytics after — Q1 2026: 424K sessions, $202K revenue, 1.24% CVR" class="analytics-img" loading="lazy">
-        <div class="analytics-card-meta">Q1 2026 · 424K sessions · $202K revenue · 1.24% CVR</div>
+        <img src="/images/case-studies/fit-tribe/analytics-after.webp" alt="Fit Tribe analytics after — Q1 2026: 424K sessions, E£10.3M revenue, 1.24% CVR" class="analytics-img" loading="lazy">
+        <div class="analytics-card-meta">Q1 2026 · 424K sessions · E£10.3M revenue (~$202K USD) · 1.24% CVR</div>
       </div>
     </div>
 
@@ -949,25 +948,31 @@ body {
       <div class="number-block">
         <div class="number-label">Sessions Growth</div>
         <div class="number-value"><span class="accent">+</span>21<span class="accent">%</span></div>
-        <div class="number-context">352K → 424K. More TikTok traffic, more cold visitors, same funnel.</div>
+        <div class="number-context">352K → 424K. Continued scaling across channels — TikTok the largest driver, but not the only one.</div>
       </div>
       <div class="number-block">
         <div class="number-label">Revenue Growth</div>
         <div class="number-value"><span class="accent">+</span>16<span class="accent">%</span></div>
-        <div class="number-context">$170K → $202K. Revenue followed traffic.</div>
+        <div class="number-context">E£8.67M → E£10.3M (~$170K → ~$202K USD). Revenue followed traffic.</div>
       </div>
       <div class="number-block">
         <div class="number-label">CVR Improvement</div>
         <div class="number-value">1.16<span class="accent">%</span> → 1.86<span class="accent">%</span></div>
-        <div class="number-context">1.24% with TikTok (40% of traffic at 0.1% CVR). 1.86% after TikTok removed.</div>
+        <div class="number-context">1.24% with TikTok (40% of traffic at 0.1% CVR). 1.86% after TikTok budget re-allocated.</div>
+      </div>
+      <div class="number-block">
+        <div class="number-label">CVR Growth (Est.)</div>
+        <div class="number-value"><span class="accent">+</span>166<span class="accent">%</span></div>
+        <div class="number-context">~0.70% floor (TikTok at 0.1%, 40% of traffic) → 1.86% after re-allocation</div>
       </div>
     </div>
 
     <div class="takeaway">
       <div class="takeaway-glow"></div>
-      <p>"TikTok made up 40% of traffic and converted at 0.1%. The blended CVR still went up because we fixed what the site was losing on its own traffic. When TikTok was eventually removed, CVR jumped to 1.86%."</p>
+      <p>"TikTok made up 40% of traffic and converted at 0.1%. The blended CVR still went up because we fixed what the site was losing on its own traffic. After TikTok budget was re-allocated, CVR reached 1.86%."</p>
       <div class="takeaway-attr">— Scalo · Fit Tribe Engagement, Q4 2025 – Q1 2026</div>
     </div>
+    <p class="section-body" style="margin-top: 28px;">Results were strong enough to move from a one-time sprint into an ongoing A/B testing engagement. Fit Tribe is still scaling — E£143K in a single day last week.</p>
   </div>
 </section>
 
@@ -1006,7 +1011,7 @@ body {
           <li>+21% traffic, +16% revenue, CVR maintained and improved</li>
           <li>TikTok made up ~40% of traffic during engagement</li>
           <li>TikTok CVR previously ~2%, fell to ~0.1% at time of engagement</li>
-          <li>After TikTok removed from channel mix: CVR rose to 1.86%</li>
+          <li>After TikTok budget re-allocated: CVR rose to 1.86%</li>
           <li>Project scope: 30-day sprint</li>
           <li>Work included: navigation, search, collection filtering, PDPs, cart rebuild</li>
           <li>Client site: fittribeeg.com</li>
@@ -1019,7 +1024,7 @@ body {
         <ul class="confirm-list">
           <li>"8-figure brand" label — confirm Fit Tribe is comfortable with this characterization</li>
           <li>TikTok CVR numbers (2% → 0.1%) — confirm exact figures or adjust framing to "approximately"</li>
-          <li>CVR rise to 1.86% after TikTok removed — confirm timing and attribution</li>
+          <li>CVR rise to 1.86% after TikTok budget re-allocated — confirm timing and attribution</li>
           <li>"Premium positioning" language — confirm Fit Tribe's price tier/positioning intent</li>
         </ul>
       </div>
@@ -1062,7 +1067,7 @@ var modalData = {
   before: {
     badge: 'before', label: 'Before — Q4 2025',
     sessions: '352<span class="accent">K</span>',
-    revenue: '$170<span class="accent">K</span>',
+    revenue: 'E£8.67<span class="accent">M</span>',
     cvr: '1.16<span class="accent">%</span>',
     tiktok: '0.1<span class="accent">%</span>',
     showTiktok: true,
@@ -1070,7 +1075,7 @@ var modalData = {
   after: {
     badge: 'after', label: 'After — Q1 2026',
     sessions: '424<span class="accent">K</span>',
-    revenue: '$202<span class="accent">K</span>',
+    revenue: 'E£10.3<span class="accent">M</span>',
     cvr: '1.24<span class="accent">%</span>',
     tiktok: null,
     showTiktok: false,
