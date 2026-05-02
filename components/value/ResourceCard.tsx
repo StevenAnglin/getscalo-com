@@ -13,7 +13,7 @@ export default function ResourceCard({ resource, dark }: ResourceCardProps) {
   const headline = isCaseStudy ? resource.caseStudyHeadline! : resource.title;
   const ctaText = isCaseStudy ? "Read case study" : "Read guide";
 
-  const cardBg = dark ? "bg-white/[0.04] border-white/[0.08] hover:border-white/[0.14]" : "bg-[var(--scalo-bg-2)] border-[var(--scalo-border-ghost)] hover:border-[var(--scalo-border-strong)]";
+  const cardBg = dark ? "glass-card glass-card-hover" : "bg-[var(--scalo-bg-2)] border-[var(--scalo-border-ghost)] hover:border-[var(--scalo-border-strong)]";
   const topBorder = dark ? "border-white/[0.06]" : "border-[var(--scalo-border-hairline)]";
   const subtitleText = dark ? "text-white/55" : "text-[var(--scalo-fg-2)]";
   const arrowBtn = dark ? "border-white/[0.10] text-white/35 group-hover:border-[var(--scalo-accent)]/50 group-hover:text-[var(--scalo-accent)]" : "border-[var(--scalo-border-ghost)] text-[var(--scalo-fg-3)] group-hover:border-[var(--scalo-ember)]/50 group-hover:text-[var(--scalo-ember)]";

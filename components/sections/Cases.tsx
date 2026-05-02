@@ -62,7 +62,7 @@ const caseData: CaseCardProps[] = [
 
 function CaseCard({ index, client, category, tag, metric, metricLabel, goal, approach, quote, attribution, href }: CaseCardProps) {
   return (
-    <Card className="bg-white/[0.04] border-white/[0.08] ring-0 rounded-2xl overflow-hidden">
+    <Card className="ring-0 rounded-2xl overflow-hidden glass-card glass-card-hover">
       <CardHeader className="px-8 pt-8 pb-0 relative">
         <div className="absolute top-4 right-6 tnum text-[80px] font-medium leading-none text-white/[0.03] select-none pointer-events-none tracking-tight">
           {index.replace("CASE ", "")}

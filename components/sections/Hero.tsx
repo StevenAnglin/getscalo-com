@@ -45,20 +45,23 @@ export default function Hero() {
 
         {/* Proof card */}
         <div className="hero-animate" style={{ animationDelay: "180ms" }}>
-          <div className="mt-8 sm:mt-10 max-w-[560px] mx-auto lg:mx-0 rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden shadow-[0_2px_32px_rgba(0,0,0,0.4)]">
-            <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-white/[0.07]">
-              <span className="text-[10px] uppercase tracking-widest text-white/30 font-medium">
-                Track record
-              </span>
-              <span className="text-[10px] text-white/25">Last updated: March, 2026</span>
+          <div className="mt-8 sm:mt-10 max-w-[580px] mx-auto lg:mx-0 rounded-2xl overflow-hidden glass-card">
+            {/* Header */}
+            <div className="flex items-center justify-between px-5 pt-4 pb-3.5 border-b border-white/[0.07]">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--scalo-accent)] pulse-dot" />
+                <span className="text-[10px] uppercase tracking-widest text-white/40 font-medium">Track record</span>
+              </div>
+              <span className="text-[10px] text-white/20 font-mono tracking-wide">Updated Mar 2026</span>
             </div>
-            <div className="flex divide-x divide-white/[0.07] px-1">
+            {/* Stats grid */}
+            <div className="grid grid-cols-4 divide-x divide-white/[0.07]">
               {proofStats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="flex items-center gap-2.5 flex-1 px-4 py-3.5">
-                  <Icon className="w-3.5 h-3.5 text-[var(--scalo-accent)] shrink-0" />
+                <div key={label} className="flex flex-col px-4 py-4 gap-2">
+                  <Icon className="w-4 h-4 text-[var(--scalo-accent)]" strokeWidth={1.5} />
                   <div>
-                    <div className="tnum text-sm font-semibold text-white leading-none">{value}</div>
-                    <div className="text-[10px] text-white/30 leading-snug mt-0.5 whitespace-nowrap">{label}</div>
+                    <div className="tnum text-base font-bold text-white leading-none tracking-tight">{value}</div>
+                    <div className="text-[9.5px] text-white/35 leading-snug mt-1 uppercase tracking-wide">{label}</div>
                   </div>
                 </div>
               ))}

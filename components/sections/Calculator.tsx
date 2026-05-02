@@ -18,7 +18,7 @@ export default function Calculator() {
         </div>
 
         <div className="max-w-[760px] mx-auto" data-reveal data-delay="100">
-          <div className="bg-white/[0.04] rounded-3xl p-10 lg:p-14 border border-white/[0.09] relative overflow-hidden">
+          <div className="rounded-3xl p-10 lg:p-14 glass-card relative overflow-hidden">
             <div className="absolute top-0 left-12 right-12 h-px bg-[var(--scalo-accent)]" />
 
             <div className="space-y-10">

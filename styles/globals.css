@@ -221,6 +221,27 @@
   pointer-events: none;
 }
 
+/* ── Glass card — dark surface with depth + inner top highlight ── */
+.glass-card {
+  background: linear-gradient(160deg, rgba(255,255,255,0.065) 0%, rgba(255,255,255,0.03) 100%);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.07) inset,
+    0 8px 40px rgba(0,0,0,0.45),
+    0 2px 8px rgba(0,0,0,0.20);
+}
+.glass-card-hover {
+  transition: transform 0.25s var(--scalo-ease-out), box-shadow 0.25s var(--scalo-ease-out), border-color 0.25s;
+}
+.glass-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.15) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 20px 60px rgba(0,0,0,0.55),
+    0 4px 16px rgba(0,0,0,0.30) !important;
+}
+
 /* ── Card hover lift ── */
 .card-lift {
   transition: transform 0.25s var(--scalo-ease-out), box-shadow 0.25s var(--scalo-ease-out);

@@ -28,7 +28,7 @@ export default function Method() {
         </div>
 
         {/* Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.07] rounded-2xl overflow-hidden" data-reveal data-delay="100">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden glass-card" data-reveal data-delay="100">
           {pillars.map((p, i) => {
             const Icon = p.icon;
             return (
@@ -53,7 +53,7 @@ export default function Method() {
         </div>
 
         {/* Process strip */}
-        <div className="bg-white/[0.03] rounded-2xl mt-4 overflow-hidden border border-white/[0.07]" data-reveal data-delay="200">
+        <div className="rounded-2xl mt-4 overflow-hidden glass-card" data-reveal data-delay="200">
           <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/[0.07]">
             {steps.map((s) => (
               <div key={s.n} className="p-8 relative overflow-hidden group">

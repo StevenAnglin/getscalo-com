@@ -31,10 +31,10 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] rounded-3xl overflow-hidden border border-white/[0.09]" data-reveal data-delay="100">
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] rounded-3xl overflow-hidden glass-card" data-reveal data-delay="100">
           {/* Audit panel */}
-          <div className="p-10 lg:p-14 bg-white/[0.03] relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.09]">
-            <div className="absolute top-0 left-10 right-10 h-px bg-white/[0.10]" />
+          <div className="p-10 lg:p-14 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.07]">
+            <div className="absolute top-0 left-10 right-10 h-px bg-white/[0.15]" />
 
             <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-widest uppercase border border-white/[0.15] text-white/60">
               {audit.tag}

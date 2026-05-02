@@ -36,16 +36,17 @@ export default function Stats() {
               key={s.label}
               data-reveal
               data-delay={`${i * 100}`}
-              className="relative bg-white/[0.04] rounded-2xl p-10 overflow-hidden border border-white/[0.08] group hover:border-white/[0.14] transition-colors"
+              className="relative rounded-2xl p-10 overflow-hidden glass-card glass-card-hover group"
             >
-              <div className={`absolute top-0 left-10 right-10 h-px ${s.ember ? "bg-[var(--scalo-accent)]" : "bg-white/[0.12]"}`} />
+              {/* Top accent line */}
+              <div className={`absolute top-0 left-10 right-10 h-px ${s.ember ? "bg-[var(--scalo-accent)]" : "bg-white/[0.18]"}`} />
 
               {s.ember && (
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(170,255,0,0.09) 0%, transparent 100%)" }} />
+                  style={{ background: "radial-gradient(ellipse 80% 60% at 30% 0%, rgba(170,255,0,0.11) 0%, transparent 100%)" }} />
               )}
 
-              <div className="absolute bottom-4 right-6 tnum text-[100px] font-medium leading-none text-white/[0.03] select-none pointer-events-none">
+              <div className="absolute bottom-4 right-6 tnum text-[100px] font-medium leading-none text-white/[0.025] select-none pointer-events-none">
                 {i + 1}
               </div>
 

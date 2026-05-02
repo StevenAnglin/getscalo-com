@@ -5,7 +5,7 @@ export default function Team() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Photo column */}
           <div className="lg:col-span-5 order-2 lg:order-1" data-reveal>
-            <div className="relative bg-white/[0.04] rounded-3xl overflow-hidden border border-white/[0.09] flex flex-col">
+            <div className="relative rounded-3xl overflow-hidden glass-card flex flex-col">
               <div className="absolute top-0 left-12 right-12 h-px bg-[var(--scalo-accent)]/50 z-10" />
 
               {/* Volt corner wash */}
