@@ -10,10 +10,10 @@
 
 :root {
   /* Scalo color tokens — light mode */
-  --scalo-bg-0: #FAFAF5;
-  --scalo-bg-1: #F3F3EC;
-  --scalo-bg-2: #EAEAE0;
-  --scalo-bg-3: #DEDED2;
+  --scalo-bg-0: #F5F5EE;
+  --scalo-bg-1: #EEEED6;
+  --scalo-bg-2: #E5E5D8;
+  --scalo-bg-3: #D8D8C8;
 
   /* Ink text — near-black on cream */
   --scalo-ink:   #14140F;
@@ -33,13 +33,13 @@
 
   /* Foreground scale — ink on cream */
   --scalo-fg-1: rgba(20, 20, 15, 1);
-  --scalo-fg-2: rgba(20, 20, 15, 0.65);
-  --scalo-fg-3: rgba(20, 20, 15, 0.40);
+  --scalo-fg-2: rgba(20, 20, 15, 0.75);
+  --scalo-fg-3: rgba(20, 20, 15, 0.52);
 
   /* Border scale — ink-based */
-  --scalo-border-strong:   rgba(20, 20, 15, 0.18);
-  --scalo-border-ghost:    rgba(20, 20, 15, 0.10);
-  --scalo-border-hairline: rgba(20, 20, 15, 0.06);
+  --scalo-border-strong:   rgba(20, 20, 15, 0.22);
+  --scalo-border-ghost:    rgba(20, 20, 15, 0.13);
+  --scalo-border-hairline: rgba(20, 20, 15, 0.08);
 
   /* Scalo motion */
   --scalo-ease-out: cubic-bezier(0.22, 1, 0.36, 1);

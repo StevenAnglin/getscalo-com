@@ -15,7 +15,6 @@ function resolveHref(href: string, isHomePage: boolean) {
   if (!href.startsWith("#")) {
     return href;
   }
-
   return isHomePage ? href : `/${href}`;
 }
 
@@ -25,8 +24,9 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const isHomePage = router.pathname === "/";
 
+  // Hero is ~100vh tall — switch nav style after scrolling past it
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 48);
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.7);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -53,19 +53,19 @@ export default function Nav() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
           <a
             href={resolveHref("#home", isHomePage)}
-            className="text-2xl font-medium tracking-tight text-[var(--scalo-ink)] z-10"
+            className={`text-2xl font-medium tracking-tight z-10 transition-colors duration-500 ${scrolled ? "text-[var(--scalo-ink)]" : "text-white"}`}
             style={{ fontFamily: 'var(--font-serif)', fontStyle: "italic" }}
           >
             scalo.
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8 text-sm text-[var(--scalo-fg-2)]">
+          <div className={`hidden md:flex items-center gap-8 text-sm transition-colors duration-500 ${scrolled ? "text-[var(--scalo-fg-2)]" : "text-white/55"}`}>
             {links.map((l) => (
               <a
                 key={l.href}
                 href={resolveHref(l.href, isHomePage)}
-                className="relative py-1 hover:text-[var(--scalo-ink)] transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-[var(--scalo-accent)] after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100"
+                className={`relative py-1 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-[var(--scalo-accent)] after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100 ${scrolled ? "hover:text-[var(--scalo-ink)]" : "hover:text-white"}`}
               >
                 {l.label}
               </a>
@@ -83,7 +83,7 @@ export default function Nav() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden w-10 h-10 flex items-center justify-center text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] transition-colors"
+              className={`md:hidden w-10 h-10 flex items-center justify-center transition-colors ${scrolled ? "text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)]" : "text-white/55 hover:text-white"}`}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -98,12 +98,10 @@ export default function Nav() {
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-[var(--scalo-bg-0)]/70"
           onClick={() => setMobileOpen(false)}
         />
-        {/* Drawer */}
         <div
           className={`absolute top-16 left-0 right-0 bg-[var(--scalo-bg-0)] border-b border-[var(--scalo-border-ghost)] transition-transform duration-400 ${
             mobileOpen ? "translate-y-0" : "-translate-y-4"

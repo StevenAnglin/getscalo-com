@@ -42,14 +42,14 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
 
       {/* Body */}
       <div className="flex flex-1 flex-col gap-5 px-6 py-7 lg:px-7">
-        <h3 className="text-xl font-medium leading-snug tracking-tight text-[var(--scalo-cream)] lg:text-2xl">
+        <h3 className="text-xl font-medium leading-snug tracking-tight text-[var(--scalo-ink)] lg:text-2xl">
           {headline}
         </h3>
         <p className="flex-1 text-sm leading-relaxed text-[var(--scalo-fg-2)]">
           {resource.description}
         </p>
         <div>
-          <span className="inline-flex items-center gap-1.5 border-b border-[var(--scalo-border-ghost)] pb-1 text-sm text-[var(--scalo-cream)] transition-colors group-hover:border-[var(--scalo-ember)]">
+          <span className="inline-flex items-center gap-1.5 border-b border-[var(--scalo-border-ghost)] pb-1 text-sm text-[var(--scalo-fg-2)] transition-colors group-hover:border-[var(--scalo-ember)]">
             {ctaText} <ArrowUpRight className="h-3.5 w-3.5" />
           </span>
         </div>

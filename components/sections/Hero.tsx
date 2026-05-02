@@ -11,19 +11,20 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-between pt-32 sm:pt-36 pb-16 overflow-hidden bg-[var(--scalo-bg-0)]"
+      className="relative min-h-screen flex flex-col justify-between pt-32 sm:pt-36 pb-16 overflow-hidden"
+      style={{ background: "#0C0C09" }}
     >
-      {/* Subtle volt green glow — left quadrant */}
+      {/* Volt green glow — left quadrant */}
       <div className="pointer-events-none absolute -top-32 -left-28 w-[1200px] h-[1100px] glow-volt-headline" />
 
-      {/* Main content — staggered load animations */}
+      {/* Main content */}
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full text-center lg:text-left">
 
         {/* Pill badge */}
         <div className="hero-animate" style={{ animationDelay: "0ms" }}>
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-[var(--scalo-border-ghost)] bg-[var(--scalo-bg-2)] px-4 py-2 mb-10">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 mb-10">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--scalo-accent)] shrink-0 pulse-dot" />
-            <span className="text-xs font-medium tracking-widest text-[var(--scalo-fg-2)] uppercase">
+            <span className="text-xs font-medium tracking-widest text-white/50 uppercase">
               For 6–9 figure Shopify brands
             </span>
           </div>
@@ -31,7 +32,7 @@ export default function Hero() {
 
         {/* Headline */}
         <div className="hero-animate" style={{ animationDelay: "90ms" }}>
-          <h1 className="display-xl text-[var(--scalo-ink)] max-w-[1060px] mx-auto lg:mx-0">
+          <h1 className="display-xl text-white max-w-[1060px] mx-auto lg:mx-0">
             Your store loses{" "}
             <span className="italic-editorial text-[var(--scalo-accent)]">revenue</span>{" "}
             every day.
@@ -42,22 +43,20 @@ export default function Hero() {
 
         {/* Proof card */}
         <div className="hero-animate" style={{ animationDelay: "180ms" }}>
-          <div className="mt-8 sm:mt-10 max-w-[560px] mx-auto lg:mx-0 rounded-2xl border border-[var(--scalo-border-ghost)] bg-[var(--scalo-bg-2)] overflow-hidden shadow-[0_2px_16px_rgba(20,20,15,0.06)]">
-            {/* Card header */}
-            <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-[var(--scalo-border-hairline)]">
-              <span className="text-[10px] uppercase tracking-widest text-[var(--scalo-fg-3)] font-medium">
+          <div className="mt-8 sm:mt-10 max-w-[560px] mx-auto lg:mx-0 rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden shadow-[0_2px_32px_rgba(0,0,0,0.4)]">
+            <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-white/[0.07]">
+              <span className="text-[10px] uppercase tracking-widest text-white/30 font-medium">
                 Track record
               </span>
-              <span className="text-[10px] text-[var(--scalo-fg-3)]">Last updated: March, 2026</span>
+              <span className="text-[10px] text-white/25">Last updated: March, 2026</span>
             </div>
-            {/* Single-row metric strip */}
-            <div className="flex divide-x divide-[var(--scalo-border-hairline)] px-1">
+            <div className="flex divide-x divide-white/[0.07] px-1">
               {proofStats.map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex items-center gap-2.5 flex-1 px-4 py-3.5">
                   <Icon className="w-3.5 h-3.5 text-[var(--scalo-accent)] shrink-0" />
                   <div>
-                    <div className="tnum text-sm font-semibold text-[var(--scalo-ink)] leading-none">{value}</div>
-                    <div className="text-[10px] text-[var(--scalo-fg-3)] leading-snug mt-0.5 whitespace-nowrap">{label}</div>
+                    <div className="tnum text-sm font-semibold text-white leading-none">{value}</div>
+                    <div className="text-[10px] text-white/30 leading-snug mt-0.5 whitespace-nowrap">{label}</div>
                   </div>
                 </div>
               ))}
@@ -71,22 +70,22 @@ export default function Hero() {
             <a
               href="#"
               data-tf-popup="EgCg6DVP"
-              className="inline-flex items-center gap-1.5 bg-[var(--scalo-accent)] hover:bg-[var(--scalo-accent-dim)] text-[var(--scalo-ink)] rounded-full h-12 px-7 text-base font-semibold transition-colors btn-press shadow-[0_0_32px_rgba(170,255,0,0.25)]"
+              className="inline-flex items-center gap-1.5 bg-[var(--scalo-accent)] hover:bg-[var(--scalo-accent-dim)] text-[var(--scalo-ink)] rounded-full h-12 px-7 text-base font-semibold transition-colors btn-press shadow-[0_0_32px_rgba(170,255,0,0.30)]"
             >
               Start with a teardown <ArrowUpRight className="w-4 h-4" />
             </a>
             <a
               href="#results"
-              className="inline-flex items-center gap-1.5 text-[var(--scalo-fg-2)] hover:text-[var(--scalo-ink)] h-12 px-3 text-base transition-colors btn-press"
+              className="inline-flex items-center gap-1.5 text-white/45 hover:text-white h-12 px-3 text-base transition-colors btn-press"
             >
               See results <ArrowDown className="w-4 h-4" />
             </a>
           </div>
         </div>
 
-        {/* Minimum revenue requirement */}
+        {/* Qualifier */}
         <div className="hero-animate" style={{ animationDelay: "360ms" }}>
-          <p className="text-[11px] text-[var(--scalo-fg-3)] mt-6 text-center lg:text-left tracking-wide">
+          <p className="text-[11px] text-white/25 mt-6 text-center lg:text-left tracking-wide">
             We work exclusively with Shopify brands doing $50K+/month.
           </p>
         </div>
@@ -94,21 +93,21 @@ export default function Hero() {
 
       {/* Stat strip — bottom anchor */}
       <div className="hero-animate relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full mt-24" style={{ animationDelay: "440ms" }}>
-        <div className="border-t border-[var(--scalo-border-ghost)] pt-8">
-          <div className="grid grid-cols-3 gap-0 divide-x divide-[var(--scalo-border-hairline)]">
+        <div className="border-t border-white/[0.08] pt-8">
+          <div className="grid grid-cols-3 gap-0 divide-x divide-white/[0.08]">
             <div className="pr-8 lg:pr-16">
-              <div className="tnum text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--scalo-ink)] tracking-tight">
+              <div className="tnum text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                 $2.4M+
               </div>
-              <div className="text-[11px] uppercase tracking-widest text-[var(--scalo-fg-3)] mt-2 leading-snug">
+              <div className="text-[11px] uppercase tracking-widest text-white/35 mt-2 leading-snug">
                 Revenue Recovered
               </div>
             </div>
             <div className="px-8 lg:px-16">
-              <div className="tnum text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--scalo-ink)] tracking-tight">
+              <div className="tnum text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                 48
               </div>
-              <div className="text-[11px] uppercase tracking-widest text-[var(--scalo-fg-3)] mt-2 leading-snug">
+              <div className="text-[11px] uppercase tracking-widest text-white/35 mt-2 leading-snug">
                 Stores Audited
               </div>
             </div>
@@ -116,7 +115,7 @@ export default function Hero() {
               <div className="tnum text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--scalo-accent)] tracking-tight">
                 +18%
               </div>
-              <div className="text-[11px] uppercase tracking-widest text-[var(--scalo-fg-3)] mt-2 leading-snug">
+              <div className="text-[11px] uppercase tracking-widest text-white/35 mt-2 leading-snug">
                 Avg RPV Lift
               </div>
             </div>
