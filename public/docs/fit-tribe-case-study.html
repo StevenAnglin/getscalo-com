@@ -146,7 +146,7 @@ body {
   border-radius: 16px; overflow: hidden;
   position: relative; z-index: 1;
 }
-@media (min-width: 640px) { .cover-stats { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 640px) { .cover-stats { grid-template-columns: repeat(3, 1fr); } }
 
 .stat { background: var(--bg-1); padding: 20px 24px; }
 .stat-value {
@@ -242,6 +242,17 @@ body {
   font-size: 11px; font-weight: 500; color: var(--fg-3); letter-spacing: 0.02em;
 }
 .approach-pill::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
+
+.text-highlight { background: rgba(170,255,0,0.12); color: var(--ember); padding: 1px 6px; border-radius: 4px; font-weight: 500; }
+.engagement-next { background: var(--bg-2); border: 1px solid var(--border-ghost); border-radius: 16px; padding: 28px 32px; margin-top: 32px; }
+.engagement-next-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.engagement-next-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 14px; border-radius: 100px;
+  border: 1px solid rgba(170,255,0,0.35); background: rgba(170,255,0,0.10);
+  font-size: 11px; font-weight: 700; color: var(--ember); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.engagement-next p { font-size: 15px; line-height: 1.7; color: var(--fg-2); margin: 0; }
 .approach-pill-impact {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 4px 12px; border-radius: 100px;
@@ -291,6 +302,9 @@ body {
   overflow: hidden;
   padding: 20px;
   background: var(--bg-1);
+}
+@media (max-width: 639px) {
+  .funnel-group-body { overflow: clip; }
 }
 .funnel-group.collapsed .funnel-group-body { display: none; }
 
@@ -837,14 +851,14 @@ body {
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
-            <img src="/images/case-studies/fit-tribe/homepage-before-desktop.png" alt="Fit Tribe homepage before redesign" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+            <img src="/images/case-studies/fit-tribe/homepage/desktop-before.png" alt="Fit Tribe homepage before redesign" class="funnel-img" loading="lazy" onclick="openModal('/images/case-studies/fit-tribe/homepage/desktop-before.png','/images/case-studies/fit-tribe/homepage/desktop-after.png','before')">
           </div>
           <div class="funnel-img-wrap">
             <span class="funnel-badge after">After</span>
             <div class="funnel-img-placeholder">
               <div class="ph-icon">🖥</div>
               <div class="ph-label">After screenshot</div>
-              <div class="ph-hint">homepage-after-desktop.png</div>
+              <div class="ph-hint">homepage/desktop-after.png</div>
             </div>
           </div>
         </div>
@@ -865,11 +879,11 @@ body {
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
-            <img src="/images/case-studies/fit-tribe/collections-before-desktop.png" alt="Fit Tribe collections before" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+            <img src="/images/case-studies/fit-tribe/collections/desktop-before.png" alt="Fit Tribe collections before" class="funnel-img" loading="lazy" onclick="openModal('/images/case-studies/fit-tribe/collections/desktop-before.png','/images/case-studies/fit-tribe/collections/desktop-after.png','before')">
           </div>
           <div class="funnel-img-wrap">
             <span class="funnel-badge after">After</span>
-            <img src="/images/case-studies/fit-tribe/collections-after-desktop.png" alt="Fit Tribe collections after" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'after')">
+            <img src="/images/case-studies/fit-tribe/collections/desktop-after.png" alt="Fit Tribe collections after" class="funnel-img" loading="lazy" onclick="openModal('/images/case-studies/fit-tribe/collections/desktop-before.png','/images/case-studies/fit-tribe/collections/desktop-after.png','after')">
           </div>
         </div>
       </div>
@@ -889,14 +903,14 @@ body {
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
-            <img src="/images/case-studies/fit-tribe/pdp-before-desktop.png" alt="Fit Tribe PDP before" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+            <img src="/images/case-studies/fit-tribe/pdp/desktop-before.png" alt="Fit Tribe PDP before" class="funnel-img" loading="lazy" onclick="openModal('/images/case-studies/fit-tribe/pdp/desktop-before.png','/images/case-studies/fit-tribe/pdp/desktop-after.png','before')">
           </div>
           <div class="funnel-img-wrap">
             <span class="funnel-badge after">After</span>
             <div class="funnel-img-placeholder">
               <div class="ph-icon">🖥</div>
               <div class="ph-label">After screenshot</div>
-              <div class="ph-hint">pdp-after-desktop.png</div>
+              <div class="ph-hint">pdp/desktop-after.png</div>
             </div>
           </div>
         </div>
@@ -917,14 +931,14 @@ body {
         <div class="funnel-before-after">
           <div class="funnel-img-wrap">
             <span class="funnel-badge before">Before</span>
-            <img src="/images/case-studies/fit-tribe/cart-before-desktop.png" alt="Fit Tribe cart before" class="funnel-img" loading="lazy" onclick="openModal(this.src, 'before')">
+            <img src="/images/case-studies/fit-tribe/cart/desktop-before.png" alt="Fit Tribe cart before" class="funnel-img" loading="lazy" onclick="openModal('/images/case-studies/fit-tribe/cart/desktop-before.png','/images/case-studies/fit-tribe/cart/desktop-after.png','before')">
           </div>
           <div class="funnel-img-wrap">
             <span class="funnel-badge after">After</span>
             <div class="funnel-img-placeholder">
               <div class="ph-icon">🖥</div>
               <div class="ph-label">After screenshot</div>
-              <div class="ph-hint">cart-after-desktop.png</div>
+              <div class="ph-hint">cart/desktop-after.png</div>
             </div>
           </div>
         </div>
@@ -938,22 +952,21 @@ body {
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">The Results</div>
-    <div class="section-title">Traffic Up 21%. Revenue Up 16%. CVR Held.</div>
+    <div class="section-title">Traffic Up 21%. CVR Recovered. Then Hit 1.86%.</div>
     <div class="section-body">
-      <p>The comparison is Q4 2025 vs. Q1 2026. Sessions grew 21% — driven by continued traffic scaling across channels, TikTok the largest driver. Blended CVR rose from 1.16% to 1.24% despite TikTok accounting for 40% of traffic at 0.1% CVR. General scaling was compressing CVR on its own — TikTok compounded that. Product discovery and navigation improvements pulled it back up for all traffic.</p>
-      <p>After TikTok budget was re-allocated, CVR rose to 1.86%. The optimization had compounded — the site was converting better across all channels, not just compensating for TikTok's drag.</p>
+      <p>Without our optimizations, blended CVR was on track to collapse to an estimated <strong>~0.70%</strong> — TikTok at 40% of traffic converting at 0.1% compounded a general channel-wide CVR drop of ~16%. We held it at <strong>1.24%</strong>. After TikTok budget was re-allocated to Meta — the actual largest traffic driver — CVR rose to <strong>1.86%</strong>. The site had been rebuilt to convert across all channels, not just compensate for TikTok's drag.</p>
     </div>
 
     <div class="analytics-grid">
-      <div class="analytics-card" onclick="openModal(this.querySelector('img').src, 'before')">
+      <div class="analytics-card" onclick="openModal('/images/case-studies/fit-tribe/analytics-before.webp','/images/case-studies/fit-tribe/analytics-after.webp','before')">
         <span class="analytics-card-badge before">Before — Q4 2025</span>
         <img src="/images/case-studies/fit-tribe/analytics-before.webp" alt="Fit Tribe analytics before — Q4 2025: 352K sessions, E£8.67M revenue, 1.16% CVR" class="analytics-img" loading="lazy">
         <div class="analytics-card-meta">Q4 2025 · 352K sessions · E£8.67M revenue (~$170K USD) · 1.16% CVR</div>
       </div>
-      <div class="analytics-card" onclick="openModal(this.querySelector('img').src, 'after')">
+      <div class="analytics-card" onclick="openModal('/images/case-studies/fit-tribe/analytics-before.webp','/images/case-studies/fit-tribe/analytics-after.webp','after')">
         <span class="analytics-card-badge after">After — Q1 2026</span>
-        <img src="/images/case-studies/fit-tribe/analytics-after.webp" alt="Fit Tribe analytics after — Q1 2026: 424K sessions, E£10.3M revenue, 1.24% CVR" class="analytics-img" loading="lazy">
-        <div class="analytics-card-meta">Q1 2026 · 424K sessions · E£10.3M revenue (~$202K USD) · 1.24% CVR</div>
+        <img src="/images/case-studies/fit-tribe/analytics-after.webp" alt="Fit Tribe analytics after — Q1 2026: 424K sessions, E£14.1M revenue, 1.24% CVR" class="analytics-img" loading="lazy">
+        <div class="analytics-card-meta">Q1 2026 · 424K sessions · E£14.1M revenue · 1.24% CVR</div>
       </div>
     </div>
 
@@ -961,12 +974,12 @@ body {
       <div class="number-block">
         <div class="number-label">Sessions Growth</div>
         <div class="number-value"><span class="accent">+</span>21<span class="accent">%</span></div>
-        <div class="number-context">352K → 424K. Continued scaling across channels — TikTok the largest driver, but not the only one.</div>
+        <div class="number-context">352K → 424K. Scaled across all channels — Meta the largest driver.</div>
       </div>
       <div class="number-block">
-        <div class="number-label">Revenue Growth</div>
-        <div class="number-value"><span class="accent">+</span>16<span class="accent">%</span></div>
-        <div class="number-context">E£8.67M → E£10.3M (~$170K → ~$202K USD). Revenue followed traffic.</div>
+        <div class="number-label">Revenue</div>
+        <div class="number-value">E£14.1<span class="accent">M</span></div>
+        <div class="number-context">In 4 months. Up from E£8.67M the prior quarter.</div>
       </div>
       <div class="number-block">
         <div class="number-label">CVR Improvement</div>
@@ -985,7 +998,14 @@ body {
       <p>"TikTok made up 40% of traffic and converted at 0.1%. The blended CVR still went up because we fixed what the site was losing on its own traffic. After TikTok budget was re-allocated, CVR reached 1.86%."</p>
       <div class="takeaway-attr">— Scalo · Fit Tribe Engagement, Q4 2025 – Q1 2026</div>
     </div>
-    <p class="section-body" style="margin-top: 28px;">Results were strong enough to move from a one-time sprint into an ongoing A/B testing engagement. Fit Tribe is still scaling — E£143K in a single day last week.</p>
+    <div class="engagement-next">
+      <div class="engagement-next-pills">
+        <span class="engagement-next-pill">Ongoing engagement</span>
+        <span class="engagement-next-pill">A/B testing</span>
+        <span class="engagement-next-pill">Active</span>
+      </div>
+      <p>Results were strong enough to move from a one-time sprint into an <span class="text-highlight">ongoing A/B testing engagement</span>. The site now has a structured testing backlog — every change is measured, not assumed. Fit Tribe is still scaling. <span class="text-highlight">E£143K in a single day</span> last week.</p>
+    </div>
   </div>
 </section>
 
@@ -1088,17 +1108,19 @@ var modalData = {
   after: {
     badge: 'after', label: 'After — Q1 2026',
     sessions: '424<span class="accent">K</span>',
-    revenue: 'E£10.3<span class="accent">M</span>',
+    revenue: 'E£14.1<span class="accent">M</span>',
     cvr: '1.24<span class="accent">%</span>',
     tiktok: null,
     showTiktok: false,
   }
 };
-var currentModalSrc = '';
+var currentBeforeSrc = '';
+var currentAfterSrc = '';
 var currentModalState = 'before';
 
-function openModal(src, state) {
-  currentModalSrc = src;
+function openModal(beforeSrc, afterSrc, state) {
+  currentBeforeSrc = beforeSrc;
+  currentAfterSrc = afterSrc;
   currentModalState = state || 'before';
   document.getElementById('imageModal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1118,7 +1140,7 @@ function showModalState(state) {
 function renderModal() {
   var d = modalData[currentModalState];
   var img = document.getElementById('modalImg');
-  img.src = currentModalSrc;
+  img.src = currentModalState === 'after' ? currentAfterSrc : currentBeforeSrc;
 
   var badge = document.getElementById('modalBadge');
   badge.className = 'modal-badge ' + d.badge;
