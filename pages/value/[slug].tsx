@@ -73,6 +73,7 @@ export default function ValueResourcePage({
               <PasswordGate
                 password={resource.password}
                 storageKey={`value-resource-${resource.slug}`}
+                bypassToken={resource.bypassToken}
               >
                 {iframeEl}
               </PasswordGate>

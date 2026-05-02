@@ -121,6 +121,7 @@ export interface ValueResource {
   tool: string;
   audience: string[];
   password?: string;
+  bypassToken?: string;
   docPath?: string;
   resultPill?: string;
   caseStudyHeadline?: string;
@@ -456,6 +457,7 @@ Design rules:
     tool: "CRO Framework",
     audience: ["Internal"],
     password: "godandmoney",
+    bypassToken: "vital2025",
     sections: [],
   },
   {

@@ -3,19 +3,26 @@ import { useState, useEffect } from "react";
 interface PasswordGateProps {
   password: string;
   storageKey: string;
+  bypassToken?: string;
   children: React.ReactNode;
 }
 
-export default function PasswordGate({ password, storageKey, children }: PasswordGateProps) {
+export default function PasswordGate({ password, storageKey, bypassToken, children }: PasswordGateProps) {
   const [unlocked, setUnlocked] = useState(false);
   const [pw, setPw] = useState("");
   const [err, setErr] = useState(false);
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    if (sessionStorage.getItem(storageKey) === "1") setUnlocked(true);
+    const params = new URLSearchParams(window.location.search);
+    if (bypassToken && params.get("token") === bypassToken) {
+      sessionStorage.setItem(storageKey, "1");
+      setUnlocked(true);
+    } else if (sessionStorage.getItem(storageKey) === "1") {
+      setUnlocked(true);
+    }
     setChecked(true);
-  }, [storageKey]);
+  }, [storageKey, bypassToken]);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
